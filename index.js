@@ -44,7 +44,7 @@ app.get('/createlogintable', (req, res) => {
 
 //insert login details
 app.get('/addlogininfo', (req,res) => {
-    let admin = {name:'Sumit', email:'st@g.com'};
+    let admin = {name:'Saurav', email:'Sv@g.com'};
     let sql = 'INSERT INTO login SET ?';
     let query = db.query(sql, admin, (err, result) => {
         if(err) throw err;
@@ -76,7 +76,7 @@ app.get('/getdesiredlogininfo/:id', (req,res) => {
 
 //update adminInfo
 app.get('/updatelogininfo/:id', (req,res) => {
-    let uname = 'Nayan';
+    let uname = 'Dew';
     let sql = `UPDATE login SET name = '${uname}' WHERE id = ${req.params.id}`;
     let query = db.query(sql, (err, result) => {
         if(err) throw err;
