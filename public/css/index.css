@@ -1,0 +1,74 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+h1 {
+  font-size: 50px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  text-align: center;
+  text-shadow: rgb(75, 68, 82);
+  color: #52c3f8;
+  text-decoration-style: solid;
+}
+div {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #c4c6ca;
+  padding-top: 50px;
+  margin: auto;
+  box-shadow: 0px 0px 15px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.txt {
+  color: rgba(32, 112, 179, 0.993);
+  font-weight: bold;
+  font-size: 18px;
+}
+.l {
+  margin-left: 23px;
+}
+.container {
+  background: #f9f9f9;
+}
+.login {
+  background: #52c3f8;
+  color: white;
+}
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+  letter-spacing: 1px;
+  width: 170px;
+  height: 55px;
+  outline: none;
+  transition: ease-out 0.3s;
+  font-size: 15px;
+  margin: 0;
+  position: relative;
+  top: 10%;
+  left: 50%;
+  /* -ms-transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%);
+  border: 2px solid #52c3f8;
+}
+.login:hover {
+  box-shadow: inset 170px 0 0 0 #47a9d6;
+  /* background-color: rgb(20, 103, 141); */
+}
+
+.l {
+  border: none;
+  border-bottom: 2px solid #52c3f8;
+  overflow: hidden;
+  padding: 8px 0px;
+  margin: 8px 0px;
+  padding-left: 10px;
+  margin-left: 5px;
+}
+input {
+  width: 200px;
+}
