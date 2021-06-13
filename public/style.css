@@ -1,0 +1,85 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+body{
+
+    
+}
+h1{
+    font-size: 50px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    text-align: center;
+    text-shadow: rgb(75, 68, 82);
+    color: #7E7E7E;
+    text-decoration-style: solid;
+}
+div {
+    width: 400px;
+    height:300px;
+    border: 1px solid #c4c6ca;
+    padding-top: 50px;
+    margin: auto;
+    box-shadow: 0px 0px 15px ;
+    display:flex;
+    justify-content: center;
+    padding-bottom: 50px;
+
+}
+
+.txt {
+    color: rgba(32, 112, 179, 0.993);
+    font-weight: bold;
+    font-size: 18px;
+}
+.l{
+    margin-left: 23px;
+}
+.container{
+    background:  #f9f9f9;
+    
+}
+.btn{
+    
+    background:   #f9e506;
+    cursor: pointer;;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    letter-spacing: 1px;
+    width: 170px;
+    height:55px;
+    color: black;
+    outline: none;
+    transition: ease-out 0.3s;
+    font-size: 15px;
+    margin: 0;
+  position: relative;
+  top: 10%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+    
+    
+}
+.btn:hover{
+    box-shadow: inset 170px 0 0 0 rgb(224, 189, 72);
+    color: #000;
+}
+
+
+
+.l{
+border: none;
+    border-bottom: 2px solid rgb(17, 20, 231);
+    overflow: hidden;
+    padding: 8px 0px;
+    margin: 8px 0px;
+    padding-left: 10px;
+    margin-left: 5px;
+    
+}
+input{
+    width:200px;
+}
+
+
+    
