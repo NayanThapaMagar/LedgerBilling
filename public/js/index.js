@@ -24,3 +24,25 @@ const login = (e) => {
       }
     });
 };
+
+
+//redirecting to change password page
+const redirectToChangePassword = (e) => {
+  window.location.assign("/secured/redirectToChangePassword");
+};
+
+//changing login information
+const changeloginInfo = (e) => {
+  e.preventDefault();
+  console.log("change login info");
+  // const oldPassword = document.getElementById("oldPassword").value;
+  // const newpassword = document.getElementById("newpassword").value;
+  // const comfirmpassword = document.getElementById("confirmpassword").value;
+  // console.log(oldPassword);
+  // console.log(newPassword);
+  // console.log(confirmPassword);
+};
+
+
+  
+

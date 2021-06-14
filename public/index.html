@@ -11,7 +11,6 @@
     <h1>LOGIN</h1>
     <div class="container">
       <form id="login-form" onsubmit="login(event)">
-        <!-- <label for="uname" class="txt">Name:</label> -->
 
         <i class="fa fa-user" aria-hidden="true"></i>
         <input
@@ -23,7 +22,6 @@
           required
         /><br /><br />
 
-        <!-- <label for="psw" class="txt">Password:</label> -->
         <i class="fa fa-lock" aria-hidden="true"></i>
         <input
           type="password"
@@ -36,8 +34,8 @@
         <br />
 
         <input type="submit" value="Log In" class="login btn" /><br /><br />
-        <button class="btn">Change Password</button>
       </form>
+      <button class="btn" onclick="redirectToChangePassword(event)">Change Password</button>
       <script src="./js/index.js"></script>
     </div>
   </body>

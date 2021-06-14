@@ -1,15 +1,12 @@
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
-body{
 
-    
-}
 h1{
     font-size: 50px;
     margin-top: 100px;
     margin-bottom: 50px;
     text-align: center;
     text-shadow: rgb(75, 68, 82);
-    color: #7E7E7E;
+    color: #52c3f8;
     text-decoration-style: solid;
 }
 .container {
@@ -36,7 +33,7 @@ h1{
 
 .btn{
     
-    background:   #f9e506;
+    background:   #52c3f8;
     cursor: pointer;;
     border: none;
     border-radius: 4px;
@@ -44,7 +41,7 @@ h1{
     letter-spacing: 1px;
     width: 170px;
     height:55px;
-    color: black;
+    color: white;
     outline: none;
     transition: ease-out 0.3s;
     font-size: 15px;
@@ -58,15 +55,14 @@ h1{
     
 }
 .btn:hover{
-    box-shadow: inset 170px 0 0 0 rgb(224, 189, 72);
-    color: #000;
+    box-shadow: inset 170px 0 0 0 #47a9d6;
 }
 
 
 
 .l{
 border: none;
-    border-bottom: 2px solid rgb(17, 20, 231);
+    border-bottom: 2px solid #52c3f8;
     overflow: hidden;
     padding: 8px 0px;
     margin: 8px 0px;

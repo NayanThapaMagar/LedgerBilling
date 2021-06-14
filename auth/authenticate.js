@@ -10,7 +10,7 @@ module.exports = (req, res, next) => {
 
     if (user.token) {
       const decodedToken = jwt.verify(user.token, process.env.TOKEN_SECRET);
-      const trueName = user.name.replaceAll("%20", " ");
+      const trueName = user.name.replace(/%20/g, " ");
       if (decodedToken.name === trueName) {
         res.locals.name = trueName;
         return next();
