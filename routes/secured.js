@@ -23,4 +23,8 @@ router.get("/home", (req, res) => {
 router.get("/redirectToChangePassword", (req, res) => {
   res.sendFile(staticDir + "/change.html");
 });
+//securely redirecting to accounts
+router.get("/account", (req, res) => {
+  res.sendFile(staticDir + "/account.html");
+});
 module.exports = router;

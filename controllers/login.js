@@ -11,7 +11,6 @@ const db = mysql.createConnection({
 });
 
 module.exports = (req, res) => {
-  console.log("here");
   const { email, password } = req.body;
   const sql = `SELECT * FROM admin WHERE email = '${email}'`;
   db.query(sql, (err, result) => {

@@ -8,8 +8,11 @@ const path = require("path");
 //Import Routes
 const securedRoute = require("./routes/secured");
 
-//import controllers
+//import controller's login
 const login = require("./controllers/login");
+
+//import controller's change login info
+const changeLoginInfo = require("./controllers/changeLoginInfo");
 
 
 dotenv.config();
@@ -113,6 +116,8 @@ app.use(express.json({ limit: "1mb" }));
 app.use("/secured", securedRoute);
 
 app.post("/login", login);
+
+app.post("/changeLoginInfo", changeLoginInfo);
 
 
 const PORT = 5000;

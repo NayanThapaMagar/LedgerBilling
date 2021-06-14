@@ -34,13 +34,31 @@ const redirectToChangePassword = (e) => {
 //changing login information
 const changeloginInfo = (e) => {
   e.preventDefault();
-  console.log("change login info");
-  // const oldPassword = document.getElementById("oldPassword").value;
-  // const newpassword = document.getElementById("newpassword").value;
-  // const comfirmpassword = document.getElementById("confirmpassword").value;
+  const oldPassword = document.getElementById("oldPassword").value;
+  const newPassword = document.getElementById("newPassword").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
   // console.log(oldPassword);
   // console.log(newPassword);
   // console.log(confirmPassword);
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ oldPassword, newPassword, confirmPassword }),
+  };
+  fetch("/changeLoginInfo", fetchOptions)
+    .then((res) => res.json())
+    .then((data) => {
+      if (!data.success) {
+        console.log("Failed to change password");
+        console.log(`message: ${data.message}`);
+      } else {
+        //login successful
+        console.log("Password changed");
+        window.location.assign("/secured/home");
+      }
+    });
 };
 
 
