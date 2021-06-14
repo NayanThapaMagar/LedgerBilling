@@ -2,11 +2,14 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const mysql = require("mysql");
-const { get } = require("./routes/auth");
+const { get } = require("./routes/secured");
 const path = require("path");
 
 //Import Routes
-const authRoute = require("./routes/auth");
+const securedRoute = require("./routes/secured");
+
+//import controllers
+const login = require("./controllers/login");
 
 dotenv.config();
 
@@ -26,7 +29,8 @@ db.connect(function (err) {
 });
 
 //use static folder to serve frontend
-app.use(express.static(path.join(__dirname, "public")));
+const staticDir = path.join(__dirname, "public");
+app.use(express.static(staticDir));
 app.use(express.json({ limit: "1mb" }));
 
 //create a database
@@ -105,12 +109,9 @@ app.delete("/deletelogininfo/:id", (req, res) => {
 });
 
 //Route Middlewares
-app.use("/api/user", authRoute);
+app.use("/secured", securedRoute);
 
-app.post("/login", (req, res) => {
-  const { uname, password } = req.body;
-  console.log(uname, password);
-});
+app.post("/login", login);
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`SERVER STARTED AT PORT ${PORT}`));
