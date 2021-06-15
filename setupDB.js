@@ -35,7 +35,7 @@ tables.forEach((table) => {
 // //Create table
 // app.get("/createlogintable", (req, res) => {
 //   let sql =
-//     "CREATE TABLE login(id int AUTO_INCREMENT, name VARCHAR(255), email VARCHAR(255), PRIMARY KEY(id))";
+//     "create table admin (id int AUTO_INCREMENT, email VARCHAR(255), password VARCHAR(20), name VARCHAR(255), PRIMARY KEY(id))";
 //   db.query(sql, (err, result) => {
 //     if (err) throw err;
 //     console.log(result);
@@ -102,4 +102,7 @@ tables.forEach((table) => {
 //    customerContact VARCHAR(10) UNIQUE NOT NULL,
 //    PRIMARY KEY(customerId)
 //    );
+//create table admin (id int AUTO_INCREMENT, email VARCHAR(255), password VARCHAR(20), name VARCHAR(255), PRIMARY KEY(id))
 //   INSERT INTO customerdetials (customerName, customerAddress, customerContact) VALUES ('Nayan', 'Pokhara', '9827168383');
+// insert into admin (email, password, name) values (" ", " ", " ");
+//ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'your new password';
