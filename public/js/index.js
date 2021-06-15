@@ -37,9 +37,6 @@ const changeloginInfo = (e) => {
   const oldPassword = document.getElementById("oldPassword").value;
   const newPassword = document.getElementById("newPassword").value;
   const confirmPassword = document.getElementById("confirmPassword").value;
-  // console.log(oldPassword);
-  // console.log(newPassword);
-  // console.log(confirmPassword);
   const fetchOptions = {
     method: "POST",
     headers: {
@@ -61,6 +58,64 @@ const changeloginInfo = (e) => {
     });
 };
 
+//inserting customer info
+const addCustomerDetials = (e) => {
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const address = document.getElementById("address").value;
+  const contact = document.getElementById("contact").value;
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name, address, contact }),
+  };
+  fetch("/insertCustomerInfo", fetchOptions)
+    .then((res) => res.json())
+    .then((data) => {
+      if (!data.success) {
+        console.log("Failed to insert data");
+        console.log(`message: ${data.message}`);
+      } else {
+        //Data inserted
+        console.log("Data inserted");
+        alert("Data Inserted");
+        window.location.assign("/secured/account");
+      }
+    });
 
-  
-
+};
+// displaying customer info on load
+const dislpayCustomerDetials = (e) => {
+  e.preventDefault();
+  console.log("ON LOAD");
+  // const searchContact = document.getElementById("contact").value;
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  fetch("/dislpayCustomerDetials", fetchOptions)
+    // .then((res) => res.json())
+    // .then((data) => {
+    //   if (!data.success) {
+    //     console.log("login failed");
+    //     console.log(`message: ${data.message}`);
+    //   } else {
+    //     //login successful
+    //     console.log("login successful");
+    //     window.location.assign("/secured/home");
+    //   }
+    // });
+};
+// //displaying customer info on search
+// const dislpayCustomerDetialsOnClick = (e) => {
+//   e.preventDefault();
+//   console.log("ON Click");
+//   const searchContact = document.getElementById("searchContact").value;
+//   // const address = document.getElementById("address").value;
+//   // const contact = document.getElementById("contact").value;
+//   console.log(searchContact);
+// };

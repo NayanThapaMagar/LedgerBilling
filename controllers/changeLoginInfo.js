@@ -1,4 +1,3 @@
-// const jwt = require("jsonwebtoken");
 const mysql = require("mysql");
 require("dotenv").config();
 
@@ -11,11 +10,7 @@ const db = mysql.createConnection({
 });
 
 module.exports = (req, res) => {
-//   console.log("here");
   const { oldPassword, newPassword, confirmPassword } = req.body;
-//   console.log(oldPassword);
-//   console.log(newPassword);
-//   console.log(confirmPassword);
   const sql = `SELECT * FROM admin WHERE password = '${oldPassword}'`;
   db.query(sql, (err, result) => {
     if (err) throw err;
@@ -25,7 +20,7 @@ module.exports = (req, res) => {
       return res.json({ success: false, message: "Incorrect password" });
     } else {
       //correct password
-      // const admin = result[0];
+      // const admin = result[0]; saurav lai sodne......
       if(newPassword!=confirmPassword){
         return res.json({ success: false, message: "Password Doesn't match" });
       } else{

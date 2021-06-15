@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/account.css">
 </head>
 
-<body>
+<body onload="dislpayCustomerDetials(event)">
     <!-- add account -->
     <div class="heading">
         <h1>Add Account</h1>
@@ -17,28 +17,31 @@
 
     <div class="add">
 
-        <div>
-            <label for="Name">
-                <span>Name: <br><input type="text" placeholder="Enter your name" name="Name" id="Name"> </span> </label>
-            <br><br><br>
-
-            <label for="Address">
-                <span>Address: <br><input type="text" placeholder="Enter address" name="adress" id="Address">
-                </span></label>
-            <br><br><br>
-
-            <label for="Contact">
-                <span>Contact Number: <br><input type="text" placeholder="Enter contact number" name="contact"
-                        id="Contact"> </span>
-            </label>
-            <br><br><br>
-        </div>
-
-        <div>
-            <button class="btn">Add</button>
-            <button class="btn">Cancel</button>
-        </div>
-
+        <form id="addCustomerDetials-form" onsubmit="addCustomerDetials(event)">
+            <div>
+                <label for="name">
+                    <span>Name: <br><input type="text" placeholder="Enter your name" name="name" id="name" required> </span> </label>
+                <br><br><br>
+    
+                <label for="address">
+                    <span>Address: <br><input type="text" placeholder="Enter address" name="address" id="address" required>
+                    </span></label>
+                <br><br><br>
+    
+                <label for="contact">
+                    <span>Contact Number: <br><input type="text" placeholder="Enter contact number" name="contact"
+                            id="contact" required> </span>
+                </label>
+                <br><br><br>
+            </div>
+    
+            <div>
+                <input type="submit" value="Submit" class="btn"></input>
+                <!-- <button class="btn">Cancel</button> -->
+            </div>
+    
+        </form>
+        
     </div>
     <br><br>
     <!-- search bar  -->
@@ -46,41 +49,43 @@
     <div class="main">
 
         <div class="padd">
-            <label for="SName">
-                <span class="pen">Name:<input type="text" placeholder="Enter your name" name="SName" id="SName"> </span> </label>
-
-            <label for="Scontact">
-                <span class="pen">Contact number:<input type="text" placeholder="Enter contact number" name="SName" id="Scontact">
-                </span> </label>
-
-            <button class="btn2">Search</button>
-            <button class="btn2">Cancel</button>
+            <form id="customerInfoDisplsying" onsubmit="dislpayCustomerDetialsOnClick(event)">
+                <label for="sName">
+                    <!-- <span class="pen">Name:<input type="text" placeholder="Enter your name" name="searchName" id="searchName"> </span> </label> -->
+    
+                <label for="sContact">
+                    <span class="pen">Contact number:<input type="text" placeholder="Enter contact number" name="searchContact" id="searchContact" required>
+                    </span> </label>
+    
+                <button class="btn2">Search</button>
+            </form>
+            <!-- <button class="btn2">Cancel</button> -->
         </div>
 <br>
         <div>
-            <table>
-                <tr >
-                    <th class="widths">Sn.</th>
-                    
-                    <th class="width">Name</th>
-                    <th class="width">Customer Id</th>
-                    <th class="width">Contact no</th>
-                    <th class="width">Address</th>
-                    
-                </tr>
-    
-                <tr>
-                    <td class="sn"> 1. </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            </table>
+           <table>
+            <tr >
+                <th class="widths">SN.</th>
+                
+                <th class="width">Name</th>
+                <th class="width">Customer Id</th>
+                <th class="width">Contact no</th>
+                <th class="width">Address</th>
+                
+            </tr>
+
+            <tr>
+                <td class="sn"> 1. </td>
+                <td>Nayan</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
         </div>
     </div>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
