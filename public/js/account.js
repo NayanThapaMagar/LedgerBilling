@@ -49,10 +49,20 @@ const addCustomerDetials = (e) => {
         data.result.forEach((customer) => wrapCustomerDetails(customer))
       );
   };
+
+  const clearCustomerInfoTable = () => {
+    console.log("Search ko");
+    //keep on removing child untill there is first child
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
+  };
   
   //displaying customer info on search
   const dislpayCustomerDetialsOnSearch = (e) => {
     e.preventDefault();
+    clearCustomerInfoTable();
+    count = 0;
     const searchContact = document.getElementById("searchContact").value;
     // console.log(searchContact);
     const fetchOptions = {

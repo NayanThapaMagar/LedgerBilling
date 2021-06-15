@@ -83,16 +83,18 @@ table {
   border-radius: 4px;
   padding: 5px;
   letter-spacing: 1px;
-  width: 70px;
+  width: 90px;
   height: 25px;
   color: white;
   outline: none;
   transition: ease-out 0.3s;
   font-weight: bold;
+  text-decoration: none;
 }
 .btn2:hover {
   box-shadow: inset 70px 0 0 0 #47a9d6;
   color: white;
+  /* text-decoration: none; */
 }
 .main input {
   border: none;
