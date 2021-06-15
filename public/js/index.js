@@ -25,7 +25,6 @@ const login = (e) => {
     });
 };
 
-
 //redirecting to change password page
 const redirectToChangePassword = (e) => {
   window.location.assign("/secured/redirectToChangePassword");
@@ -84,31 +83,31 @@ const addCustomerDetials = (e) => {
         window.location.assign("/secured/account");
       }
     });
-
 };
 // displaying customer info on load
+let count = 0;
+const tbody = document.getElementById("customer-detials");
+const wrapCustomerDetails = (customer) => {
+  count++;
+  const row = document.createElement("tr");
+  // row = <tr></tr>
+  row.innerHTML = `
+  <td class="sn">${count}</td>
+  <td>${customer.customerName}</td>
+  <td>${customer.customerId}</td>
+  <td>${customer.customerContact}</td>
+  <td>${customer.customerAddress}</td>`;
+  tbody.appendChild(row);
+};
+
 const dislpayCustomerDetials = (e) => {
   e.preventDefault();
-  console.log("ON LOAD");
   // const searchContact = document.getElementById("contact").value;
-  const fetchOptions = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
-  fetch("/dislpayCustomerDetials", fetchOptions)
-    // .then((res) => res.json())
-    // .then((data) => {
-    //   if (!data.success) {
-    //     console.log("login failed");
-    //     console.log(`message: ${data.message}`);
-    //   } else {
-    //     //login successful
-    //     console.log("login successful");
-    //     window.location.assign("/secured/home");
-    //   }
-    // });
+  fetch("/secured/dislpayCustomerDetials")
+    .then((res) => res.json())
+    .then((data) =>
+      data.result.forEach((customer) => wrapCustomerDetails(customer))
+    );
 };
 // //displaying customer info on search
 // const dislpayCustomerDetialsOnClick = (e) => {

@@ -14,9 +14,11 @@ router.use(express.json({ limit: "1mb" }));
 //use authentication middleware
 router.use(verify);
 
-// directing to home page after authentication 
+//displaying costumer detials
+const dislpayCustomerDetials = require("../controllers/dislpayCustomerDetials");
+
+// directing to home page after authentication
 router.get("/home", (req, res) => {
-  console.log(res.locals.name);
   res.sendFile(staticDir + "/home.html");
 });
 //redirecting to change password page
@@ -27,4 +29,8 @@ router.get("/redirectToChangePassword", (req, res) => {
 router.get("/account", (req, res) => {
   res.sendFile(staticDir + "/account.html");
 });
+
+//displaying costumer detials
+router.get("/dislpayCustomerDetials", dislpayCustomerDetials);
+
 module.exports = router;

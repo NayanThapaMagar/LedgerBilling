@@ -94,7 +94,7 @@ tables.forEach((table) => {
 //     res.send(`Admin Info deleted where id = ${req.params.id}`);
 //   });
 // });
-// //creating costumer detials table 
+// //creating costumer detials table
 // CREATE TABLE customerdetials (
 //   customerId INT AUTO_INCREMENT UNIQUE,
 //    customerName TINYTEXT NOT NULL,

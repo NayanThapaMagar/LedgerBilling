@@ -17,10 +17,6 @@ const changeLoginInfo = require("./controllers/changeLoginInfo");
 //inserting customer info
 const insertCustomerInfo = require("./controllers/insertCustomerInfo");
 
-//displaying costumer detials
-const dislpayCustomerDetials = require("./controllers/dislpayCustomerDetials");
-
-
 dotenv.config();
 
 //Create Connection
@@ -51,8 +47,6 @@ app.post("/login", login);
 app.post("/changeLoginInfo", changeLoginInfo);
 //inserting customer info
 app.post("/insertCustomerInfo", insertCustomerInfo);
-//displaying costumer detials
-app.post("/dislpayCustomerDetials", dislpayCustomerDetials);
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`SERVER STARTED AT PORT ${PORT}`));
