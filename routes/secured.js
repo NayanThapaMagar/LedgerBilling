@@ -17,6 +17,15 @@ router.use(verify);
 //displaying costumer detials
 const dislpayCustomerDetials = require("../controllers/dislpayCustomerDetials");
 
+// changing login info
+const changeloginInfo = require("../controllers/changeloginInfo");
+
+// adding new customer's details
+const addCustomerDetials = require("../controllers/addCustomerDetials");
+
+//displaying desired customer's detials on search
+const dislpayCustomerDetialsOnSearch = require("../controllers/dislpayCustomerDetialsOnSearch");
+
 // directing to home page after authentication
 router.get("/home", (req, res) => {
   res.sendFile(staticDir + "/home.html");
@@ -30,7 +39,16 @@ router.get("/account", (req, res) => {
   res.sendFile(staticDir + "/account.html");
 });
 
+// changing login info
+router.post("/changeloginInfo", changeloginInfo);
+
+// adding new customer's details
+router.post("/addCustomerDetials", addCustomerDetials);
+
 //displaying costumer detials
 router.get("/dislpayCustomerDetials", dislpayCustomerDetials);
+
+// displaying desired customer's detials on search
+router.post("/dislpayCustomerDetialsOnSearch", dislpayCustomerDetialsOnSearch);
 
 module.exports = router;

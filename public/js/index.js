@@ -43,7 +43,7 @@ const changeloginInfo = (e) => {
     },
     body: JSON.stringify({ oldPassword, newPassword, confirmPassword }),
   };
-  fetch("/changeLoginInfo", fetchOptions)
+  fetch("/secured/changeLoginInfo", fetchOptions)
     .then((res) => res.json())
     .then((data) => {
       if (!data.success) {
@@ -70,7 +70,7 @@ const addCustomerDetials = (e) => {
     },
     body: JSON.stringify({ name, address, contact }),
   };
-  fetch("/insertCustomerInfo", fetchOptions)
+  fetch("/secured/addCustomerDetials", fetchOptions)
     .then((res) => res.json())
     .then((data) => {
       if (!data.success) {
@@ -84,6 +84,7 @@ const addCustomerDetials = (e) => {
       }
     });
 };
+
 // displaying customer info on load
 let count = 0;
 const tbody = document.getElementById("customer-detials");
@@ -102,19 +103,28 @@ const wrapCustomerDetails = (customer) => {
 
 const dislpayCustomerDetials = (e) => {
   e.preventDefault();
-  // const searchContact = document.getElementById("contact").value;
   fetch("/secured/dislpayCustomerDetials")
     .then((res) => res.json())
     .then((data) =>
       data.result.forEach((customer) => wrapCustomerDetails(customer))
     );
 };
-// //displaying customer info on search
-// const dislpayCustomerDetialsOnClick = (e) => {
-//   e.preventDefault();
-//   console.log("ON Click");
-//   const searchContact = document.getElementById("searchContact").value;
-//   // const address = document.getElementById("address").value;
-//   // const contact = document.getElementById("contact").value;
-//   console.log(searchContact);
-// };
+
+//displaying customer info on search
+const dislpayCustomerDetialsOnSearch = (e) => {
+  e.preventDefault();
+  const searchContact = document.getElementById("searchContact").value;
+  // console.log(searchContact);
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ searchContact }),
+  };
+  fetch("/secured/dislpayCustomerDetialsOnSearch", fetchOptions)
+  .then((res) => res.json())
+  .then((data) =>
+    data.result.forEach((customer) => wrapCustomerDetails(customer))
+  );
+};

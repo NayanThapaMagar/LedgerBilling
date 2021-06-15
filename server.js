@@ -11,12 +11,6 @@ const securedRoute = require("./routes/secured");
 //import controller's login
 const login = require("./controllers/login");
 
-//import controller's change login info
-const changeLoginInfo = require("./controllers/changeLoginInfo");
-
-//inserting customer info
-const insertCustomerInfo = require("./controllers/insertCustomerInfo");
-
 dotenv.config();
 
 //Create Connection
@@ -43,10 +37,7 @@ app.use(express.json({ limit: "1mb" }));
 app.use("/secured", securedRoute);
 //login process
 app.post("/login", login);
-//changing login password
-app.post("/changeLoginInfo", changeLoginInfo);
-//inserting customer info
-app.post("/insertCustomerInfo", insertCustomerInfo);
+
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`SERVER STARTED AT PORT ${PORT}`));

@@ -47,9 +47,8 @@
     <!-- search bar  -->
 
     <div class="main">
-
-        <div class="padd">
-            <form id="customerInfoDisplsying" onsubmit="dislpayCustomerDetialsOnClick(event)">
+        <form id="customerInfoDisplsying" onsubmit="dislpayCustomerDetialsOnSearch(event)">
+            <div class="padd">
                 <label for="sName">
                     <!-- <span class="pen">Name:<input type="text" placeholder="Enter your name" name="searchName" id="searchName"> </span> </label> -->
     
@@ -57,26 +56,27 @@
                     <span class="pen">Contact number:<input type="text" placeholder="Enter contact number" name="searchContact" id="searchContact" required>
                     </span> </label>
     
-                <button class="btn2">Search</button>
-            </form>
+                <input type="submit" value="Search" class="btn2"></input>
             <!-- <button class="btn2">Cancel</button> -->
-        </div>
-<br>
-        <div>
-           <table>
-            <thead >
-                <td class="widths">SN.</td>                
-                <td class="width">Name</td>
-                <td class="width">Customer Id</td>
-                <td class="width">Contact no</td>
-                <td class="width">Address</td>
-                
-            </thead>
-            <tbody id="customer-detials"></tbody>            
-        </table>
-        </div>
+            </div>
+                <br>
+            <div>
+            <table>
+                <thead >
+                    <td class="widths">SN.</td>                
+                    <td class="width">Name</td>
+                    <td class="width">Customer Id</td>
+                    <td class="width">Contact no</td>
+                    <td class="width">Address</td>
+                    
+                </thead>
+                <tbody id="customer-detials"></tbody>            
+            </table>
+            </div>
+        </form>
+
     </div>
-    <script src="./js/index.js"></script>
+    <script src="./js/account.js"></script>
 </body>
 
 </html>
