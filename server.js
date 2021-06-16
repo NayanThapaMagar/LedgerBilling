@@ -11,6 +11,9 @@ const securedRoute = require("./routes/secured");
 //import controller's login
 const login = require("./controllers/login");
 
+//inport controller's register
+const register = require("./controllers/register");
+
 dotenv.config();
 
 //Create Connection
@@ -37,6 +40,12 @@ app.use(express.json({ limit: "1mb" }));
 app.use("/secured", securedRoute);
 //login process
 app.post("/login", login);
+//regestering
+app.post("/register", register);
+//redirecting to login page
+app.get("/login", (req, res) => {
+  res.sendFile(staticDir+"/login.html");
+});
 
 
 const PORT = 5000;

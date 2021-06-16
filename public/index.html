@@ -1,42 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>E-Billing</title>
-    <link rel="stylesheet" href="./css/index.css" />
-  </head>
-  <body>
-    <h1>LOGIN</h1>
+<html>
+<head>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <h1>Register</h1>
     <div class="container">
-      <form id="login-form" onsubmit="login(event)">
+    <form id="register-form" onsubmit="addAdmin(event)">
+        
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <input class="l" type="text" id="companyname" name="companyname" placeholder="Company Name" required><br><br>
+        
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <input class="l" type="text" id="userName" name="userName" placeholder="Company user name" required><br><br>
 
         <i class="fa fa-user" aria-hidden="true"></i>
-        <input
-          class="l"
-          type="text"
-          id="email"
-          name="email"
-          placeholder="Enter username"
-          required
-        /><br /><br />
+        <input class="l" type="text" id="address" name="address" placeholder="Company Address" required><br><br> 
+
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <input class="l" type="text" id="email" name="email" placeholder="xyz@gma..." required><br><br> 
+
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <input class="l" type="text" id="contact" name="contact" placeholder="Contact Number" required><br><br>
 
         <i class="fa fa-lock" aria-hidden="true"></i>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Enter password"
-          class="l"
-          required
-        /><br /><br />
-        <br />
+        <input type="password" id="password" name="password" placeholder="Password" class="l" required><br><br>
 
-        <input type="submit" value="Log In" class="btn" /><br /><br />
-      </form>
-      <button class="btn" onclick="redirectToChangePassword(event)">Change Password</button>
-      <script src="./js/index.js"></script>
-    </div>
-  </body>
-</html>
+        <i class="fa fa-lock" aria-hidden="true"></i>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" class="l" required><br><br>
+        <br>
+
+        <input type="submit" value="Create account" class="btn btncolour"><br><br>
+        <span>Already have an account? <a href="/login">Login</a></span>
+
+    </form>
+    <script src="./js/addAdmin.js"></script>
+    </div> 
+</body>
+

@@ -11,33 +11,37 @@ const db = mysql.createConnection({
 });
 
 module.exports = (req, res) => {
-  const { email, password } = req.body;
-  const sql = `SELECT * FROM admin WHERE email = '${email}'`;
+  const { userName, password } = req.body;
+  const sql = `SELECT * FROM admin WHERE userName = '${userName}'`;
   db.query(sql, (err, result) => {
     if (err) throw err;
 
     if (result.length == 0) {
       //admin does not exist
-      return res.json({ success: false, message: "No admin found" });
+      return res.json({ success: false, message: "Admin doesn't exist!!!" });
     } else {
       //admin exists
       const admin = result[0];
       if (password != admin.password) {
         //incorrect password
-        return res.json({ success: false, message: "Incorrect Password" });
+        return res.json({ success: false, message: "Incorrect Password!!!" });
       } else {
         //correct password
-        // jwt.sign(info, secret, options)
+        // jwt.sign(info, secret, options)=>jwt.sign ko format
         const token = jwt.sign(
           {
             id: admin.id,
-            name: admin.name,
+            companyName: admin.companyName,
+            userName: admin.userName,
+            address: admin.address,
+            email: admin.email,
+            contact: admin.contact
           },
           process.env.TOKEN_SECRET,
           { expiresIn: "1h" }
         );
         res.cookie("token", token);
-        res.cookie("name", admin.name);
+        res.cookie("contact", admin.contact);
         return res.json({ success: true, message: "Login Successful" });
       }
     }

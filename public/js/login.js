@@ -1,6 +1,6 @@
 const login = (e) => {
   e.preventDefault();
-  const email = document.getElementById("email").value;
+  const userName = document.getElementById("userName").value;
   const password = document.getElementById("password").value;
 
   const fetchOptions = {
@@ -8,7 +8,7 @@ const login = (e) => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ email, password }),
+    body: JSON.stringify({ userName, password }),
   };
 
   fetch("/login", fetchOptions)
@@ -17,6 +17,7 @@ const login = (e) => {
       if (!data.success) {
         console.log("login failed");
         console.log(`message: ${data.message}`);
+        alert(`${data.message}`)
       } else {
         //login successful
         console.log("login successful");
@@ -29,6 +30,7 @@ const login = (e) => {
 const redirectToChangePassword = (e) => {
   window.location.assign("/secured/redirectToChangePassword");
 };
+
 
 
 

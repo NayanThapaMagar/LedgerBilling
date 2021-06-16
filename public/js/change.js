@@ -16,10 +16,11 @@ const changeloginInfo = (e) => {
       .then((data) => {
         if (!data.success) {
           console.log("Failed to change password");
-          console.log(`message: ${data.message}`);
+          alert(`${data.message}`)
         } else {
           //login successful
           console.log("Password changed");
+          alert(`${data.message}`)
           window.location.assign("/secured/home");
         }
       });
