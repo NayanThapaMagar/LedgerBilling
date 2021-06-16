@@ -1,5 +1,5 @@
 //adding new customer info
-const addCustomerDetials = (e) => {
+const addCustomerDetails = (e) => {
     e.preventDefault();
     const name = document.getElementById("name").value;
     const address = document.getElementById("address").value;
@@ -11,7 +11,7 @@ const addCustomerDetials = (e) => {
       },
       body: JSON.stringify({ name, address, contact }),
     };
-    fetch("/secured/addCustomerDetials", fetchOptions)
+    fetch("/secured/addCustomerDetails", fetchOptions)
       .then((res) => res.json())
       .then((data) => {
         if (!data.success) {
@@ -27,7 +27,7 @@ const addCustomerDetials = (e) => {
   
   // displaying customer info on load
   let count = 0;
-  const tbody = document.getElementById("customer-detials");
+  const tbody = document.getElementById("customer-details");
   const wrapCustomerDetails = (customer) => {
     count++;
     const row = document.createElement("tr");
@@ -41,9 +41,9 @@ const addCustomerDetials = (e) => {
     tbody.appendChild(row);
   };
   
-  const dislpayCustomerDetials = (e) => {
+  const dislpayCustomerDetails = (e) => {
     e.preventDefault();
-    fetch("/secured/dislpayCustomerDetials")
+    fetch("/secured/dislpayCustomerDetails")
       .then((res) => res.json())
       .then((data) =>
         data.result.forEach((customer) => wrapCustomerDetails(customer))
@@ -51,7 +51,6 @@ const addCustomerDetials = (e) => {
   };
 
   const clearCustomerInfoTable = () => {
-    console.log("Search ko");
     //keep on removing child untill there is first child
     while (tbody.firstChild) {
         tbody.removeChild(tbody.firstChild);
@@ -59,7 +58,7 @@ const addCustomerDetials = (e) => {
   };
   
   //displaying customer info on search
-  const dislpayCustomerDetialsOnSearch = (e) => {
+  const dislpayCustomerDetailsOnSearch = (e) => {
     e.preventDefault();
     clearCustomerInfoTable();
     count = 0;
@@ -72,7 +71,7 @@ const addCustomerDetials = (e) => {
       },
       body: JSON.stringify({ searchContact }),
     };
-    fetch("/secured/dislpayCustomerDetialsOnSearch", fetchOptions)
+    fetch("/secured/dislpayCustomerDetailsOnSearch", fetchOptions)
     .then((res) => res.json())
     .then((data) =>
       data.result.forEach((customer) => wrapCustomerDetails(customer))

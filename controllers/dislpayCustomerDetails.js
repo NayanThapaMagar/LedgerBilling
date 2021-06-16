@@ -10,8 +10,7 @@ const db = mysql.createConnection({
 });
 
 module.exports = (req, res) => {
-    const { searchContact } = req.body;
-  const sql = `SELECT * FROM customerdetials WHERE customerContact = '${searchContact}'`;
+  const sql = `SELECT * FROM customerdetails`;
   db.query(sql, (err, result) => {
     if (err) throw err;
     return res.json({ result });

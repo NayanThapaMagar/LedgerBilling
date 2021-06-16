@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/account.css">
 </head>
 
-<body onload="dislpayCustomerDetials(event)">
+<body onload="dislpayCustomerDetails(event)">
     <!-- add account -->
     <div class="heading">
         <h1>Add Account</h1>
@@ -17,7 +17,7 @@
 
     <div class="add">
 
-        <form id="addCustomerDetials-form" onsubmit="addCustomerDetials(event)">
+        <form id="addCustomerDetails-form" onsubmit="addCustomerDetails(event)">
             <div>
                 <label for="name">
                     <span>Name: <br><input type="text" placeholder="Enter your name" name="name" id="name" required> </span> </label>
@@ -47,7 +47,7 @@
     <!-- search bar  -->
 
     <div class="main">
-        <form id="customerInfoDisplsying-form" onsubmit="dislpayCustomerDetialsOnSearch(event)">
+        <form id="customerInfoDisplsying-form" onsubmit="dislpayCustomerDetailsOnSearch(event)">
             <div class="padd">
                 <label for="sName">
                     <!-- <span class="pen">Name:<input type="text" placeholder="Enter your name" name="searchName" id="searchName"> </span> </label> -->
@@ -71,7 +71,7 @@
                     <td class="width">Address</td>
                     
                 </thead>
-                <tbody id="customer-detials"></tbody>            
+                <tbody id="customer-details"></tbody>            
             </table>
             </div>
         </form>

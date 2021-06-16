@@ -14,17 +14,17 @@ router.use(express.json({ limit: "1mb" }));
 //use authentication middleware
 router.use(verify);
 
-//displaying costumer detials
-const dislpayCustomerDetials = require("../controllers/dislpayCustomerDetials");
+//displaying costumer details
+const dislpayCustomerDetails = require("../controllers/dislpayCustomerDetails");
 
 // changing login info
 const changeloginInfo = require("../controllers/changeloginInfo");
 
 // adding new customer's details
-const addCustomerDetials = require("../controllers/addCustomerDetials");
+const addCustomerDetails = require("../controllers/addCustomerDetails");
 
-//displaying desired customer's detials on search
-const dislpayCustomerDetialsOnSearch = require("../controllers/dislpayCustomerDetialsOnSearch");
+//displaying desired customer's details on search
+const dislpayCustomerDetailsOnSearch = require("../controllers/dislpayCustomerDetailsOnSearch");
 
 // directing to home page after authentication
 router.get("/home", (req, res) => {
@@ -43,12 +43,12 @@ router.get("/account", (req, res) => {
 router.post("/changeloginInfo", changeloginInfo);
 
 // adding new customer's details
-router.post("/addCustomerDetials", addCustomerDetials);
+router.post("/addCustomerDetails", addCustomerDetails);
 
-//displaying costumer detials
-router.get("/dislpayCustomerDetials", dislpayCustomerDetials);
+//displaying costumer details
+router.get("/dislpayCustomerDetails", dislpayCustomerDetails);
 
-// displaying desired customer's detials on search
-router.post("/dislpayCustomerDetialsOnSearch", dislpayCustomerDetialsOnSearch);
+// displaying desired customer's details on search
+router.post("/dislpayCustomerDetailsOnSearch", dislpayCustomerDetailsOnSearch);
 
 module.exports = router;

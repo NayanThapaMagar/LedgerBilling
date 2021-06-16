@@ -87,7 +87,7 @@ tables.forEach((table) => {
 // });
 
 // //creating costumer detials table
-// CREATE TABLE customerdetials (
+// CREATE TABLE customerdetails (
 //   customerId INT AUTO_INCREMENT UNIQUE,
 //    customerName TINYTEXT NOT NULL,
 //    customerAddress VARCHAR(255),
@@ -95,6 +95,6 @@ tables.forEach((table) => {
 //    PRIMARY KEY(customerId)
 //    );
 //create table admin (id int AUTO_INCREMENT, email VARCHAR(255), password VARCHAR(20), name VARCHAR(255), PRIMARY KEY(id))
-//   INSERT INTO customerdetials (customerName, customerAddress, customerContact) VALUES ('Nayan', 'Pokhara', '9827168383');
+//   INSERT INTO customerdetails (customerName, customerAddress, customerContact) VALUES ('Nayan', 'Pokhara', '9827168383');
 // insert into admin (email, password, name) values (" ", " ", " ");
 //ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'your new password';

@@ -14,7 +14,7 @@ module.exports = (req, res) => {
   if (contact > 9999999999){
     return res.json({ success: false, message: `Contact number: ${contact} is invalid` }); 
   }
-  const sql = `SELECT * FROM customerdetials`;
+  const sql = `SELECT * FROM customerdetails`;
   db.query(sql, (err, result) => {
     if (err) throw err;
     else {
@@ -25,7 +25,7 @@ module.exports = (req, res) => {
       });
     }
   });
-  const sql1 = `INSERT INTO customerdetials (customerName, customerAddress, customerContact) VALUES ('${name}', '${address}', '${contact}')`;
+  const sql1 = `INSERT INTO customerdetails (customerName, customerAddress, customerContact) VALUES ('${name}', '${address}', '${contact}')`;
   db.query(sql1, (err, result) => {
     if (err) throw err;
     else{
