@@ -32,7 +32,7 @@ router.get("/home", (req, res) => {
 });
 //redirecting to change password page
 router.get("/redirectToChangePassword", (req, res) => {
-  res.sendFile(staticDir + "/change.html");
+  res.sendFile(staticDir + "/changeLoginInfo.html");
 });
 //securely redirecting to accounts
 router.get("/account", (req, res) => {
