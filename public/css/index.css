@@ -32,11 +32,10 @@ div {
 .container {
   background: #f9f9f9;
 }
-.login {
+
+.btn {
   background: #52c3f8;
   color: white;
-}
-.btn {
   cursor: pointer;
   border: none;
   border-radius: 4px;
@@ -55,7 +54,7 @@ div {
   transform: translate(-50%, -50%);
   border: 2px solid #52c3f8;
 }
-.login:hover {
+.btn:hover {
   box-shadow: inset 170px 0 0 0 #47a9d6;
   /* background-color: rgb(20, 103, 141); */
 }
