@@ -15,8 +15,8 @@ const addCustomerDetails = (e) => {
       .then((res) => res.json())
       .then((data) => {
         if (!data.success) {
-          console.log("Failed to insert data");
-          console.log(`message: ${data.message}`);
+          //failed to insert data
+          alert(`${data.message}`)
         } else {
           //Data inserted
           alert("Data Inserted");

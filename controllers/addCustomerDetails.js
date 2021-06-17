@@ -8,28 +8,22 @@ const db = mysql.createConnection({
   database: "login",
   insecureAuth: true,
 });
-
+let count = 0;
 module.exports = (req, res) => {
   const { name, address, contact } = req.body;
-  if (contact > 9999999999){
+  if (contact > 9999999999 || contact < 9800000000){
     return res.json({ success: false, message: `Contact number: ${contact} is invalid` }); 
   }
-  const sql = `SELECT * FROM customerdetails`;
+  const sql = `SELECT * FROM customerdetails WHERE customerContact = '${contact}'`;
   db.query(sql, (err, result) => {
     if (err) throw err;
-    else {
-      result.forEach((result)=>{
-        if (contact == result.customerContact) {
-          return res.json({ success: false, message: `Contact number: ${contact} is already occupied` });
-        }
-      });
+    if (result.length != 0) {
+      return res.json({ success: false, message: `Contact number: ${contact} is already occupied` });
     }
-  });
-  const sql1 = `INSERT INTO customerdetails (customerName, customerAddress, customerContact) VALUES ('${name}', '${address}', '${contact}')`;
-  db.query(sql1, (err, result) => {
-    if (err) throw err;
-    else{
+    const sql1 = `INSERT INTO customerdetails (customerName, customerAddress, customerContact) VALUES ('${name}', '${address}', '${contact}')`;
+    db.query(sql1, (err, result) => {
+      if (err) throw err;
         return res.json({ success: true, message: "Data Inserted" });
-    }
+    });
   });
 };
