@@ -60,20 +60,29 @@ const addCustomerDetails = (e) => {
   //displaying customer info on search
   const dislpayCustomerDetailsOnSearch = (e) => {
     e.preventDefault();
-    clearCustomerInfoTable();
     count = 0;
+    const searchCustomer = document.getElementById("searchCustomer").value;
     const searchContact = document.getElementById("searchContact").value;
-    // console.log(searchContact);
+    const searchAddress = document.getElementById("searchAddress").value;
+    if ( searchCustomer === "" && searchContact === "" && searchAddress === "") {
+      return alert("Enter atleast one parameter");
+    } 
+    clearCustomerInfoTable();
     const fetchOptions = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ searchContact }),
+      body: JSON.stringify({ searchCustomer, searchContact, searchAddress }),
     };
     fetch("/secured/dislpayCustomerDetailsOnSearch", fetchOptions)
     .then((res) => res.json())
-    .then((data) =>
-      data.result.forEach((customer) => wrapCustomerDetails(customer))
+    .then((data) => {
+      if (!data.success) {
+        alert(`${data.message}`)
+      } else {
+        data.result.forEach((customer) => wrapCustomerDetails(customer))
+      }
+    }
     );
   };
