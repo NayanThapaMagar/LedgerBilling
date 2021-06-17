@@ -46,6 +46,10 @@ app.post("/register", register);
 app.get("/login", (req, res) => {
   res.sendFile(staticDir+"/login.html");
 });
+//redirecting to register page
+app.get("/register", (req, res) => {
+  res.sendFile(staticDir+"/index.html");
+});
 
 
 const PORT = 5000;

@@ -2,8 +2,8 @@
 
 h1 {
   font-size: 50px;
-  margin-top: 100px;
-  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 25px;
   text-align: center;
   text-shadow: rgb(75, 68, 82);
   color: #52c3f8;
@@ -11,7 +11,6 @@ h1 {
 }
 div {
   width: 400px;
-  height: 300px;
   border: 1px solid #c4c6ca;
   padding-top: 50px;
   margin: auto;
@@ -71,4 +70,8 @@ div {
 }
 input {
   width: 200px;
+}
+
+#login-form{
+  padding: 20px 10px;
 }
