@@ -1,0 +1,119 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.heading{
+    font-size: 10px;
+    margin-bottom: 20px;
+    color: #52c3f8; 
+
+}
+
+.billto td{
+    background-color: white;
+}
+.cutomerId td{
+    background-color: hsl(258, 45%, 94%);
+}
+
+.billno input{
+ border: none;
+ 
+}
+
+.all td{
+    background-color: #f5f3eb;
+}
+
+ .whole{
+     border: 1px solid #c4c6ca;
+    width: 600px; 
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0px 0px 15px ;
+    margin-top: 30px;
+    padding-bottom: 40px;
+
+    
+    }   
+
+ 
+th{
+    background-color:#52c3f8;
+    height: 25px;
+
+}
+
+.billno {
+display: flex; 
+justify-content: flex-end;   
+padding-right: 57px;
+
+}
+
+.billto input{
+border: none;
+ 
+}
+.customerId{
+    padding-left:15px;
+}
+
+.particulars{
+    display: flex;
+    justify-content: center;
+}
+.width{
+    width:30px;
+    
+}
+.width2{
+    width: 60px;
+}
+.width2 input{
+    width: 60px;
+}
+
+.width1{
+    width:160px
+}
+.width3{
+    width:100px;
+}
+.particulars table{
+border: 1px solid black;
+border-collapse: collapse;
+margin-top: 20px;
+}
+.particulars td,th{
+    border: 1px solid black;
+}
+.particulars input{
+    border: none;
+}
+
+.input input{
+    border: none;
+    border-bottom: 2px solid #52c3f8; 
+    
+}
+.flex1{
+display: flex;
+padding-left: 55px;
+}
+.flex2{
+    display: flex;
+}
+.delivery{
+    padding-left: 55px;
+}
+.total{
+    padding-left: 30px;
+}
+.particulars table{
+    width:490px;
+}
+
+
+
+
