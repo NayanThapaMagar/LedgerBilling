@@ -38,7 +38,10 @@ router.get("/redirectToChangePassword", (req, res) => {
 router.get("/account", (req, res) => {
   res.sendFile(staticDir + "/account.html");
 });
-
+//invoice display securely
+router.get("/invoice", (req, res) => {
+  res.sendFile(staticDir + "/invoice.html");
+});
 // changing login info
 router.post("/changeloginInfo", changeloginInfo);
 
@@ -50,5 +53,6 @@ router.get("/dislpayCustomerDetails", dislpayCustomerDetails);
 
 // displaying desired customer's details on search
 router.post("/dislpayCustomerDetailsOnSearch", dislpayCustomerDetailsOnSearch);
+
 
 module.exports = router;
