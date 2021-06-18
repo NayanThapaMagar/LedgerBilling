@@ -11,7 +11,7 @@ const db = mysql.createConnection({
 let count = 0;
 module.exports = (req, res) => {
   const { name, address, contact } = req.body;
-  if (contact > 9999999999 || contact < 9800000000){
+  if (contact > 9999999999 || contact < 9800000000 || isNaN(contact)){
     return res.json({ success: false, message: `Contact number: ${contact} is invalid` }); 
   }
   const sql = `SELECT * FROM customerdetails WHERE customerContact = '${contact}'`;
