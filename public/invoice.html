@@ -1,162 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/table.css">
+    <link rel="stylesheet" href="./css/bill.css">
 </head>
-
 <body>
-    <div class="heading">
-        <h1>
-            Company Name: Nuss Hardware
-        </h1>
-    </div>
-    <div class="main">
-
-        <div class="holy">
-            <div class="info">
-
-                <label for="bill">Bill no: <br></label>
-                <input type="text" id="bill" placeholder="Enter bill no">
-                <br><br>
-
-                <label style for="name">Name: <br></label>
-                <input type="text" placeholder="Enter your name" minlength="6" maxlength="30" id="name">
-                <br><br>
-
-                <label for="customer id"> <span>Customer Id: <br></span></label>
-                <input type="text" placeholder="Enter customer Id" id="customer id">
-                
-            </div>
-
-            <div class="ninfo">
-
-
-                <label for="date"> <span>Date: <br></span></label>
-                <input type="date" placeholder="Enter date" id="date"><br><br>
-
-                <label for="day"><span>Contact number: <br></span></label>
-                <input type="text" placeholder="Enter contact number" id="day"><br><br>
-
-                <label for="address">Address: <br></label>
-                <input type="text" placeholder="Enter address" id="address">
-            </div>
+    <main class="whole">
+        <div class="heading">
+        <h1>Company Name: Nuss</h1>
         </div>
 
 
-        <div>
-            <table class="fit">
+
+        <div class="billno all">
+    <table >
+        <tr>
+            <th>Bill no:</th>
+            <th>Date:</th>
+        </tr> 
+
+        <tr>
+            <td></td>
+            <td><input type="date"></td>
+        </tr>
+    </table>
+    
+        </div>
+<br><br>
+<div class="flex1">
+        <div class="billto">
+            <table>
                 <tr>
-                    <th> SN</th>
-                    <th>Particulars</th>
-                    <th class="width1">QTY</th>
-                    <th class="width2">Rate</th>
-                    <th class="width2">Amount</th>
+                    <th colspan="2">Bill To </th>
+                    
                 </tr>
+              
+
                 <tr>
-                    <td class="sn"> 1. </td>
-                    <td> <input type="text"> </td>
-                    <td> <input class="width1" type="text"> </td>
-                    <td> <input type="text" class="width2"> </td>
-                    <td> <input type="text" class="width2"> </td>
+                    <td>Name:</td>
+                    <td></td>
 
                 </tr>
-
+                
                 <tr>
-                    <td class="sn"> 2.</td>
-                    <td> <input type="text"> </td>
-
-                    <td> <input class="width1" type="text"></td>
-                    <td> <input type="text" class="width2"></td>
-                    <td> <input type="text" class="width2"></td>
-
-                </tr>
-
-                <tr>
-                    <td class="sn">3.</td>
-                    <td> <input type="text"></td>
-
-                    <td> <input class="width1" type="text"></td>
-                    <td> <input class="width2" type="text"></td>
-                    <td> <input class="width2" type="text"></td>
-
+                    <td>Address:</td>
+                    <td></td>
                 </tr>
 
                 <tr>
-                    <td class="sn">4.</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Contact number:</td>
                     <td><input type="text"></td>
-                    <td><input class="width1" type="text"></td>
-                    <td><input class="width2" type="text"></td>
-                    <td><input class="width2" type="text"></td>
-
-                </tr>
-                <tr>
-                    <td class="sn">5.</td>
-                    <td><input type="text"></td>
-                    <td><input class="width1" type="text"></td>
-                    <td><input class="width2" type="text"></td>
-                    <td><input class="width2" type="text"></td>
-
-                </tr>
-                <tr>
-                    <td class="sn">6.</td>
-                    <td><input type="text"></td>
-                    <td><input class="width1" type="text"></td>
-                    <td><input class="width2" type="text"></td>
-                    <td><input class="width2" type="text"></td>
-
-                </tr>
-                <tr>
-                    <td class="sn">7.</td>
-                    <td><input type="text"></td>
-                    <td><input class="width1" type="text"></td>
-                    <td><input class="width2" type="text"></td>
-                    <td><input class="width2" type="text"></td>
                 </tr>
             </table>
         </div>
+        <br>
 
-        <div class="total">
-
-            <div class="toto">
-            
-                <span> Total: <br> <input type="text"></span><br><br>
-        
-                <span> VAT: <br> <input type="text"></span><br><br>
-                
-                <span> Discount: <br> <input type="text"></span>
-                
-            </div>
-
-            
-
-            <div class="iholy">
-
-                <div class="info">
-            <span>Delivery By: <br> <input type="text"></span><br><br>
-            <span>Checked By: <br> <input type="text"></span><br><br>
-            <span> Received By: <br> <input type="text"> </span><br><br>
-            <span> Authorized Signature: <br> <input type="text"> </span><br><br>
-            
-            </div>
-           
-            <div class="info">
-            <span>Grand Total: <br> <input type="text"></span>
-            <br>
-            <br>
-            <span>Paid amount: <br> <input type="text"></span> <br><br>
-            <span>Due amount: <br> <input type="text"></span><br><br>
-            <span> Remarks: <br> <input type="text"> </span><br><br>
-</div></div>
-
+        <div class="customerId all">
+         <table>
+             <tr>
+                 <th>CUTOMER ID</th>
+                 <th>TERMS</th>
+             </tr>
+             <td></td>
+             <td>Due Upon Receipt</td>
+             <tr>
+                 
+             </tr>
+         </table>
+        </div>
 
         </div>
 
+        <div class="particulars">
 
+            <table>
+                <tr>
+                    <th class="width"> SN   </th>
+                    <th class="width1">Particulars</th>
+                    <th class="width2">Qty</th>
+                    <th class="width3">Rate</th>
+                    <th class="width3">Amount</th>
+
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td></td>
+                <td class="width2"><input type="text"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td></td>
+                <td class="width2"><input type="text"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td></td>
+                <td class="width2"><input type="text"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </table>
+
+        </div>
+        <br><br>
+  
+        <div class="flex2">
+
+            <div class="delivery input">
+                <table>
+                    <tr>
+                        <td> Delivery By:</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Checked By:</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Received By:</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Remarks:</td>
+                        <td><input type="text"></td>
+                        
+                    </tr>
+                <tr>
+                    <td>Authorized signature:</td>
+                    <td><input type="text"></td>
+                </tr>
+                </table>
+                </div>
+        <div class="total input">
+            <table>
+    
+                <tr>
+                    <td>Total:</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Vat:</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td >Discount:</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Grand Total:</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Paid amount:</td>
+            <td class> <input type="text"></td>
+                </tr> 
+                <tr>
+                <td>Due amount:</td>
+                <td></td>
+            </tr>
+            </table>
+        </div>
+
+
+       
+            </div>
+
+<!-- 
+            <div class="input signature">
+                Authorized Signature: <input type="text">
+            </div>
+        </div> -->
+    </main>
 </body>
-
 </html>
