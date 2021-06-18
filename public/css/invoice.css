@@ -2,40 +2,60 @@
     margin:0px;
     padding:0px;
 }
-.heading{
+#center_whole_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+.border-outline input{
+outline: none;
+}
+
+#heading{
     font-size: 10px;
     margin-bottom: 20px;
     color: #52c3f8; 
+    padding-left: 20px;
 
 }
 
 .billto td{
     background-color: white;
 }
+.billto {
+    
+    width: 50%;
+    padding-left: 4px;
+}
+.customerId{
+    width: 39%;
+}
 .cutomerId td{
     background-color: hsl(258, 45%, 94%);
 }
 
-.billno input{
- border: none;
- 
-}
 
 .all td{
-    background-color: #f5f3eb;
+    background-color: #68c7f373;
+}
+.all th{
+    border: none;
 }
 
  .whole{
      border: 1px solid #c4c6ca;
-    width: 600px; 
-    margin: auto;
+    width: 600px;
+    height:100;
     padding: 20px;
     box-shadow: 0px 0px 15px ;
     margin-top: 30px;
-    padding-bottom: 40px;
-
-    
-    }   
+    padding-bottom: 40px; 
+    }  
+    .whole input{
+        border: none;
+    } 
 
  
 th{
@@ -47,73 +67,106 @@ th{
 .billno {
 display: flex; 
 justify-content: flex-end;   
-padding-right: 57px;
+padding-right: 28px;
 
 }
 
-.billto input{
-border: none;
- 
-}
-.customerId{
-    padding-left:15px;
-}
+
 
 .particulars{
     display: flex;
     justify-content: center;
 }
-.width{
+.widthSN{
     width:30px;
     
 }
-.width2{
+.widthQTY{
     width: 60px;
 }
-.width2 input{
+.widthQTY input{
     width: 60px;
 }
 
-.width1{
+.widthpariculars{
     width:160px
 }
-.width3{
+.width_Rate_Amount{
     width:100px;
 }
 .particulars table{
-border: 1px solid black;
+border: 0.5px solid black;
 border-collapse: collapse;
 margin-top: 20px;
+
 }
 .particulars td,th{
-    border: 1px solid black;
-}
-.particulars input{
-    border: none;
+    border: 0.5px solid black;
 }
 
 .input input{
-    border: none;
     border-bottom: 2px solid #52c3f8; 
     
 }
 .flex1{
 display: flex;
-padding-left: 55px;
+flex-direction: row-reverse;
+width:100%;
+justify-content: space-around;
 }
 .flex2{
     display: flex;
-}
-.delivery{
-    padding-left: 55px;
-}
-.total{
-    padding-left: 30px;
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: space-around;
 }
 .particulars table{
+    width:555px;
+ }
+
+  /* for resizing */
+@media (max-width:654px){
+  .whole{
+      width: 550px;
+  }
+  .whole th{
+      font-size: 12px;
+  }
+
+  .particulars table{
+    width:505px;
+ }
+ .customerId td{
+text-align: center;
+ }
+ 
+} 
+@media (max-width:600px){
+
+.whole{
     width:490px;
+    font-size: 12px;
+}
+.particulars table{
+    width: 480px;
+}
+.customerId{
+    padding-left: 100px;
+    width: 50%;  
+} 
+@media (max-width:503px){
+.whole{
+    width: 430px;
 }
 
-
-
-
+.particulars table{
+    width: 430px;
+}
+.billno{
+    width: 100%;
+    
+}
+.flex2 input{
+    width:120px;
+}
+}
