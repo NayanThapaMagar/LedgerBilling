@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="./css/invoice.css">
 </head>
 <body>
-    <main class="whole">
-        <div class="heading">
+    <main id="center_whole_content" >
+        <div class="whole border-outline">
+        <div id="heading">
         <h1>Company Name: Nuss</h1>
         </div>
 
@@ -31,6 +32,21 @@
         </div>
 <br><br>
 <div class="flex1">
+    
+
+        <div class="customerId all">
+         <table>
+             <tr>
+                 <th>CUTOMER ID</th>
+                 <th>TERMS</th>
+             </tr>
+             <td></td>
+             <td>Due Upon Receipt</td>
+             <tr>
+                 
+             </tr>
+         </table>
+        </div>
         <div class="billto">
             <table>
                 <tr>
@@ -59,54 +75,38 @@
                 </tr>
             </table>
         </div>
-        <br>
-
-        <div class="customerId all">
-         <table>
-             <tr>
-                 <th>CUTOMER ID</th>
-                 <th>TERMS</th>
-             </tr>
-             <td></td>
-             <td>Due Upon Receipt</td>
-             <tr>
-                 
-             </tr>
-         </table>
-        </div>
-
         </div>
 
         <div class="particulars">
 
-            <table>
+            <table >
                 <tr>
-                    <th class="width"> SN   </th>
-                    <th class="width1">Particulars</th>
-                    <th class="width2">Qty</th>
-                    <th class="width3">Rate</th>
-                    <th class="width3">Amount</th>
+                    <th class="widthSN"> SN   </th>
+                    <th class="widthParticulars">Particulars</th>
+                    <th class="widthQTY">Qty</th>
+                    <th class="width_Rate_Amount">Rate</th>
+                    <th class="width_Rate_Amount">Amount</th>
 
             </tr>
 
             <tr>
                 <td>1</td>
                 <td></td>
-                <td class="width2"><input type="text"></td>
+                <td class="widthQTY"><input type="text"></td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
                 <td>2</td>
                 <td></td>
-                <td class="width2"><input type="text"></td>
+                <td class="widthQTY"><input type="text"></td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
                 <td>3</td>
                 <td></td>
-                <td class="width2"><input type="text"></td>
+                <td class="widthQTY"><input type="text"></td>
                 <td></td>
                 <td></td>
             </tr>
@@ -117,31 +117,7 @@
   
         <div class="flex2">
 
-            <div class="delivery input">
-                <table>
-                    <tr>
-                        <td> Delivery By:</td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>Checked By:</td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>Received By:</td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>Remarks:</td>
-                        <td><input type="text"></td>
-                        
-                    </tr>
-                <tr>
-                    <td>Authorized signature:</td>
-                    <td><input type="text"></td>
-                </tr>
-                </table>
-                </div>
+          
         <div class="total input">
             <table>
     
@@ -171,7 +147,31 @@
             </tr>
             </table>
         </div>
-
+        <div class="delivery input">
+            <table>
+                <tr>
+                    <td> Delivery By:</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Checked By:</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Received By:</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Remarks:</td>
+                    <td><input type="text"></td>
+                    
+                </tr>
+            <tr>
+                <td>Authorized signature:</td>
+                <td><input type="text"></td>
+            </tr>
+            </table>
+            </div>
 
        
             </div>
@@ -181,6 +181,8 @@
                 Authorized Signature: <input type="text">
             </div>
         </div> -->
+        </div>
     </main>
+
 </body>
 </html>

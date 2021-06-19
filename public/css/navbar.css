@@ -24,26 +24,60 @@ a{
     text-decoration: none;
     color:white;
 }
-.navbar ul{
+.nav_links ul{
     display:flex;
     list-style: none;   
 }
 
-.navbar ul li{
+.nav_links ul li{
     padding: 0px 20px;
     
 }
 a:hover{
-    color:red;
+    color:blue;
+}
+a:active{
+    color:blue;
 }
 nav{
     position:sticky;
 }
+.burger div{
+    width:20px;
+    height: 2px;
+    margin: 3px;
+    background-color: white;
+    display:none;
+}
 
-@media only screen and (max-width:731px){
+.burger:hover{
+    cursor: pointer;
+
+}
+.button{
+    display:none;
+}
+
+
+@media only screen and (max-width:970px){
     .navl{
         flex-direction:column;
-        height:120px;
+        height:150px;
+    }
+    .logo{
+        margin: 20px 0px;
     }
 }
-    
+@media only screen and (max-width:775px){
+
+    .nav_links ul{
+        
+        display: flex;
+        flex-direction: column;
+        height:92vh;
+        background-color: hsla(0, 6%, 7%, 0.616);
+    }
+.logo{
+    position: absolute;
+    top:0px;
+}
