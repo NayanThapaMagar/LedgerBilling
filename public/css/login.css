@@ -64,3 +64,6 @@ h1 {
   #body{
       margin-top:200px;
   }
+  form {
+    width: auto;
+  }
