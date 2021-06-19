@@ -139,24 +139,12 @@ justify-content: space-around;
  .customerId td{
 text-align: center;
  }
+}
  
-} 
 @media (max-width:600px){
-
-.whole{
-    width:490px;
-    font-size: 12px;
-}
-.particulars table{
-    width: 480px;
-}
-.customerId{
-    padding-left: 100px;
-    width: 50%;  
-} 
-@media (max-width:503px){
 .whole{
     width: 430px;
+    font-size: 12px;
 }
 
 .particulars table{
