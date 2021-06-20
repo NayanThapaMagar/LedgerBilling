@@ -9,6 +9,9 @@ h1{
     color: #52c3f8;
     text-decoration-style: solid;
 }
+input{
+    outline: none;
+}
 .container {
     width: 400px;
     height:400px;
