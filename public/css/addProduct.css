@@ -3,40 +3,44 @@
     padding:0px;
     box-sizing: border-box;
 }
-h1{
-    background-color: rgb(163, 159, 167);
+input{
+    outline:none ;
+    text-align: center;
+    
+}
+
+
+#h2{
+    background-color:  #363636;;
+    height: 40px;
+    width: 200px;
+    margin: 60px auto;
+    border-radius: 4px;
+
+}
+h2{
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-    height: 50px;
-}
-#h2{
-    /* border: 1px solid #52c3f8; */
-    width: 300px;
-    margin:100px auto;
-    text-align: center;
-    /* box-shadow: 0px 0px 15px ; */
+    padding-top: 5px;
+    color: white;
+    font-family: 'Jura', sans-serif;
 }
 .add{
     border: 1px solid #52c3f8;
     width: 300px;
     margin:20px auto;
     text-align: center;
-    padding-top:20px;
+    padding:40px;
     box-shadow: 0px 0px 15px ;
 }
 .add input{
     border:none;
     border-bottom: 2px solid #52c3f8;
-    line-height: 25px;
+    line-height: 30px;
     
     
 }
 
-.label input{
-    margin-bottom: 15px;
-}
 
 
 
@@ -124,4 +128,7 @@ table{
 }
 .pen{
     padding:10px;
+}
+.padding{
+    padding: 20px 0px;
 }

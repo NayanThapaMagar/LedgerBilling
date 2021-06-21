@@ -3,6 +3,9 @@
   padding: 0px;
   box-sizing: border-box;
 }
+input{
+  outline: none;
+}
 h1 {
   background-color: rgb(163, 159, 167);
   display: flex;
