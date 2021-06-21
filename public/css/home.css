@@ -54,7 +54,7 @@ nav {
     background-color: #2c2c2c;
 }
 .dropdown-content {
-    display: none;
+    /* display: none; */
     position: absolute;
     background-color:  #2c2c2c;
     min-width: 150px;
@@ -118,9 +118,9 @@ nav {
     float: left;
     overflow: hidden;
 } */
-@media  screen and (max-height:780px) {
+@media  screen and (max-height:800px) {
     .navbar a, .dropdown .dropbtn{
-        padding: 24px 29px 24px;
+        padding: 23px 28px 23px;
         letter-spacing: 2px;
         font-size: 13px;
     }
@@ -138,18 +138,18 @@ nav {
 }
 @media  screen and (max-height:765px) {
     .navbar a, .dropdown .dropbtn{
-        padding: 23px 27px 23px;
+        padding: 22px 27px 22px;
     }
 }
 @media  screen and (max-height:745px) {
     .navbar a, .dropdown .dropbtn{
-        padding: 21px 27px 21px;
+        padding: 20px 26px 21px;
     }
 }
 
-@media  screen and (max-height:695px) {
+@media  screen and (max-height:700px) {
     .navbar a, .dropdown .dropbtn{
-        padding: 20px 27px 21px;
+        padding: 20px 27px 20px;
         letter-spacing: 1px;
     }
     .logo {
@@ -165,20 +165,20 @@ nav {
     }
   
 }
-@media  screen and (max-height:670px) {
+@media  screen and (max-height:686px) {
     .navbar a, .dropdown .dropbtn{
         padding: 18px 27px 19px;
     }
 }
 @media  screen and (max-height:665px) {
     .navbar a, .dropdown .dropbtn{
-        padding: 17px 27px 18px;
+        padding: 17px 27px 17px;
     }
 }
 @media  screen and (max-height:630px) {
-    .navbar a .dropdown .dropbtn{
+    /* .navbar a .dropdown .dropbtn{
         padding: 21px 26px 21px;
-    }
+    } */
     .logo {
         letter-spacing: 1px;
         font-size: 20px;
@@ -186,7 +186,7 @@ nav {
 }
 @media  screen and (max-width:1251px) {
     .navbar a, .dropdown .dropbtn{
-        padding: 22px 29px 23px;
+        padding: 21px 29px 21px;
         letter-spacing: 2px;
     }
     .logo {
@@ -201,11 +201,10 @@ nav {
         margin-bottom: -7px;
     }
 }
-@media  screen and (max-width:1025px) {
+@media  screen and (max-width:1075px) {
     .navbar a, .dropdown .dropbtn{
-        padding: 22px 28px 23px;
+        padding: 21px 27px 21px;
         letter-spacing: 2px;
-
     }
     .logo {
         letter-spacing: 2px;
@@ -218,39 +217,62 @@ nav {
         border-top: 7px solid #f3ebeb;
         margin-bottom: -7px;
     }
-  
 }
 @media  screen and (max-width:1025px) {
     .navbar a, .dropdown .dropbtn{
-        padding: 22px 28px 22px;
+        padding: 20px 26px 21px;
     }
     .logo {
         font-size: 23px;
     }  
 }
-@media  screen and (max-width:970px) {
+@media  screen and (max-width:990px) {
     .navbar a, .dropdown .dropbtn{
-        padding: 21px 25px 22px;
+        padding: 20px 24px 20px;
         letter-spacing: 1px;
-        font-size: 14px;
+        font-size: 13px;
 
     }
     .logo {
         letter-spacing: 1px;
-        font-size: 23px;
+        font-size: 22px;
     }
 }
-@media  screen and (max-width:890px) {
+@media  screen and (max-width:900px) {
+    .navbar a, .dropdown .dropbtn{
+        padding: 21px 22px 21px;
+        letter-spacing: 1px;
+        font-size: 13px;
+
+    }
     .logo {
         letter-spacing: 1px;
-        font-size: 20px;
+        font-size: 19px;
     }
     .down-arrow{
-        width: 25px;
+        width: 24px;
     }
-    .dropdown .dropbtn{
+    /* .dropdown .dropbtn{
         padding: 15px 25px 15px;
+    } */
+}
+@media  screen and (max-width:855px) {
+    .navbar a, .dropdown .dropbtn{
+        padding: 21px 21px 22px;
+        letter-spacing: 1px;
+        font-size: 12px;
+
     }
+    .logo {
+        letter-spacing: 1px;
+        font-size: 18px;
+    }
+    .down-arrow{
+        width: 23px;
+    }
+    /* .dropdown .dropbtn{
+        padding: 15px 25px 15px;
+    } */
 }
 @media screen and (max-height:620px) {
     .down-arrow{
