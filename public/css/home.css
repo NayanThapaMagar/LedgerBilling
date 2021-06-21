@@ -47,18 +47,12 @@ nav {
     font-family: inherit
 }
 
-/* .navbar a:hover, .dropdown:hover .dropbtn {
+.navbar a:hover, .dropdown:hover .dropbtn {
     background-color: #2c2c2c;
-} */
+}
 #down-arrow:hover{
     background-color: #2c2c2c;
 }
-/* .navbar a:active, .dropdown:active .dropbtn {
-    background-color: #2c2c2c;
-}
-#down-arrow:active{
-    background-color: #2c2c2c;
-} */
 .dropdown-content {
     display: none;
     position: absolute;
