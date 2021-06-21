@@ -1,94 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/account.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap" rel="stylesheet">
+    <title>Home</title>
 </head>
 
+<div class="nav-and-arrow">
+    <nav>
+        <div class="logo">
+            <h4>The Nuss</h4>
+        </div>
+        <div class="navbar">
+            <span class="dropdown">
+                <a href="#">Home</a>
+            </span>
+            <span class="dropdown" id="accountBtn">
+                <button 
+                class="dropbtn">Customer Account
+                </button>
+                <div class="dropdown-content" id="account">
+                    <a href="/secured/account" target="iframe">Add or Delete Account</a>
+                    <a href="#">Search Account</a>
+                </div>
+            </span>
+            <span class="dropdown" id="ledgerBtn">
+                <a href="invoice.html" target="iframe">Invoice</a>
+            </span>                
+            <span class="dropdown" id="ledgerBtn">
+                <a href="#">Ledger</a>
+            </span>
+            <span class="dropdown" id="productBtn">
+                <button 
+                class="dropbtn">Products
+                </button>
+                <div class="dropdown-content" id="product">
+                    <a href="#">Add or Delete Products</a>
+                    <a href="#">Search Products</a>
+                    <a href="#">Stock</a>
+                </div>
+            </span>
+            <span class="dropdown">
+                <a href="#">Cash Bill</a>
+            </span>
+            <span class="settings-and-logout">
+                <a href="#">Settings and privacy</a>
+            </span >
+            <span class="settings-and-logout">
+                <a href="#">Log out</a>
+            </span>
+        </div>
+        <span class="dropdown" id="down-arrow">
+            <div class="arrow-down" ></div>
+            <div class="dropdown-content" id="system">
+                <a href="#">Account</a>
+                <a href="#">Settings and privacy</a>
+                <a href="#">Log out</a>
+            </div>
+        </span>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+</div>
 <body onload="dislpayCustomerDetails(event)">
-    <!-- add account -->
-    <div class="heading">
-        <h1>Add Account</h1>
-    </div>
-
-    <div class="add">
-
-        <form id="addCustomerDetails-form" onsubmit="addCustomerDetails(event)">
-            <div>
-                <label for="name">
-                    <span>Name: <br><input type="text" placeholder="Enter your name" name="name" id="name" required> </span> </label>
-                <br><br><br>
+    <div class="body">
+        <!-- <div class="iframes">
+            <iframe src="" name="iframe"
+            ></iframe>
+        </div> -->
+            <!-- add account -->
+        <div class="heading">
+            <h1>Add Account</h1>
+        </div>
     
-                <label for="address">
-                    <span>Address: <br><input type="text" placeholder="Enter address" name="address" id="address" required>
-                    </span></label>
-                <br><br><br>
+        <div class="add">
     
-                <label for="contact">
-                    <span>Contact Number: <br><input type="text" placeholder="Enter contact number" name="contact"
-                            id="contact" required> </span>
-                </label>
-                <br><br><br>
-            </div>
-    
-            <div>
-                <input type="submit" value="Add" class="btn"></input>
-                <!-- <button class="btn">Cancel</button> -->
-            </div>
-    
-        </form>
+            <form id="addCustomerDetails-form" onsubmit="addCustomerDetails(event)">
+                <div>
+                    <label for="name">
+                        <span>Name: <br><input type="text" placeholder="Enter your name" name="name" id="name" required> </span> </label>
+                    <br><br><br>
         
-    </div>
-    <br><br>
-    <!-- search bar  -->
-
-    <div class="main">
-        <form id="customerInfoDisplsying-form" onsubmit="dislpayCustomerDetailsOnSearch(event)">
-            <div class="padd">
-                <label for="sName">
-                    <!-- <span class="pen">Name:<input type="text" placeholder="Enter your name" name="searchName" id="searchName"> </span> </label> -->
+                    <label for="address">
+                        <span>Address: <br><input type="text" placeholder="Enter address" name="address" id="address" required>
+                        </span></label>
+                    <br><br><br>
+        
+                    <label for="contact">
+                        <span>Contact Number: <br><input type="text" placeholder="Enter contact number" name="contact"
+                                id="contact" required> </span>
+                    </label>
+                    <br><br><br>
+                </div>
+        
+                <div>
+                    <input type="submit" value="Add" class="btn"></input>
+                    <!-- <button class="btn">Cancel</button> -->
+                </div>
+        
+            </form>
+            
+        </div>
+        <br><br>
+        <!-- search bar  -->
     
-                <label for="sContact">
-                    <span class="pen">Customer Name:<input type="text" placeholder="Enter customer name" name="searchCustomer" id="searchCustomer">
-                    </span> 
-                </label>
-                
-                <label for="sContact">
-                    <span class="pen">Contact number:<input type="text" placeholder="Enter contact number" name="searchContact" id="searchContact">
-                    </span> 
-                </label>
-
-                <label for="sContact">
-                    <span class="pen">Address:<input type="text" placeholder="Enter address" name="searchAddress" id="searchAddress">
-                    </span> 
-                </label>
-    
-                <input type="submit" value="Search" class="btn2"></input>
-                <button class="btn2"><a href="/secured/account" class="btn2">Chancel</a></button>
-                <!-- <button class="btn2"><a href="/secured/account" >Chancel</a></button> -->
-            </div>
-                <br>
-            <div>
-            <table>
-                <thead >
-                    <td class="widths">SN.</td>                
-                    <td class="width">Name</td>
-                    <td class="width">Customer Id</td>
-                    <td class="width">Contact no</td>
-                    <td class="width">Address</td>
+        <div class="main">
+            <form id="customerInfoDisplsying-form" onsubmit="dislpayCustomerDetailsOnSearch(event)">
+                <div class="padd">
+                    <label for="sName">
+                        <!-- <span class="pen">Name:<input type="text" placeholder="Enter your name" name="searchName" id="searchName"> </span> </label> -->
+        
+                    <label for="sContact">
+                        <span class="pen">Customer Name:<input type="text" placeholder="Enter customer name" name="searchCustomer" id="searchCustomer">
+                        </span> 
+                    </label>
                     
-                </thead>
-                <tbody id="customer-details"></tbody>            
-            </table>
-            </div>
-        </form>
-
+                    <label for="sContact">
+                        <span class="pen">Contact number:<input type="text" placeholder="Enter contact number" name="searchContact" id="searchContact">
+                        </span> 
+                    </label>
+    
+                    <label for="sContact">
+                        <span class="pen">Address:<input type="text" placeholder="Enter address" name="searchAddress" id="searchAddress">
+                        </span> 
+                    </label>
+        
+                    <input type="submit" value="Search" class="btn2"></input>
+                    <button class="btn2"><a href="/secured/account" class="btn2">Chancel</a></button>
+                    <!-- <button class="btn2"><a href="/secured/account" >Chancel</a></button> -->
+                </div>
+                    <br>
+                <div>
+                <table>
+                    <thead >
+                        <td class="widths">SN.</td>                
+                        <td class="width">Name</td>
+                        <td class="width">Customer Id</td>
+                        <td class="width">Contact no</td>
+                        <td class="width">Address</td>
+                        
+                    </thead>
+                    <tbody id="customer-details"></tbody>            
+                </table>
+                </div>
+            </form>
+    
+        </div>
     </div>
-    <script src="./js/account.js"></script>
 </body>
-
+<script src="./js/account.js"></script>
+<script src="./js/home.js"></script>
 </html>
