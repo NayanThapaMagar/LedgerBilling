@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script> 
     <title>Home</title>
 </head>
 
@@ -19,7 +22,7 @@
         </div>
         <div class="navbar">
             <span class="dropdown">
-                <a href="#">Home</a>
+                <a href="/secured/home">Home</a>
             </span>
             <span class="dropdown" id="accountBtn">
                 <button 
@@ -31,7 +34,7 @@
                 </div>
             </span>
             <span class="dropdown" id="ledgerBtn">
-                <a href="invoice.html" target="iframe">Invoice</a>
+                <a href="/secured/invoice">Invoice</a>
             </span>                
             <span class="dropdown" id="ledgerBtn">
                 <a href="#">Ledger</a>
@@ -62,7 +65,8 @@
                 <a href="#">Admin</a>
                 <a href="#">Privacy Settings</a>
                 <a href="/secured/redirectToChangePassword">Change admin password</a>
-                <a href="#">Log out</a>
+                <!-- <button id="logout">Log out</button> -->
+                <a href="" id="logout">Log out</a>
             </div>
         </span>
         <div class="burger">
@@ -72,7 +76,7 @@
         </div>
     </nav>
 </div>
-<body >
+<body onload="dislpayDetails(event)" >
  <div class="body">
     <main id="center_whole_content" >
         <div class="whole border-outline">
@@ -106,7 +110,7 @@
                  <th>CUTOMER ID</th>
                  <th>TERMS</th>
              </tr>
-             <td></td>
+             <td id="customerId"></td>
              <td>Due Upon Receipt</td>
              <tr>
                  
@@ -122,14 +126,14 @@
               
 
                 <tr>
-                    <td>Name:</td>
-                    <td></td>
+                    <td >Name:</td>
+                    <td id="customerName"></td>
 
                 </tr>
                 
                 <tr>
                     <td>Address:</td>
-                    <td></td>
+                    <td id="customerAddress"></td>
                 </tr>
 
                 <tr>
@@ -137,7 +141,14 @@
                 </tr>
                 <tr>
                     <td>Contact number:</td>
-                    <td><input type="text"></td>
+                    <td>  <select  id="select-options" onchange="contactNoChange(event,this.value)" style="width:130px"> 
+                        <option id="contactNumber">----select----</option>
+                        <!-- <?php 
+                            include 'connectToCostumer.php';
+                            select('Contact_Number','costumer_detials');
+                        
+                        ?> -->
+                    </select> </td>
                 </tr>
             </table>
         </div>

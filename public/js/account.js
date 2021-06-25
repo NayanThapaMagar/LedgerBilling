@@ -50,8 +50,8 @@ const addCustomerDetails = (e) => {
       );
   };
 
+  //keep on removing child untill there is first child
   const clearCustomerInfoTable = () => {
-    //keep on removing child untill there is first child
     while (tbody.firstChild) {
         tbody.removeChild(tbody.firstChild);
     }

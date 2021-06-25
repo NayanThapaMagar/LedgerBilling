@@ -22,5 +22,5 @@ module.exports = (req, res, next) => {
   }
   return res
     .status(403)
-    .json({ message: "You need to login to complete the action" });
+    .json({ success: false, message: "You need to login to complete the action" });
 };

@@ -1,3 +1,28 @@
+// const express = require("express");
+// const logedin = express.logedin();
+
+// //import authenticating middleware
+// const verify = require("../auth/authenticate");
+
+// //use authentication middleware
+// // logedin.use(verify);
+
+// // directing to home page after authentication
+// router.get("/verify/home", (req, res) => {
+//   res.sendFile(staticDir + "/home.html");
+// });
+
+// const isLogedIn = () => {
+//   fetch("../../auth/authenticate/")
+//   .then((res) => res.json())
+//   .then((data) => {
+//     if (data.success) {
+//       window.location.assign("/secured/");
+//     }
+//   });
+// }
+// isLogedIn();
+
 const addAdmin = (e) => {
     e.preventDefault();
     const companyname = document.getElementById("companyname").value;

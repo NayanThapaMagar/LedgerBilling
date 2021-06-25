@@ -29,9 +29,8 @@ const navSlide = () => {
 navSlide();
 
 //logging out
-const logoutFunction = () => {
-  
 const logoutButton = document.getElementById('logout');
+const logoutFunction = () => {
 logoutButton.addEventListener('click', () => {
     fetch("/secured/logout")
     .then((res) => res.json())
