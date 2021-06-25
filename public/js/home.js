@@ -14,20 +14,45 @@ const navSlide = () => {
                 link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
             }
         });
+        burger.classList.toggle('toggle');
         // trying to make dropdown overlap other
         // const dropdownContentLinks = document.querySelector('.dropdown-content');
         // dropdownContentLinks.style.cssText = 'display: absolute; transform: translateX(-70%);';
-        burger.classList.toggle('toggle');
     });
    //     static
 // relative
 // fixed
 // absolute
 // sticky
-    
+ 
 }
 navSlide();
-// getting elements
+
+//logging out
+const logoutFunction = () => {
+  
+const logoutButton = document.getElementById('logout');
+logoutButton.addEventListener('click', () => {
+    fetch("/secured/logout")
+    .then((res) => res.json())
+    .then((data) => {
+      if (!data.success) {
+        alert("Failed to logout")
+      } else {
+        //logout successful
+        window.location.assign("/login");
+      }
+    });
+});
+}
+logoutFunction();
+
+
+
+
+
+ 
+// getting nav elements
 const dropdownContentAccount = document.getElementById("account");
 const dropdownContentProduct = document.getElementById("product");
 const dropdownContentSystem = document.getElementById("system");
@@ -106,32 +131,6 @@ downArrow.addEventListener('click', () => {
         
     }
 });
-// up to here js of header
 
-// //changing login information
-// const changeloginInfo = (e) => {
-//     e.preventDefault();
-//     const oldPassword = document.getElementById("oldPassword").value;
-//     const newPassword = document.getElementById("newPassword").value;
-//     const confirmPassword = document.getElementById("confirmPassword").value;
-//     const fetchOptions = {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({ oldPassword, newPassword, confirmPassword }),
-//     };
-//     fetch("/secured/changeLoginInfo", fetchOptions)
-//       .then((res) => res.json())
-//       .then((data) => {
-//         if (!data.success) {
-//           console.log("Failed to change password");
-//           alert(`${data.message}`)
-//         } else {
-//           //login successful
-//           console.log("Password changed");
-//           alert(`${data.message}`)
-//           window.location.assign("/secured/home");
-//         }
-//       });
-//   };
+
+// up to here js of header

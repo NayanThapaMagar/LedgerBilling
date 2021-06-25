@@ -15,21 +15,19 @@ const login = (e) => {
     .then((res) => res.json())
     .then((data) => {
       if (!data.success) {
-        console.log("login failed");
-        console.log(`message: ${data.message}`);
+        //login failed
         alert(`${data.message}`)
       } else {
         //login successful
-        console.log("login successful");
         window.location.assign("/secured/home");
       }
     });
 };
 
 //redirecting to change password page
-const redirectToChangePassword = (e) => {
-  window.location.assign("/secured/redirectToChangePassword");
-};
+// const redirectToChangePassword = (e) => {
+//   window.location.assign("/secured/redirectToChangePassword");
+// };
 
 
 

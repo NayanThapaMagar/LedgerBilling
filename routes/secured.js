@@ -26,6 +26,9 @@ const addCustomerDetails = require("../controllers/addCustomerDetails");
 //displaying desired customer's details on search
 const dislpayCustomerDetailsOnSearch = require("../controllers/dislpayCustomerDetailsOnSearch");
 
+//logging out
+const logout = require("../controllers/logout");
+
 // directing to home page after authentication
 router.get("/home", (req, res) => {
   res.sendFile(staticDir + "/home.html");
@@ -54,5 +57,7 @@ router.get("/dislpayCustomerDetails", dislpayCustomerDetails);
 // displaying desired customer's details on search
 router.post("/dislpayCustomerDetailsOnSearch", dislpayCustomerDetailsOnSearch);
 
+// //logging out 
+router.get("/logout", logout);
 
 module.exports = router;
