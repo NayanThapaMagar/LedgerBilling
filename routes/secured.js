@@ -45,6 +45,10 @@ router.get("/account", (req, res) => {
 router.get("/invoice", (req, res) => {
   res.sendFile(staticDir + "/invoice.html");
 });
+//addproduct display securely
+router.get("/addProduct", (req, res) => {
+  res.sendFile(staticDir + "/addProduct.html");
+});
 // changing login info
 router.post("/changeloginInfo", changeloginInfo);
 

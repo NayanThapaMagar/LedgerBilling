@@ -42,7 +42,13 @@ module.exports = (req, res) => {
         );
         res.cookie("token", token);
         res.cookie("contact", admin.contact);
-        return res.json({ success: true, message: "Login Successful" });
+        return res.json({ success: true, message: "Login Successful", id: admin.id,
+          companyName: admin.companyName,
+          userName: admin.userName,
+          address: admin.address,
+          email: admin.email,
+          contact: admin.contact 
+        });
       }
     }
   });

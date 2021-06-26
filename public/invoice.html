@@ -18,7 +18,7 @@
 <div class="nav-and-arrow">
     <nav>
         <div class="logo">
-            <h4>The Nuss</h4>
+            <h4 id="logo">The Nuss</h4>
         </div>
         <div class="navbar">
             <span class="dropdown">
@@ -29,7 +29,8 @@
                 class="dropbtn">Customer Account
                 </button>
                 <div class="dropdown-content" id="account">
-                    <a href="/secured/account" target="iframe">Add or Delete Account</a>
+                    <a href="/secured/account">Add Account</a>
+                    <a href="" >Delete Account</a>
                     <a href="#">Search Account</a>
                 </div>
             </span>
@@ -44,7 +45,8 @@
                 class="dropbtn">Products
                 </button>
                 <div class="dropdown-content" id="product">
-                    <a href="#">Add or Delete Products</a>
+                    <a href="/secured/addProduct">Add Products</a>
+                    <a href="">Delete Products</a>
                     <a href="#">Search Products</a>
                     <a href="#">Stock</a>
                 </div>
@@ -81,7 +83,7 @@
     <main id="center_whole_content" >
         <div class="whole border-outline">
         <div id="heading">
-        <h1>Company Name: Nuss</h1>
+        <h1 id="companyName">Company Name: Nuss</h1>
         </div>
 
 
@@ -160,6 +162,7 @@
                 <tr>
                     <th class="widthSN"> SN   </th>
                     <th class="widthParticulars">Particulars</th>
+                    <th class="widthQTY">Id</th>
                     <th class="widthQTY">Qty</th>
                     <th class="width_Rate_Amount">Rate</th>
                     <th class="width_Rate_Amount">Amount</th>
@@ -169,6 +172,7 @@
             <tr>
                 <td>1</td>
                 <td></td>
+                <td class="widthQTY"></td>
                 <td class="widthQTY"><input type="text"></td>
                 <td></td>
                 <td></td>
@@ -176,6 +180,7 @@
             <tr>
                 <td>2</td>
                 <td></td>
+                <td class="widthQTY"></td>
                 <td class="widthQTY"><input type="text"></td>
                 <td></td>
                 <td></td>
@@ -183,6 +188,7 @@
             <tr>
                 <td>3</td>
                 <td></td>
+                <td class="widthQTY"></td>
                 <td class="widthQTY"><input type="text"></td>
                 <td></td>
                 <td></td>

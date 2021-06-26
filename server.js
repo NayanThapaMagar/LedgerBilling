@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const mysql = require("mysql");
 const { get } = require("./routes/secured");
 const path = require("path");
+const jwt = require("jsonwebtoken");
 
 //Import Routes
 const securedRoute = require("./routes/secured");
@@ -36,6 +37,24 @@ const staticDir = path.join(__dirname, "public");
 app.use(express.static(staticDir));
 app.use(express.json({ limit: "1mb" }));
 
+app.get("/", (req, res) => {
+  if (req.headers.cookie) {
+    const cookieInfo = req.headers.cookie.split("; ");
+    const user = {
+      [cookieInfo[0].split("=")[0]]: cookieInfo[0].split("=")[1],
+      [cookieInfo[1].split("=")[0]]: cookieInfo[1].split("=")[1],
+    };
+    if (user.token) {
+      const decodedToken = jwt.verify(user.token, process.env.TOKEN_SECRET);
+      if (decodedToken.contact === user.contact) {
+        return res.redirect("/secured/home");
+      }
+    }
+  }
+  return res.sendFile(staticDir+"/register.html");
+})
+
+
 //Route Middlewares
 app.use("/secured", securedRoute);
 //login process
@@ -48,7 +67,7 @@ app.get("/login", (req, res) => {
 });
 //redirecting to register page
 app.get("/register", (req, res) => {
-  res.sendFile(staticDir+"/index.html");
+  res.sendFile(staticDir+"/register.html");
 });
 
 

@@ -1,3 +1,6 @@
+//displaying company name
+document.getElementById("logo").innerHTML = localStorage.getItem("companyName");
+
 //changing login information
 const changeloginInfo = (e) => {
     e.preventDefault();

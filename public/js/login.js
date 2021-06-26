@@ -19,6 +19,7 @@ const login = (e) => {
         alert(`${data.message}`)
       } else {
         //login successful
+        localStorage.setItem("companyName", data.companyName)
         window.location.assign("/secured/home");
       }
     });

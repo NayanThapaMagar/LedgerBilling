@@ -1,3 +1,6 @@
+//displaying company name
+document.getElementById("logo").innerHTML = localStorage.getItem("companyName");
+
 const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.navbar');
@@ -39,6 +42,7 @@ logoutButton.addEventListener('click', () => {
         alert("Failed to logout")
       } else {
         //logout successful
+        localStorage.removeItem("companyName");
         window.location.assign("/login");
       }
     });

@@ -17,7 +17,7 @@
 //   .then((res) => res.json())
 //   .then((data) => {
 //     if (data.success) {
-//       window.location.assign("/secured/");
+//       window.location.assign("/secured/home");
 //     }
 //   });
 // }

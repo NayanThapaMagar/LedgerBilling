@@ -1,18 +1,22 @@
-  // displaying contact no. on load
-  const selectOptions = document.getElementById("select-options");
-  const wrapCustomerDetails = (customer) => {
-    const options = document.createElement("option");
-    options.innerHTML = `${customer.customerContact}`;
-    selectOptions.appendChild(options);
-  };
+//displaying company name
+document.getElementById("companyName").innerHTML = localStorage.getItem("companyName");
+document.getElementById("logo").innerHTML = localStorage.getItem("companyName");
+
+// displaying contact no. on load
+const selectOptions = document.getElementById("select-options");
+const wrapCustomerDetails = (customer) => {
+  const options = document.createElement("option");
+  options.innerHTML = `${customer.customerContact}`;
+  selectOptions.appendChild(options);
+};
   
 const dislpayDetails = (e) => {
-e.preventDefault();
-fetch("/secured/dislpayCustomerDetails")
-    .then((res) => res.json())
-    .then((data) =>
-    data.result.forEach((customer) => wrapCustomerDetails(customer))
-    );
+  e.preventDefault();
+  fetch("/secured/dislpayCustomerDetails")
+  .then((res) => res.json())
+  .then((data) =>
+  data.result.forEach((customer) => wrapCustomerDetails(customer))
+  );
 };
 
 $(document).ready(

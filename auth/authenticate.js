@@ -16,7 +16,7 @@ module.exports = (req, res, next) => {
         res.locals.address = decodedToken.address;
         res.locals.email = decodedToken.email;
         res.locals.contact = decodedToken.contact;
-      return next();
+        return next();
       }
     }
   }

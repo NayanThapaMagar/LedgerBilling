@@ -15,7 +15,7 @@
 <div class="nav-and-arrow">
     <nav>
         <div class="logo">
-            <h4>The Nuss</h4>
+            <h4 id="logo">The Nuss</h4>
         </div>
         <div class="navbar">
             <span class="dropdown">
@@ -26,12 +26,13 @@
                 class="dropbtn">Customer Account
                 </button>
                 <div class="dropdown-content" id="account">
-                    <a href="/secured/account" target="iframe">Add or Delete Account</a>
+                    <a href="/secured/account">Add Account</a>
+                    <a href="" >Delete Account</a>
                     <a href="#">Search Account</a>
                 </div>
             </span>
             <span class="dropdown" id="ledgerBtn">
-                <a href="invoice.html" target="iframe">Invoice</a>
+                <a href="/secured/invoice">Invoice</a>
             </span>                
             <span class="dropdown" id="ledgerBtn">
                 <a href="#">Ledger</a>
@@ -41,7 +42,8 @@
                 class="dropbtn">Products
                 </button>
                 <div class="dropdown-content" id="product">
-                    <a href="#">Add or Delete Products</a>
+                    <a href="/secured/addProduct">Add Products</a>
+                    <a href="">Delete Products</a>
                     <a href="#">Search Products</a>
                     <a href="#">Stock</a>
                 </div>
@@ -62,7 +64,8 @@
                 <a href="#">Admin</a>
                 <a href="#">Privacy Settings</a>
                 <a href="/secured/redirectToChangePassword">Change admin password</a>
-                <a href="#">Log out</a>
+                <!-- <button id="logout">Log out</button> -->
+                <a href="" id="logout">Log out</a>
             </div>
         </span>
         <div class="burger">
