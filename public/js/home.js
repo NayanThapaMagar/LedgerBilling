@@ -33,20 +33,34 @@ navSlide();
 
 //logging out
 const logoutButton = document.getElementById('logout');
+const logoutButton0 = document.getElementById('logout0');
 const logoutFunction = () => {
-logoutButton.addEventListener('click', () => {
-    fetch("/secured/logout")
-    .then((res) => res.json())
-    .then((data) => {
-      if (!data.success) {
-        alert("Failed to logout")
-      } else {
-        //logout successful
-        localStorage.removeItem("companyName");
-        window.location.assign("/login");
-      }
+    logoutButton.addEventListener('click', () => {
+        fetch("/secured/logout")
+        .then((res) => res.json())
+        .then((data) => {
+        if (!data.success) {
+            alert("Failed to logout")
+        } else {
+            //logout successful
+            localStorage.removeItem("companyName");
+            window.location.assign("/login");
+        }
+        });
     });
-});
+    logoutButton0.addEventListener('click', () => {
+        fetch("/secured/logout")
+        .then((res) => res.json())
+        .then((data) => {
+        if (!data.success) {
+            alert("Failed to logout")
+        } else {
+            //logout successful
+            localStorage.removeItem("companyName");
+            window.location.assign("/login");
+        }
+        });
+    });
 }
 logoutFunction();
 
