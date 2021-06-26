@@ -26,6 +26,9 @@ const addCustomerDetails = require("../controllers/addCustomerDetails");
 //displaying desired customer's details on search
 const dislpayCustomerDetailsOnSearch = require("../controllers/dislpayCustomerDetailsOnSearch");
 
+// to add products
+const addProduct = require("../controllers/addProduct");
+
 //logging out
 const logout = require("../controllers/logout");
 
@@ -60,6 +63,9 @@ router.get("/dislpayCustomerDetails", dislpayCustomerDetails);
 
 // displaying desired customer's details on search
 router.post("/dislpayCustomerDetailsOnSearch", dislpayCustomerDetailsOnSearch);
+
+// adding product
+router.post("/addProduct", addProduct);
 
 // //logging out 
 router.get("/logout", logout);

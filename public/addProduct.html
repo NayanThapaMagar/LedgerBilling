@@ -80,28 +80,29 @@
     <div id="h2"><h2>Add Product</h2></div>
     <div class="add">
 
-        <form action="" >
+        <form onsubmit="addProduct(event)">
             <div >
                 <div class="padding">
                 <label class="label" for="Name">
-                    <span>Product Name: <br><input type="text" placeholder="Enter product name" name="pname" id="name"> </span> </label>
+                    <span>Product Name: <br><input type="text" placeholder="Enter product name" name="pname" id="productName" required> </span> </label>
                 </div>
-
-                <!-- <div class="padding">
-                <label for="productid">
-                    <span>ProductID:<br><input type="text" placeholder="ProductID" name="pid" id="productId"> 
-                    </span></label><br>
-                </div> -->
 
                 <div class="padding">
                 <label for="Rate">
-                    <span>Rate:<br><input type="integer" placeholder="Enter Rate" name="prate" id="productRate"> <br>
+                    <span>Rate:<br><input type="integer" placeholder="Enter Rate" name="productRate" id="productRate" required> <br>
                     </span></label>
                 </div>
             </div>
+            
+            <div class="padding">
+            <label for="stockQty">
+                <span>Stock Quantity:<br><input type="text" placeholder="*******" name="stockQty" id="stockQty" required> 
+                </span></label><br>
+            </div>
 
             <div>
-                <button class="btn">Add</button>
+                <!-- <button class="btn">Add</button> -->
+                <input type="submit" value="Add" class="btn">
             </div>
         </form>
 
@@ -109,4 +110,5 @@
  </div>
 </body>
 <script src="./js/home.js"></script>
+<script src="./js/addProduct.js"></script>
 </html>

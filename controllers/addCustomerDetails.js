@@ -8,7 +8,6 @@ const db = mysql.createConnection({
   database: "login",
   insecureAuth: true,
 });
-let count = 0;
 module.exports = (req, res) => {
   const { name, address, contact } = req.body;
   if (contact > 9999999999 || contact < 9800000000 || isNaN(contact)){

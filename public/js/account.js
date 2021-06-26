@@ -1,6 +1,3 @@
-//displaying company name
-document.getElementById("logo").innerHTML = localStorage.getItem("companyName");
-
 //adding new customer info
 const addCustomerDetails = (e) => {
     e.preventDefault();

@@ -1,6 +1,5 @@
 //displaying company name
 document.getElementById("companyName").innerHTML = localStorage.getItem("companyName");
-document.getElementById("logo").innerHTML = localStorage.getItem("companyName");
 
 // displaying contact no. on load
 const selectOptions = document.getElementById("select-options");
