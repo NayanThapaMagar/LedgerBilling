@@ -149,13 +149,8 @@
                 </tr>
                 <tr>
                     <td>Contact number:</td>
-                    <td>  <select  id="select-options" onchange="contactNoChange(event,this.value)" style="width:130px"> 
+                    <td>  <select  id="select-options-customer" onchange="contactOnChange(event,this.value)" style="width:130px"> 
                         <option id="contactNumber">----select----</option>
-                        <!-- <?php 
-                            include 'connectToCostumer.php';
-                            select('Contact_Number','costumer_detials');
-                        
-                        ?> -->
                     </select> </td>
                 </tr>
             </table>
@@ -169,39 +164,32 @@
                     <th class="widthSN"> SN   </th>
                     <th class="widthParticulars">Particulars</th>
                     <th class="widthQTY">Id</th>
-                    <th class="widthQTY">Qty</th>
                     <th class="width_Rate_Amount">Rate</th>
+                    <th class="widthQTY">Qty</th>
                     <th class="width_Rate_Amount">Amount</th>
 
             </tr>
 
-            <tr>
-                <td>1</td>
-                <td></td>
-                <td class="widthQTY"></td>
-                <td class="widthQTY"><input type="text"></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td></td>
-                <td class="widthQTY"></td>
-                <td class="widthQTY"><input type="text"></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td></td>
-                <td class="widthQTY"></td>
-                <td class="widthQTY"><input type="text"></td>
-                <td></td>
-                <td></td>
-            </tr>
-            </table>
+            <tbody class="product-details">
+                <tr>
+                    <td class="SN1">1</td>
+                    <td><select  class="select-options-product1" onchange="productOnChange1(event,this.value)" style="width:200px"> 
+                        <option>----select----</option>
+                    </select></td>
+                    <td class="widthQTY" ><select  class="productID1" onchange="productIdOnChange1(event,this.value)" style="width:70px"> 
+                        <option>-----</option>
+                    </select></td>
+                    <td class="productRate1"></td>
+                    <td class="widthQTY"><input type="text" class="productQty1" oninput="productQtyOnChange1()"></td>
+                    <td class="productAmount1">0</td>
+                </tr>
+            </tbody> 
 
+            </table>
         </div>
+        <br>
+        <button onclick="addRow(event)">Add row</button>
+        <button onclick="deleteRow(event)">Remove row</button>
         <br><br>
   
         <div class="flex2">
@@ -211,28 +199,28 @@
             <table>
     
                 <tr>
-                    <td>Total:</td>
-                    <td></td>
+                    <td >Total:</td>
+                    <td id="total"></td>
                 </tr>
                 <tr>
                     <td>Vat:</td>
-                    <td></td>
+                    <td id="vat"></td>
                 </tr>
                 <tr>
                     <td >Discount:</td>
-                    <td></td>
+                    <td id="discount"></td>
                 </tr>
                 <tr>
                     <td>Grand Total:</td>
-                    <td></td>
+                    <td id="grandTotal"></td>
                 </tr>
                 <tr>
                     <td>Paid amount:</td>
-            <td class> <input type="text"></td>
+            <td class> <input type="text" id="paidAmount" oninput="paidAmountOnInput()"></td>
                 </tr> 
                 <tr>
                 <td>Due amount:</td>
-                <td></td>
+                <td id="dueAmount"></td>
             </tr>
             </table>
         </div>

@@ -1,61 +1,61 @@
 //adding new customer info
 const addCustomerDetails = (e) => {
-    e.preventDefault();
-    const name = document.getElementById("name").value;
-    const address = document.getElementById("address").value;
-    const contact = document.getElementById("contact").value;
-    const fetchOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, address, contact }),
-    };
-    fetch("/secured/addCustomerDetails", fetchOptions)
-      .then((res) => res.json())
-      .then((data) => {
-        if (!data.success) {
-          //failed to insert data
-          alert(`${data.message}`)
-        } else {
-          //Data inserted
-          alert("Data Inserted");
-          window.location.assign("/secured/account");
-        }
-      });
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const address = document.getElementById("address").value;
+  const contact = document.getElementById("contact").value;
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name, address, contact }),
   };
-  
-  // displaying customer info on load
-  let count = 0;
-  const tbody = document.getElementById("customer-details");
-  const wrapCustomerDetails = (customer) => {
-    count++;
-    const row = document.createElement("tr");
-    // row = <tr></tr>
-    row.innerHTML = `
-    <td class="sn">${count}</td>
-    <td>${customer.customerName}</td>
-    <td>${customer.customerId}</td>
-    <td>${customer.customerContact}</td>
-    <td>${customer.customerAddress}</td>`;
-    tbody.appendChild(row);
-  };
-  
-  const dislpayCustomerDetails = (e) => {
-    e.preventDefault();
-    fetch("/secured/dislpayCustomerDetails")
-      .then((res) => res.json())
-      .then((data) =>
-        data.result.forEach((customer) => wrapCustomerDetails(customer))
-      );
-  };
+  fetch("/secured/addCustomerDetails", fetchOptions)
+    .then((res) => res.json())
+    .then((data) => {
+      if (!data.success) {
+        //failed to insert data
+        alert(`${data.message}`)
+      } else {
+        //Data inserted
+        alert("Data Inserted");
+        window.location.assign("/secured/account");
+      }
+    });
+};
 
-  //keep on removing child untill there is first child
-  const clearCustomerInfoTable = () => {
-    while (tbody.firstChild) {
-        tbody.removeChild(tbody.firstChild);
-    }
-  };
+// displaying customer info on load
+let count = 0;
+const tbody = document.getElementById("customer-details");
+const wrapCustomerDetails = (customer) => {
+  count++;
+  const row = document.createElement("tr");
+  // row = <tr></tr>
+  row.innerHTML = `
+  <td class="sn">${count}</td>
+  <td>${customer.customerName}</td>
+  <td>${customer.customerId}</td>
+  <td>${customer.customerContact}</td>
+  <td>${customer.customerAddress}</td>`;
+  tbody.appendChild(row);
+};
+
+const dislpayCustomerDetails = (e) => {
+  e.preventDefault();
+  fetch("/secured/dislpayCustomerDetails")
+    .then((res) => res.json())
+    .then((data) =>
+      data.result.forEach((customer) => wrapCustomerDetails(customer))
+    );
+};
+
+//keep on removing child untill there exist a first child
+const clearCustomerInfoTable = () => {
+  while (tbody.firstChild) {
+      tbody.removeChild(tbody.firstChild);
+  }
+};
   
   //displaying customer info on search
   const dislpayCustomerDetailsOnSearch = (e) => {

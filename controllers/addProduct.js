@@ -16,7 +16,7 @@ module.exports = (req, res) => {
   if (isNaN(stockQty) ){
     return res.json({ success: false, message: `Stock Quantity: ${stockQty} is invalid` }); 
   }
-  const sql = `INSERT INTO productdetails (productrName, productRate, prodcutStock) VALUES ('${name}', '${rate}', '${stockQty}')`;
+  const sql = `INSERT INTO productdetails (productName, productRate, prodcutStock) VALUES ('${name}', '${rate}', '${stockQty}')`;
   db.query(sql, (err, result) => {
     if (err) throw err;
       return res.json({ success: true, message: "Data Inserted" });

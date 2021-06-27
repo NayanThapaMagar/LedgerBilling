@@ -17,6 +17,9 @@ router.use(verify);
 //displaying costumer details
 const dislpayCustomerDetails = require("../controllers/dislpayCustomerDetails");
 
+// connecting to backend to display products 
+const dislpayProductDetails = require("../controllers/dislpayProductDetails");
+
 // changing login info
 const changeloginInfo = require("../controllers/changeloginInfo");
 
@@ -25,6 +28,9 @@ const addCustomerDetails = require("../controllers/addCustomerDetails");
 
 //displaying desired customer's details on search
 const dislpayCustomerDetailsOnSearch = require("../controllers/dislpayCustomerDetailsOnSearch");
+
+// connecting to backend to displaying product detials
+const dislpayProductDetailsOnSearch = require("../controllers/dislpayProductDetailsOnSearch");
 
 // to add products
 const addProduct = require("../controllers/addProduct");
@@ -61,8 +67,14 @@ router.post("/addCustomerDetails", addCustomerDetails);
 //displaying costumer details
 router.get("/dislpayCustomerDetails", dislpayCustomerDetails);
 
+//displaying product names
+router.get("/dislpayProductDetails", dislpayProductDetails);
+
 // displaying desired customer's details on search
 router.post("/dislpayCustomerDetailsOnSearch", dislpayCustomerDetailsOnSearch);
+
+// displaying product detials on search
+router.post("/dislpayProductDetailsOnSearch", dislpayProductDetailsOnSearch);
 
 // adding product
 router.post("/addProduct", addProduct);
