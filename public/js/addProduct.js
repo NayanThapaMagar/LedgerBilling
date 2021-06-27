@@ -23,5 +23,4 @@ const addProduct = (e) => {
           window.location.assign("/secured/addProduct");
         }
       });
-    // console.log("add p");
   };

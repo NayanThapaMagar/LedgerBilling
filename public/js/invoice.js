@@ -2,6 +2,10 @@
 document.getElementById("companyName").innerHTML = localStorage.getItem("companyName");
 
 
+//-------------------------------------------ADDING AND REMOVING ROWS----------------------------------------------------//
+
+
+
 // for table
 let count = 1;
 const tbody = document.querySelector(".product-details");
@@ -24,7 +28,7 @@ const addRow = (e) => {
   </td>
   <td class="productRate${count}" ></td>
   <td class="widthQTY">
-    <input type="text" class="productQty${count}" oninput="productQtyOnChange(this.className)">
+    <input type="text" class="productQty${count}" oninput="productQtyOnChange(this.className)" required>
   </td>
   <td class="productAmount${count}" >0</td>`;
   tbody.appendChild(row);
@@ -53,6 +57,10 @@ const deleteRow = (e) => {
   calculateGrandTotal();
   paidAmountOnInput();
 };
+
+
+//-------------------------------------DISPLAYING DATABASE INFO ON LOAD----------------------------------------------//
+
 
 
 // displaying contact no. on load
@@ -124,16 +132,10 @@ $(document).ready(
         $('select').select2();
     }
 );
-// $(document).ready(
-//   function () {
-//       $('.select-options-product').select2();
-//   }
-//   );
-// $(document).ready(
-// function () {
-//     $('.productID').select2();
-// }
-// );
+
+//-----------------------------------DISPLAYING INFORMATION ON DIRRERENT ACTIONS-----------------------------------------//
+
+
 // on changing contact displaying customer info
 const contactOnChange = (e,selectedNo) => {
     e.preventDefault();
@@ -162,6 +164,26 @@ const contactOnChange = (e,selectedNo) => {
         }
     }
     );
+    
+    setTimeout(function(){ 
+      // console.log(document.getElementById('customerId').innerHTML);
+      const invoiceId = document.getElementById('customerId').innerHTML;
+      const fetchOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ invoiceId }),
+      };
+      fetch("/secured/dislpayInvoiceDetailsOnSearch", fetchOptions)
+      .then((res) => res.json())
+      .then((data) => {
+          let invoiceNo = (data.length + 1);
+          document.getElementById('invoiceNo').innerHTML = invoiceNo;
+      }
+      );
+    },
+    50);
 };
 
 //on changing product(with class no 1) displaying product ids
@@ -313,6 +335,11 @@ const productIdOnChange = (e,selectedProductId,className) => {
   50);
 };
 
+
+//---------------------------------------CALCULATION OF DIFFERENT VALUES------------------------------------------------//
+
+
+
 //calculating amount(of first row) on input
 const productQtyOnChange1 = () => {
   const inputQty = document.querySelector('.productQty1').value;
@@ -360,4 +387,92 @@ const paidAmountOnInput = () => {
   const grandTotal = document.querySelector('#grandTotal').innerHTML;
   const dueAmount = grandTotal - paidAmount;
   document.querySelector('#dueAmount').innerHTML = dueAmount;
+};
+
+//-------------------------------------INSERTING INVOICE DATA TO DATABASE----------------------------------------------//
+
+//calculating due amount on input
+const saveInvoiceData = (e) => {
+  e.preventDefault();
+  const invoiceNo = document.getElementById('invoiceNo').innerHTML;
+  const date = document.getElementById('date').value;
+  const customerId = document.getElementById('customerId').innerHTML;
+  const customerName = document.getElementById('customerName').innerHTML;
+  const customerAddress = document.getElementById('customerAddress').innerHTML;
+  const contactNo = document.getElementById('select-options-customer').value;
+  const total = document.getElementById('total').innerHTML;
+  const paidAmount = document.getElementById('paidAmount').value;
+  const deliveredBy = document.getElementById('deliveredBy').value;
+  const checkedBy = document.getElementById('checkedBy').value;
+  const num = tbody.childElementCount;
+  for(let i=1; i <= num; i++){
+    let productName = document.querySelector(`.select-options-product${i}`).value; 
+    let productID = document.querySelector(`.productID${i}`).value; 
+    if (contactNo == "----select----" ) {
+      alert("Select customer!!!");
+      return 0;
+    }
+    if (productName == "----select----" ) {
+      alert("Product not selected!!!");
+      return 0;
+    }
+    if ( productID == "-----") {
+      alert("Product Id not selected!!!");
+      return 0;
+    } 
+  }
+  if (contactNo == "----select----" ) {
+    alert("Select customer!!!");
+    return 0;
+  }
+  if (isNaN(total)) {
+    alert("Quantity entered is invalid!!!");
+    return 0;
+  } 
+  if (isNaN(paidAmount)) {
+    alert("Paid amount entered is invalid!!!");
+    return 0;
+  } 
+  for(let i=1; i <= num; i++){
+    let productName = document.querySelector(`.select-options-product${i}`).value; 
+    let productID = document.querySelector(`.productID${i}`).value; 
+    let productRate = document.querySelector(`.productRate${i}`).innerHTML; 
+    let productQty = document.querySelector(`.productQty${i}`).value;      
+    const fetchOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ invoiceNo, customerId, productName, productID, productRate, productQty  }),
+    };
+    fetch("/secured/addInvoiceProductDetails", fetchOptions)
+    .then((res) => res.json())
+    .then((data) => {
+      if (!data.success) {
+        //failed to insert data
+        alert("Failed to insert selected product detials of invoice!!!");
+      } 
+    });
+  }
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ invoiceNo, date, customerName, customerId, customerAddress, contactNo, total, paidAmount, deliveredBy, checkedBy  }),
+  };
+  fetch("/secured/addInvoiceDetails", fetchOptions)
+  .then((res) => res.json())
+  .then((data) => {
+    if (!data.success) {
+      //failed to insert data
+      alert("Failed to insert detials of invoice!!!");
+
+    } else {
+      //Data inserted
+      alert(`${data.message}`)
+      window.location.assign("/secured/invoice");
+
+    }
+  });
 };

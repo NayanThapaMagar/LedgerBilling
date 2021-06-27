@@ -88,176 +88,183 @@
  <div class="body">
     <main id="center_whole_content" >
         <div class="whole border-outline">
-        <div id="heading">
-        <h1 id="companyName">Company Name: Nuss</h1>
-        </div>
 
-
-
-        <div class="billno all">
-    <table >
-        <tr>
-            <th>Bill no:</th>
-            <th>Date:</th>
-        </tr> 
-
-        <tr>
-            <td></td>
-            <td><input type="date"></td>
-        </tr>
-    </table>
-    
-        </div>
-        <br><br>
-        <div class="flex1">
-            
-
-        <div class="customerId all">
-         <table>
-             <tr>
-                 <th>CUTOMER ID</th>
-                 <th>TERMS</th>
-             </tr>
-             <td id="customerId"></td>
-             <td>Due Upon Receipt</td>
-             <tr>
-                 
-             </tr>
-         </table>
-        </div>
-        <div class="billto">
-            <table>
-                <tr>
-                    <th colspan="2">Bill To </th>
-                    
-                </tr>
-              
-
-                <tr>
-                    <td >Name:</td>
-                    <td id="customerName"></td>
-
-                </tr>
+            <form id="invoiceForm" onsubmit="saveInvoiceData(event)">
                 
-                <tr>
-                    <td>Address:</td>
-                    <td id="customerAddress"></td>
-                </tr>
+                <div id="heading">
+                    <h1 id="companyName">Company Name: Nuss</h1>
+                </div>
 
-                <tr>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Contact number:</td>
-                    <td>  <select  id="select-options-customer" onchange="contactOnChange(event,this.value)" style="width:130px"> 
-                        <option id="contactNumber">----select----</option>
-                    </select> </td>
-                </tr>
-            </table>
-        </div>
-        </div>
 
-        <div class="particulars">
 
-            <table >
-                <tr>
-                    <th class="widthSN"> SN   </th>
-                    <th class="widthParticulars">Particulars</th>
-                    <th class="widthQTY">Id</th>
-                    <th class="width_Rate_Amount">Rate</th>
-                    <th class="widthQTY">Qty</th>
-                    <th class="width_Rate_Amount">Amount</th>
+                <div class="billno all">
+                    <table >
+                        <tr>
+                            <th>Invoice no:</th>
+                            <th>Date:</th>
+                        </tr> 
 
-            </tr>
+                        <tr>
+                            <td id="invoiceNo">00</td>
+                            <td><input type="date" id="date" required></td>
+                        </tr>
+                    </table>
+                </div>
 
-            <tbody class="product-details">
-                <tr>
-                    <td class="SN1">1</td>
-                    <td><select  class="select-options-product1" onchange="productOnChange1(event,this.value)" style="width:200px"> 
-                        <option>----select----</option>
-                    </select></td>
-                    <td class="widthQTY" ><select  class="productID1" onchange="productIdOnChange1(event,this.value)" style="width:70px"> 
-                        <option>-----</option>
-                    </select></td>
-                    <td class="productRate1"></td>
-                    <td class="widthQTY"><input type="text" class="productQty1" oninput="productQtyOnChange1()"></td>
-                    <td class="productAmount1">0</td>
-                </tr>
-            </tbody> 
+                <br><br>
 
-            </table>
-        </div>
-        <br>
-        <button onclick="addRow(event)">Add row</button>
-        <button onclick="deleteRow(event)">Remove row</button>
-        <br><br>
-  
-        <div class="flex2">
+                <div class="flex1">
+                
 
-          
-        <div class="total input">
-            <table>
+                    <div class="customerId all">
+                        <table>
+                            <tr>
+                                <th>CUTOMER ID</th>
+                                <th>TERMS</th>
+                            </tr>
+                            <td id="customerId"></td>
+                            <td>Due Upon Receipt</td>
+                            <tr>
+                                
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="billto">
+                        <table>
+                            <tr>
+                                <th colspan="2">Bill To </th>
+                                
+                            </tr>
+                        
+
+                            <tr>
+                                <td >Name:</td>
+                                <td id="customerName"></td>
+
+                            </tr>
+                            
+                            <tr>
+                                <td>Address:</td>
+                                <td id="customerAddress"></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Contact number:</td>
+                                <td>  <select  id="select-options-customer" onchange="contactOnChange(event,this.value)" style="width:130px"> 
+                                    <option id="contactNumber">----select----</option>
+                                </select> </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="particulars">
+
+                    <table >
+                        <tr>
+                            <th class="widthSN"> SN   </th>
+                            <th class="widthParticulars">Particulars</th>
+                            <th class="widthQTY">Id</th>
+                            <th class="width_Rate_Amount">Rate</th>
+                            <th class="widthQTY">Qty</th>
+                            <th class="width_Rate_Amount">Amount</th>
+
+                        </tr>
+
+                        <tbody class="product-details">
+                            <tr>
+                                <td class="SN1">1</td>
+                                <td><select  class="select-options-product1" onchange="productOnChange1(event,this.value)" style="width:200px"> 
+                                    <option>----select----</option>
+                                </select></td>
+                                <td class="widthQTY" ><select  class="productID1" onchange="productIdOnChange1(event,this.value)" style="width:70px"> 
+                                    <option>-----</option>
+                                </select></td>
+                                <td class="productRate1"></td>
+                                <td class="widthQTY"><input type="text" class="productQty1" oninput="productQtyOnChange1()" required></td>
+                                <td class="productAmount1">0</td>
+                            </tr>
+                        </tbody> 
+
+                    </table>
+                </div>
+
+                <br>
+
+                <div>
+                    <button onclick="addRow(event)">Add row</button>
+                    <button onclick="deleteRow(event)">Remove row</button>
+                </div>
+            
+                <br>
     
-                <tr>
-                    <td >Total:</td>
-                    <td id="total"></td>
-                </tr>
-                <tr>
-                    <td>Vat:</td>
-                    <td id="vat"></td>
-                </tr>
-                <tr>
-                    <td >Discount:</td>
-                    <td id="discount"></td>
-                </tr>
-                <tr>
-                    <td>Grand Total:</td>
-                    <td id="grandTotal"></td>
-                </tr>
-                <tr>
-                    <td>Paid amount:</td>
-            <td class> <input type="text" id="paidAmount" oninput="paidAmountOnInput()"></td>
-                </tr> 
-                <tr>
-                <td>Due amount:</td>
-                <td id="dueAmount"></td>
-            </tr>
-            </table>
-        </div>
-        <div class="delivery input">
-            <table>
-                <tr>
-                    <td> Delivery By:</td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Checked By:</td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Received By:</td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Remarks:</td>
-                    <td><input type="text"></td>
-                    
-                </tr>
-            <tr>
-                <td>Authorized signature:</td>
-                <td><input type="text"></td>
-            </tr>
-            </table>
-            </div>
+                <div class="flex2">
 
-       
-            </div>
+                
+                    <div class="total input">
+                        <table>
+                
+                            <tr>
+                                <td >Total:</td>
+                                <td id="total"></td>
+                            </tr>
+                            <tr>
+                                <td>Vat:</td>
+                                <td id="vat"></td>
+                            </tr>
+                            <tr>
+                                <td >Discount:</td>
+                                <td id="discount"></td>
+                            </tr>
+                            <tr>
+                                <td>Grand Total:</td>
+                                <td id="grandTotal"></td>
+                            </tr>
+                            <tr>
+                                <td>Paid amount:</td>
+                        <td class> <input type="text" id="paidAmount" oninput="paidAmountOnInput()" required></td>
+                            </tr> 
+                            <tr>
+                            <td>Due amount:</td>
+                            <td id="dueAmount"></td>
+                        </tr>
+                        </table>
+                    </div>
 
-            <!-- 
-            <div class="input signature">
-                Authorized Signature: <input type="text">
-            </div>
-            </div> -->
+                    <div class="delivery input">
+                        <table>
+                            <tr>
+                                <td> Delivery By:</td>
+                                <td><input type="text" id="deliveredBy" required></td>
+                            </tr>
+                            <tr>
+                                <td>Checked By:</td>
+                                <td><input type="text" id="checkedBy" required></td>
+                            </tr>
+                            <!-- <tr>
+                                <td>Received By:</td>
+                                <td><input type="text"></td>
+                            </tr> -->
+                            <br>
+                            <br>
+                            <tr>
+                                <td>Authorized signature:</td>
+                                <td><input type="text"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- <button onclick="saveInvoiceData(event)">Continue</button> -->
+                    <input type="submit" value="Continue">
+                </div>
+            </form>
+
         </div>
     </main>
 </div>

@@ -23,17 +23,26 @@ const dislpayProductDetails = require("../controllers/dislpayProductDetails");
 // changing login info
 const changeloginInfo = require("../controllers/changeloginInfo");
 
-// adding new customer's details
-const addCustomerDetails = require("../controllers/addCustomerDetails");
-
 //displaying desired customer's details on search
 const dislpayCustomerDetailsOnSearch = require("../controllers/dislpayCustomerDetailsOnSearch");
 
 // connecting to backend to displaying product detials
 const dislpayProductDetailsOnSearch = require("../controllers/dislpayProductDetailsOnSearch");
 
+// connecting to backend to displaying invoice detials
+const dislpayInvoiceDetailsOnSearch = require("../controllers/dislpayInvoiceDetailsOnSearch");
+
+// to new customer's details
+const addCustomerDetails = require("../controllers/addCustomerDetails");
+
 // to add products
 const addProduct = require("../controllers/addProduct");
+
+// to add selected product detials of invoice to database 
+const addInvoiceProductDetails = require("../controllers/addInvoiceProductDetails");
+
+// to add detials of invoice to database 
+const addInvoiceDetails = require("../controllers/addInvoiceDetails");
 
 //logging out
 const logout = require("../controllers/logout");
@@ -76,8 +85,17 @@ router.post("/dislpayCustomerDetailsOnSearch", dislpayCustomerDetailsOnSearch);
 // displaying product detials on search
 router.post("/dislpayProductDetailsOnSearch", dislpayProductDetailsOnSearch);
 
+// displaying invoice detials on search
+router.post("/dislpayInvoiceDetailsOnSearch", dislpayInvoiceDetailsOnSearch);
+
 // adding product
 router.post("/addProduct", addProduct);
+
+// adding selected product detials of invoice to database 
+router.post("/addInvoiceProductDetails", addInvoiceProductDetails);
+
+// adding detials of invoice to database 
+router.post("/addInvoiceDetails", addInvoiceDetails);
 
 // //logging out 
 router.get("/logout", logout);
