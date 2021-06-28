@@ -3,7 +3,9 @@
   padding: 0px;
   box-sizing: border-box;
 }
-
+.body{
+  z-index: -2;
+}
 input{
   outline: none;
 }

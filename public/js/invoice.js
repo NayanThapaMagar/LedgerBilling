@@ -15,22 +15,22 @@ const addRow = (e) => {
   count++;
   const row = document.createElement("tr");
   row.innerHTML = `
-  <td class="SN${count}" >${count}</td>
-  <td>
+  <td class="SN${count}" align="center">${count}</td>
+  <td align="center">
     <select  class="select-options-product${count}" onchange="productOnChange(event,this.value,this.className)" style="width:200px"> 
       <option>----select----</option>
     </select>
   </td>
-  <td class="widthQTY" >
+  <td class="widthQTY" align="center">
     <select  class="productID${count}" onchange="productIdOnChange(event,this.value,this.className)" style="width:70px"> 
       <option>-----</option>
     </select>
   </td>
-  <td class="productRate${count}" ></td>
-  <td class="widthQTY">
+  <td class="productRate${count}" align="center"></td>
+  <td class="widthQTY" align="center">
     <input type="text" class="productQty${count}" oninput="productQtyOnChange(this.className)" required>
   </td>
-  <td class="productAmount${count}" >0</td>`;
+  <td class="productAmount${count}" align="center">0</td>`;
   tbody.appendChild(row);
   dislpayProducts();
 // applying search feature on select

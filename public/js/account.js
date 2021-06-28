@@ -25,8 +25,9 @@ const addCustomerDetails = (e) => {
     });
 };
 
-// displaying customer info on load
+
 let count = 0;
+//to display customer info
 const tbody = document.getElementById("customer-details");
 const wrapCustomerDetails = (customer) => {
   count++;
@@ -40,7 +41,7 @@ const wrapCustomerDetails = (customer) => {
   <td>${customer.customerAddress}</td>`;
   tbody.appendChild(row);
 };
-
+// displaying customer info on load
 const dislpayCustomerDetails = (e) => {
   e.preventDefault();
   fetch("/secured/dislpayCustomerDetails")
@@ -51,6 +52,7 @@ const dislpayCustomerDetails = (e) => {
 };
 
 //keep on removing child untill there exist a first child
+//removing previous data before displaying new
 const clearCustomerInfoTable = () => {
   while (tbody.firstChild) {
       tbody.removeChild(tbody.firstChild);

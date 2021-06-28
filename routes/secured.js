@@ -59,6 +59,10 @@ router.get("/redirectToChangePassword", (req, res) => {
 router.get("/account", (req, res) => {
   res.sendFile(staticDir + "/account.html");
 });
+//securely redirecting to search account
+router.get("/searchAccount", (req, res) => {
+  res.sendFile(staticDir + "/searchAccount.html");
+});
 //invoice display securely
 router.get("/invoice", (req, res) => {
   res.sendFile(staticDir + "/invoice.html");
