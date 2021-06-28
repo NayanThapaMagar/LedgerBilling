@@ -1,0 +1,134 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+#head{
+  background-color: #424040;
+  width: 160px;
+  color: white;
+  margin: auto;
+  margin-top: 40px;
+  height:40px;
+  font-size: 23px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.center{
+  height: 50vh;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+input{
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #424040 ;
+}
+#whole_content{
+  border: 1px solid #c4c6ca;
+  align-items: center;
+  box-shadow: 0px 0px 15px;
+  padding: 20px;
+  width: 555px;  
+
+  
+}
+ .flex{
+   display: flex;
+   width: 80%;
+   justify-content: space-between;
+   margin-top: 10px;
+ }
+
+table{
+  margin: 40px 0px;
+  width: 500px;
+  border-collapse: collapse;
+}
+th{
+  background-color: #424040;
+  height: 30px;
+  color: white;
+  font-weight: normal;
+}
+tr{
+  height: 25px;
+}
+.width_name{
+  width: 150px;
+}
+table,td{
+border: 1px solid black;
+}
+.btn2 {
+    background:  #424040;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    letter-spacing: 1px;
+    width: 90px;
+    height: 25px;
+    color: white;
+    outline: none;
+    transition: ease-out 0.3s;
+    font-weight: bold;
+    text-decoration: none;
+    
+  }
+  .btn2:hover {
+    box-shadow: inset 90px 0 0 0 #5c5858;
+    color: white;
+  }
+  @media(max-width:590px){
+    input{
+      text-align: center;
+    }
+     #whole_content {
+       width: 480px;
+     }
+    .center{
+      margin-top: 40px;
+    }
+    #whole_content input{
+      margin-bottom: 20px;   
+     
+    }
+    .name_contact input{
+      display: block;
+      
+    }
+    .name_contact{
+      line-height: 20px;
+      text-align: center;
+    }
+    .address{
+      display: flex;
+      justify-content: center;
+    }
+    .address  input{
+      display: block;
+    }
+    .address{
+      line-height: 20px;
+    }
+    .flex{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-top: 0px;
+    
+    }
+    .media_center{
+      display: grid;
+      place-items: center;
+    }
+    table{
+      margin-top: 20px;
+      width: 450px;
+    }
+  }
