@@ -85,7 +85,9 @@ border: 1px solid black;
     color: white;
   }
   .body{
+    margin: 0%;
     margin-top: 170px;
+    height: fit-content;
   }
   .center{
     margin-top: 0px;
