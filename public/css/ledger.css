@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
 }
-
+body{
+    z-index: -2;
+}
 .main{
    
     border: 1px solid #52c3f8;
@@ -98,7 +100,7 @@ h2{
     height: 27px;
 }
 
-#totalBottom{
+.totalBottom{
     text-align: center;
     background-color: #7a7d80;
     height: 27px;
@@ -122,7 +124,7 @@ h2{
 #inputField{
     border: none;
 }
-#no-outline{
+.no-outline{
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
@@ -162,4 +164,12 @@ h2{
 
 #searchCustomer{
     margin-left: 25px;
+}
+.btn22{
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+.btn22:hover{
+    background-color: rgb(195, 198, 204);
 }

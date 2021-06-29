@@ -56,8 +56,8 @@ router.get("/redirectToChangePassword", (req, res) => {
   res.sendFile(staticDir + "/changeLoginInfo.html");
 });
 //securely redirecting to accounts
-router.get("/account", (req, res) => {
-  res.sendFile(staticDir + "/account.html");
+router.get("/addAccount", (req, res) => {
+  res.sendFile(staticDir + "/addAccount.html");
 });
 //securely redirecting to search account
 router.get("/searchAccount", (req, res) => {
@@ -66,6 +66,10 @@ router.get("/searchAccount", (req, res) => {
 //invoice display securely
 router.get("/invoice", (req, res) => {
   res.sendFile(staticDir + "/invoice.html");
+});
+//ledger display securely
+router.get("/ledger", (req, res) => {
+  res.sendFile(staticDir + "/ledger.html");
 });
 //addproduct display securely
 router.get("/addProduct", (req, res) => {

@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/home.css">
-    <link rel="stylesheet" href="./css/ledgerModify.css">
+    <link rel="stylesheet" href="./css/ledger.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap" rel="stylesheet">
-    <title>Ledger</title>
+    <title>Home</title>
 </head>
 
 <div class="nav-and-arrow">
@@ -23,22 +22,24 @@
                 <a href="/secured/home">Home</a>
             </span>
             <span class="dropdown" id="accountBtn">
-                <button class="dropbtn">Customer Account
+                <button 
+                class="dropbtn">Customer Account
                 </button>
                 <div class="dropdown-content" id="account">
-                    <a href="/secured/account">Add Account</a>
-                    <a href="">Delete Account</a>
-                    <a href="#">Search Account</a>
+                    <a href="/secured/addAccount">Add Account</a>
+                    <a href="" >Delete Account</a>
+                    <a href="/secured/searchAccount">Search Account</a>
                 </div>
             </span>
             <span class="dropdown" id="ledgerBtn">
                 <a href="/secured/invoice">Invoice</a>
-            </span>
+            </span>                
             <span class="dropdown" id="ledgerBtn">
-                <a href="#">Ledger</a>
+                <a href="/secured/ledger">Ledger</a>
             </span>
             <span class="dropdown" id="productBtn">
-                <button class="dropbtn">Products
+                <button 
+                class="dropbtn">Products
                 </button>
                 <div class="dropdown-content" id="product">
                     <a href="/secured/addProduct">Add Products</a>
@@ -51,14 +52,20 @@
                 <a href="#">Cash Bill</a>
             </span>
             <span class="settings-and-logout">
-                <a href="#">Settings and privacy</a>
+                <a href="#">Admin</a>
+            </span >
+            <span class="settings-and-logout">
+                <a href="#">Privacy Settings</a>
             </span>
             <span class="settings-and-logout">
-                <a href="#">Log out</a>
+                <a href="/secured/redirectToChangePassword">Change admin password</a>
+            </span>
+            <span class="settings-and-logout">
+                <a href="#" id="logout0">Log out</a>
             </span>
         </div>
         <span class="dropdown" id="down-arrow">
-            <div class="arrow-down"></div>
+            <div class="arrow-down" ></div>
             <div class="dropdown-content" id="system">
                 <a href="#">Admin</a>
                 <a href="#">Privacy Settings</a>
@@ -74,8 +81,7 @@
         </div>
     </nav>
 </div>
-
-<body>
+<body onload="dislpayCustomerTransactionsDetails(event)">
     <div class="body">
         <!-- body portion -->
 
@@ -88,16 +94,16 @@
             <div>
                 <div id="searchCustomer">
                     <tr>
-                        <th id="thop">Name:&nbsp;</th>
-                        <td><input type="text" placeholder="Enter customer name" id="no-outline"></td> &nbsp;
+                        <th class="thop">Name:&nbsp;</th>
+                        <td><input type="text" placeholder="Enter customer name" class="no-outline"></td> &nbsp;
                     <tr>
                     <tr>
-                        <th id="thop">Contact No.:&nbsp;</th>
-                        <td><input type="text" placeholder="Enter customerID" id="no-outline">&nbsp;</td><br>
+                        <th class="thop">Contact No.:&nbsp;</th>
+                        <td><input type="text" placeholder="Enter customerID" class="no-outline">&nbsp;</td><br>
                     </tr>
                     <tr>
-                        <th id="thop">Address:&nbsp;</th>
-                        <td><input type="text" placeholder="Enter customer name" id="no-outline">
+                        <th class="thop">Address:&nbsp;</th>
+                        <td><input type="text" placeholder="Enter customer name" class="no-outline">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Search"
                                 id="searchIcon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit"
                                 value="Cancle" id="cancleIcon"></td>
@@ -118,30 +124,19 @@
                     </tr>
 
 
-                    <tr>
-                        <td id="tableData">1.</td>
-                        <td id="tableData">Susil Raj Neupane</td>
-                        <td id="tableData">fs464</td>
-                        <td id="tableData">987898456</td>
-                        <td id="tableData">Dang</td>
-                        <td id="tableData">##</td>
-                        <td id="tableData">##</td>
-                    </tr>
-
-
-
-
-
+                    <tbody id="customer-transaction-details">
+                    </tbody>
 
 
                     <tr>
+
                         <td class="noLine"></td>
                         <td class="noLine"></td>
                         <td class="noLine"></td>
                         <td class="noLine"></td>
                         <td class="noLine"></td>
-                        <td id="totalBottom">Total:</td>
-                        <td id="totalBottom">##</td>
+                        <td class="totalBottom">Total:</td>
+                        <td class="totalBottom">##</td>
 
                     </tr>
                 </table>
@@ -151,5 +146,5 @@
     </div>
 </body>
 <script src="./js/home.js"></script>
-
+<script src="./js/ledger.js"></script>
 </html>
