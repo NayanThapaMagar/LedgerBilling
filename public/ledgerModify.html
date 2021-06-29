@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/ledgerModify.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap" rel="stylesheet">
+    <title>Ledger</title>
+</head>
+
+<div class="nav-and-arrow">
+    <nav>
+        <div class="logo">
+            <h4 id="logo">The Nuss</h4>
+        </div>
+        <div class="navbar">
+            <span class="dropdown">
+                <a href="/secured/home">Home</a>
+            </span>
+            <span class="dropdown" id="accountBtn">
+                <button class="dropbtn">Customer Account
+                </button>
+                <div class="dropdown-content" id="account">
+                    <a href="/secured/account">Add Account</a>
+                    <a href="">Delete Account</a>
+                    <a href="#">Search Account</a>
+                </div>
+            </span>
+            <span class="dropdown" id="ledgerBtn">
+                <a href="/secured/invoice">Invoice</a>
+            </span>
+            <span class="dropdown" id="ledgerBtn">
+                <a href="#">Ledger</a>
+            </span>
+            <span class="dropdown" id="productBtn">
+                <button class="dropbtn">Products
+                </button>
+                <div class="dropdown-content" id="product">
+                    <a href="/secured/addProduct">Add Products</a>
+                    <a href="">Delete Products</a>
+                    <a href="#">Search Products</a>
+                    <a href="#">Stock</a>
+                </div>
+            </span>
+            <span class="dropdown">
+                <a href="#">Cash Bill</a>
+            </span>
+            <span class="settings-and-logout">
+                <a href="#">Settings and privacy</a>
+            </span>
+            <span class="settings-and-logout">
+                <a href="#">Log out</a>
+            </span>
+        </div>
+        <span class="dropdown" id="down-arrow">
+            <div class="arrow-down"></div>
+            <div class="dropdown-content" id="system">
+                <a href="#">Admin</a>
+                <a href="#">Privacy Settings</a>
+                <a href="/secured/redirectToChangePassword">Change admin password</a>
+                <!-- <button id="logout">Log out</button> -->
+                <a href="" id="logout">Log out</a>
+            </div>
+        </span>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+</div>
+
+<body>
+    <div class="body">
+        <!-- body portion -->
+
+
+        <div id="h2">
+            <h2>Ledger</h2>
+        </div>
+
+        <div class="main">
+            <div>
+                <div id="searchCustomer">
+                    <tr>
+                        <th id="thop">Name:&nbsp;</th>
+                        <td><input type="text" placeholder="Enter customer name" id="no-outline"></td> &nbsp;
+                    <tr>
+                    <tr>
+                        <th id="thop">Contact No.:&nbsp;</th>
+                        <td><input type="text" placeholder="Enter customerID" id="no-outline">&nbsp;</td><br>
+                    </tr>
+                    <tr>
+                        <th id="thop">Address:&nbsp;</th>
+                        <td><input type="text" placeholder="Enter customer name" id="no-outline">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Search"
+                                id="searchIcon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit"
+                                value="Cancle" id="cancleIcon"></td>
+                    <tr>
+
+                </div>
+            </div>
+            <div id="tableMain">
+                <table id="table">
+                    <tr id="heigth">
+                        <th id="tableHeadingSn">S.N.</th>
+                        <th id="tableHeadingName">Name</th>
+                        <th id="tableHeadingId">CustomerID</th>
+                        <th id="tableHeadingId">Contact No.</th>
+                        <th id="tableHeadingAddress">Address</th>
+                        <th id="tableHeadingCr">Dr/Cr</th>
+                        <th id="tableHeadingAmount">Amount</th>
+                    </tr>
+
+
+                    <tr>
+                        <td id="tableData">1.</td>
+                        <td id="tableData">Susil Raj Neupane</td>
+                        <td id="tableData">fs464</td>
+                        <td id="tableData">987898456</td>
+                        <td id="tableData">Dang</td>
+                        <td id="tableData">##</td>
+                        <td id="tableData">##</td>
+                    </tr>
+
+
+
+
+
+
+
+                    <tr>
+                        <td class="noLine"></td>
+                        <td class="noLine"></td>
+                        <td class="noLine"></td>
+                        <td class="noLine"></td>
+                        <td class="noLine"></td>
+                        <td id="totalBottom">Total:</td>
+                        <td id="totalBottom">##</td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="./js/home.js"></script>
+
+</html>
