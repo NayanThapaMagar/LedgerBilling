@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+   
+    border: 1px solid #52c3f8;
+    width: 700px;
+    padding: 20px;
+    margin: auto;
+    box-shadow: 0px 0px 15px;
+    margin-top: 20px;
+    
+}
+#h2{
+    background-color:  #363636;;
+    height: 40px;
+    width: 200px;
+    margin: 30px auto;
+    border-radius: 4px;
+
+}
+h2{
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    color: white;
+
+    font:sans-serif;
+}
+
+
+
+#tableMain{
+
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:20vh;
+
+
+}
+#heigth{
+    height: 34px;
+}
+
+
+#tableHeading{
+    width: 120px;
+    background-color: #363636;
+    color: #f3ebeb;
+
+}
+#tableHeadingSn{
+    width: 40px;
+    background-color: #424040;
+    color: white;
+
+}
+#tableHeadingName{
+    width: 132px;
+    background-color: #424040;
+    color: white;
+
+}
+#tableHeadingId{
+    width: 95px;
+    background-color: #424040;
+    color: white;
+
+}
+#tableHeadingAddress{
+    width: 100px;
+    background-color: #424040;
+    color: white;
+
+}
+#tableHeadingCr{
+    width: 83px;
+    background-color: #424040;
+    color: white;
+
+}
+#tableHeadingAmount{
+    width: 90px;
+    background-color: #424040;
+    color: white;
+
+}
+
+
+
+
+#tableData{
+    text-align: center;
+    height: 27px;
+}
+
+#totalBottom{
+    text-align: center;
+    background-color: #7a7d80;
+    height: 27px;
+}
+
+#tableMain table{
+    border-collapse: collapse;
+}
+
+#tableMain td,th{
+    border: 0.5px solid black;
+}
+
+
+#tableMain  .noLine{
+    border: 0.5px solid white;
+}
+
+/* css for search portion */
+
+#inputField{
+    border: none;
+}
+#no-outline{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+
+    height: 25px;
+}
+#no-outline:focus{
+    outline: none;
+}
+
+#searchIcon{
+    background-color: rgba(65, 67, 68, 0.788);
+    width: 85px;
+    margin-top: 7px;
+    margin-bottom:12px;
+    height: 30px;
+    color: white;
+}
+#cancleIcon{
+    background-color: rgba(65, 67, 68, 0.788);
+    width: 85px;
+    margin-top: 7px;
+    margin-bottom:12px;
+    height: 30px;
+    color: white;
+}
+#searchIcon:hover{
+    background-color: rgb(167, 162, 162);
+    cursor: pointer;
+}
+#cancleIcon:hover{
+    background-color: rgb(167, 162, 162);
+    cursor: pointer;
+}
+
+
+#searchCustomer{
+    margin-left: 25px;
+}
