@@ -1,3 +1,12 @@
+const personalAccount = (e, Id, invoiceNo) => {
+  e.preventDefault();
+  console.log(Id); 
+  window.location.assign(`/secured/invoice-details?id=${Id}&invoiceNo=${invoiceNo}`);
+};
+
+
+
+//to display transaction summary
 const customerId = window.location.href.split("=")[1];
 const fetchOptions = {
   method: "POST",
@@ -56,7 +65,7 @@ fetch("/secured/personalAccountDetails", fetchOptions)
       row.innerHTML = `
       <td class="sn tableData">${sn}</td>
       <td class="tableData">${date}</td>
-      <td class="tableData">${products}</td>
+      <td class="tableData"><button class="btn22" onclick="personalAccount(event,${customer.customerId},${invoice.invoiceNo})">${products}</button></td>
       <td class="tableData">${invoice.invoiceNo}</td>
       <td class="tableData">${invoice.paidAmount}</td>
       <td class="tableData">${grandTotal}</td>

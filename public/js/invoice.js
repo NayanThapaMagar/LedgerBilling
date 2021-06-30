@@ -1,5 +1,8 @@
 //displaying company name
 document.getElementById("companyName").innerHTML = localStorage.getItem("companyName");
+document.getElementById("companyAddress").innerHTML = localStorage.getItem("address");
+document.getElementById("companyContact").innerHTML = localStorage.getItem("contact");
+document.getElementById("companyEmail").innerHTML = localStorage.getItem("email");
 
 
 //-------------------------------------------ADDING AND REMOVING ROWS----------------------------------------------------//
@@ -13,6 +16,10 @@ const tbody = document.querySelector(".product-details");
 const addRow = (e) => {
   e.preventDefault();
   count++;
+  if (count>8) {
+    alert("MaxLimit!!")
+    return;
+  }
   const row = document.createElement("tr");
   row.innerHTML = `
   <td class="SN${count}" align="center">${count}</td>

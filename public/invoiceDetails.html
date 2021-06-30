@@ -84,7 +84,7 @@
     </nav>
 </div>
 
-<body onload="dislpayDetails(event)">
+<body>
     <div class="body">
         <main id="center_whole_content">
             <div class="whole border-outline">
@@ -98,6 +98,11 @@
                         <h2 id="companyName">Company Name: Nuss</h2>
                     </div>
 
+                    <div id="companyDetails">
+                        <h4 id="companyAddress">Company Name: Nuss</h4>
+                        <h4 id="companyContact">Company Name: Nuss</h4>
+                        <h4 id="companyEmail">Company Name: Nuss</h4>
+                    </div>
 
 
                     <div class="billno all">
@@ -157,7 +162,7 @@
                                 </tr>
                                 <tr>
                                     <td>Contact number:</td>
-                                    <td id="contactNo"></td>
+                                    <td id="customerContact"></td>
                                 </tr>
                             </table>
                         </div>
@@ -176,15 +181,7 @@
 
                             </tr>
 
-                            <tbody class="product-details">
-                                <tr align="center">
-                                    <td class="SN1">1</td>
-                                    <td></td>
-                                    <td class="widthQTY"></td>
-                                    <td class="productRate1"></td>
-                                    <td class="widthQTY"></td>
-                                    <td class="productAmount1">0</td>
-                                </tr>
+                            <tbody id="transacted-product">
                             </tbody>
 
                         </table>
@@ -252,7 +249,7 @@
         </main>
     </div>
 </body>
-<!-- <script src="./js/invoice.js"></script> -->
+<script src="./js/displayInvoiceDetails.js"></script>
 <script src="./js/home.js"></script>
 
 </html>

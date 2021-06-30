@@ -19,7 +19,11 @@ const login = (e) => {
         alert(`${data.message}`)
       } else {
         //login successful
-        localStorage.setItem("companyName", data.companyName)
+        localStorage.setItem("companyName", data.companyName);
+        localStorage.setItem("address", data.address);
+        localStorage.setItem("email", data.email);
+        localStorage.setItem("contact", data.contact);
+        localStorage.setItem("userName", data.userName);
         window.location.assign("/secured/home");
       }
     });

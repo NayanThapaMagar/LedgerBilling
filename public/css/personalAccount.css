@@ -131,8 +131,14 @@ table{
 
 }
 
-
-
+.btn22{
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+.btn22:hover{
+    background-color: #c3c6cc;
+}
 
 .tableData{
     text-align: center;

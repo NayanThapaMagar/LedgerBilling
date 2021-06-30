@@ -18,7 +18,14 @@ outline: none;
     margin-left: 20px;
     margin-top: 15px;
     width: 230px;
-        
+    text-align: center;
+    margin-bottom: 0px;
+}
+#companyDetails{
+    font-size: 13px;
+    margin-left: 20px;
+    margin-top: 15px;
+    width: 230px;
     text-align: center;
     margin-bottom: 0px;
 }

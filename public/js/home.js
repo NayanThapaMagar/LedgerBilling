@@ -44,6 +44,10 @@ const logoutFunction = () => {
         } else {
             //logout successful
             localStorage.removeItem("companyName");
+            localStorage.removeItem("address");
+            localStorage.removeItem("email");
+            localStorage.removeItem("contact");
+            localStorage.removeItem("userName");
             window.location.assign("/login");
         }
         });

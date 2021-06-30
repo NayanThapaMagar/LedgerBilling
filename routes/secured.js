@@ -44,6 +44,9 @@ const addInvoiceProductDetails = require("../controllers/addInvoiceProductDetail
 // to display personal Account Details 
 const personalAccountDetails = require("../controllers/personalAccountDetails");
 
+// to display invoice Details 
+const invoiceDetails = require("../controllers/invoiceDetails");
+
 // to add detials of invoice to database 
 const addInvoiceDetails = require("../controllers/addInvoiceDetails");
 
@@ -88,6 +91,12 @@ router.get("/personal-account", (req, res) => {
   res.sendFile(staticDir + "/personalAccount.html");
 });
 
+// invoice details display secuerly
+router.get("/invoice-details", (req, res) => {
+  res.sendFile(staticDir + "/invoiceDetails.html");
+});
+
+
 // changing login info
 router.post("/changeloginInfo", changeloginInfo);
 
@@ -102,6 +111,9 @@ router.get("/dislpayProductDetails", dislpayProductDetails);
 
 // displaying personal account details on customer selected
 router.post("/personalAccountDetails", personalAccountDetails);
+
+// displaying invoice Details on invoice selected
+router.post("/invoiceDetails", invoiceDetails);
 
 // displaying desired customer's details on search
 router.post("/dislpayCustomerDetailsOnSearch", dislpayCustomerDetailsOnSearch);
