@@ -47,7 +47,7 @@ const dislpayCustomerDetails = (e) => {
   fetch("/secured/dislpayCustomerDetails")
     .then((res) => res.json())
     .then((data) =>
-      data.customer.forEach((customer) => wrapCustomerDetails(customer))
+      data.result.forEach((customer) => wrapCustomerDetails(customer))
     );
 };
 
