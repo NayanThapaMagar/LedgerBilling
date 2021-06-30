@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap" rel="stylesheet">
-    <title>Personal Account</title>
+    <title>Home</title>
 </head>
 
 <div class="nav-and-arrow">
@@ -23,22 +22,24 @@
                 <a href="/secured/home">Home</a>
             </span>
             <span class="dropdown" id="accountBtn">
-                <button class="dropbtn">Customer Account
+                <button 
+                class="dropbtn">Customer Account
                 </button>
                 <div class="dropdown-content" id="account">
                     <a href="/secured/addAccount">Add Account</a>
-                    <a href="">Delete Account</a>
-                    <a href="#">Search Account</a>
+                    <a href="" >Delete Account</a>
+                    <a href="/secured/searchAccount">Search Account</a>
                 </div>
             </span>
             <span class="dropdown" id="ledgerBtn">
                 <a href="/secured/invoice">Invoice</a>
-            </span>
+            </span>                
             <span class="dropdown" id="ledgerBtn">
                 <a href="/secured/ledger">Ledger</a>
             </span>
             <span class="dropdown" id="productBtn">
-                <button class="dropbtn">Products
+                <button 
+                class="dropbtn">Products
                 </button>
                 <div class="dropdown-content" id="product">
                     <a href="/secured/addProduct">Add Products</a>
@@ -51,19 +52,24 @@
                 <a href="#">Cash Bill</a>
             </span>
             <span class="settings-and-logout">
-                <a href="#">Settings and privacy</a>
+                <a href="#">Admin</a>
+            </span >
+            <span class="settings-and-logout">
+                <a href="#">Privacy Settings</a>
             </span>
             <span class="settings-and-logout">
-                <a href="#">Log out</a>
+                <a href="/secured/redirectToChangePassword">Change admin password</a>
+            </span>
+            <span class="settings-and-logout">
+                <a href="#" id="logout0">Log out</a>
             </span>
         </div>
         <span class="dropdown" id="down-arrow">
-            <div class="arrow-down"></div>
+            <div class="arrow-down" ></div>
             <div class="dropdown-content" id="system">
                 <a href="#">Admin</a>
                 <a href="#">Privacy Settings</a>
                 <a href="/secured/redirectToChangePassword">Change admin password</a>
-                <!-- <button id="logout">Log out</button> -->
                 <a href="" id="logout">Log out</a>
             </div>
         </span>
@@ -74,94 +80,95 @@
         </div>
     </nav>
 </div>
-
-<body>
-    <div class="body">
-        <!-- body portion -->
-
-
-        <div id="h2">
-            <h2>Personal Account</h2>
-        </div>
-        <div class="main">
-            <div>
-                <h3 class="h3heading">CustomerDetails</h3>
-
-                <div class="flex1">
-                    <div class="billto">
-                        <table>
-                            <tr>
-                                <td class="informationHeading">Name:</td>
-                                <td class="informationFill">Susil Raj Neupane</td>
-                            </tr>
-                            <tr>
-                                <td class="informationHeading">Address:</td>
-                                <td class="informationFill">Dhulikhel</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="customerId all">
-                        <table>
-                            <tr>
-                                <th>CustomerID</th>
-                            </tr>
-                            <td>12345</td>
-                        </table>
-                    </div>
-
-                </div>
-            </div>
-
-
-
-
-
-            <!-- coustomer tabel starts from here -->
-            <div id="tableMain">
-                <table id="table">
-                    <tr id="heigth">
-                        <th id="tableHeadingSn">S.N.</th>
-                        <th id="tableHeadingDate">Date</th>
-                        <th id="tableHeadingParticular">Particulars</th>
-                        <th id="tableHeadingCr">Bill No.</th>
-                        <th id="tableHeadingPaid">Paid Amount</th>
-                        <th id="tableHeadingDeu">Deu Amount</th>
-                        <th id="tableHeadingCr">Dr/Cr</th>
-                        <th id="tableHeadingAmount">Amount</th>
-                    </tr>
-                    <tr>
-                        <td id="tableData">1.</td>
-                        <td id="tableData">2021/06/20</td>
-                        <td id="tableData">JCB</td>
-                        <td id="tableData">1223</td>
-                        <td id="tableData">100k</td>
-                        <td id="tableData">300k</td>
-                        <td id="tableData">500k</td>
-                        <td id="tableData">##</td>
-                    </tr>
-
-
-
-                    <tr>
-                        <td class="noLine"></td>
-                        <td class="noLine"></td>
-                        <td class="noLine"></td>
-                        <td class="noLine"></td>
-                        <td class="noLine"></td>
-                        <td class="noLine"></td>
-                        <td id="totalBottom">Total:</td>
-                        <td id="totalBottom">##</td>
-
-
-                    </tr>
-                </table>
-            </div>
-            <!-- for remarks -->
-
-        </div>
-
+<body >
+ <div class="body">
+    <div id="h2">
+        <h2>Personal Account</h2>
     </div>
+    <div class="main">
+        <div>
+            
+
+            <div class="flex1">
+                <div class="billto">
+                    <table>
+                        <tr >
+                            <h3 class="h3heading">CustomerDetails</h3>
+                        </tr>
+                        <tr>
+                            <td class="informationHeading">Name:</td>
+                            <td id="customerName"></td>
+                        </tr>
+                        <tr>
+                            <td class="informationHeading">Address:</td>
+                            <td id="customerAddress">Dhulikhel</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="customerId all">
+                    <table>
+                        <tr>
+                            <th>CustomerID</th>
+                            <th>Contact NO</th>
+                        </tr>
+                        <td id="customerId">12345</td>
+                        <td id="customerContact">12345</td>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+        <!-- coustomer tabel starts from here -->
+        <div id="tableMain">
+            <table id="table">
+                <tr id="heigth">
+                    <th id="tableHeadingSn">S.N.</th>
+                    <th id="tableHeadingDate">Date</th>
+                    <th id="tableHeadingParticular">Particulars</th>
+                    <th id="tableHeadingCr">Bill No.</th>
+                    <th id="tableHeadingPaid">Paid Amount</th>
+                    <th id="tableHeadingDue">Due Amount</th>
+                    <th id="tableHeadingCr">Dr/Cr</th>
+                    <th id="tableHeadingAmount">Amount</th>
+                </tr>
+                <!-- <tr>
+                    <td id="tableData">1.</td>
+                    <td id="tableData">2021/06/20</td>
+                    <td id="tableData">JCB</td>
+                    <td id="tableData">1223</td>
+                    <td id="tableData">100k</td>
+                    <td id="tableData">300k</td>
+                    <td id="tableData">500k</td>
+                    <td id="tableData">##</td>
+                </tr> -->
+
+                <tbody id="invoice-details">
+                </tbody>
+
+                <tr>
+                    <td class="noLine"></td>
+                    <td class="noLine"></td>
+                    <td class="noLine"></td>
+                    <td class="noLine"></td>
+                    <td class="noLine"></td>
+                    <td class="noLine"></td>
+                    <td id="totalBottom">Total:</td>
+                    <td id="totalBottom">##</td>
+
+
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+ </div>
 </body>
 <script src="./js/home.js"></script>
-
+<script src="./js/personalAccount.js"></script>
 </html>

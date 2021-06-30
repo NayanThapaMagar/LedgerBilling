@@ -41,8 +41,15 @@ const addProduct = require("../controllers/addProduct");
 // to add selected product detials of invoice to database 
 const addInvoiceProductDetails = require("../controllers/addInvoiceProductDetails");
 
+// to display personal Account Details 
+const personalAccountDetails = require("../controllers/personalAccountDetails");
+
 // to add detials of invoice to database 
 const addInvoiceDetails = require("../controllers/addInvoiceDetails");
+
+// to calculate and store customer balance amount 
+const customerBalance = require("../controllers/customerBalance");
+
 
 //logging out
 const logout = require("../controllers/logout");
@@ -75,6 +82,12 @@ router.get("/ledger", (req, res) => {
 router.get("/addProduct", (req, res) => {
   res.sendFile(staticDir + "/addProduct.html");
 });
+
+// personal account display secuerly
+router.get("/personal-account", (req, res) => {
+  res.sendFile(staticDir + "/personalAccount.html");
+});
+
 // changing login info
 router.post("/changeloginInfo", changeloginInfo);
 
@@ -86,6 +99,9 @@ router.get("/dislpayCustomerDetails", dislpayCustomerDetails);
 
 //displaying product names
 router.get("/dislpayProductDetails", dislpayProductDetails);
+
+// displaying personal account details on customer selected
+router.post("/personalAccountDetails", personalAccountDetails);
 
 // displaying desired customer's details on search
 router.post("/dislpayCustomerDetailsOnSearch", dislpayCustomerDetailsOnSearch);
@@ -104,6 +120,9 @@ router.post("/addInvoiceProductDetails", addInvoiceProductDetails);
 
 // adding detials of invoice to database 
 router.post("/addInvoiceDetails", addInvoiceDetails);
+
+// calculating and storing customer balance amount
+router.post("/customerBalance", customerBalance);
 
 // //logging out 
 router.get("/logout", logout);

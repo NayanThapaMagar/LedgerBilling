@@ -47,11 +47,10 @@ const dislpayCustomerDetails = (e) => {
   fetch("/secured/dislpayCustomerDetails")
     .then((res) => res.json())
     .then((data) =>
-      data.result.forEach((customer) => wrapCustomerDetails(customer))
+      data.customer.forEach((customer) => wrapCustomerDetails(customer))
     );
 };
 
-//keep on removing child untill there exist a first child
 //removing previous data before displaying new
 const clearCustomerInfoTable = () => {
   while (tbody.firstChild) {

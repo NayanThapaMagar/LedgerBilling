@@ -468,11 +468,31 @@ const saveInvoiceData = (e) => {
       //failed to insert data
       alert("Failed to insert detials of invoice!!!");
 
-    } else {
-      //Data inserted
-      alert(`${data.message}`)
-      window.location.assign("/secured/invoice");
-
-    }
+    } 
   });
+  const fetchOptions1 = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ customerId  }),
+  };
+  setTimeout(function(){ 
+    fetch("/secured/customerBalance", fetchOptions1)
+    .then((res) => res.json())
+    .then((data) => {
+      if (!data.success) {
+        //failed to insert data
+        alert("Failed to insert Devit/Credit amount!!!");
+  
+      } else {
+        console.log(data.result);
+        //Data inserted
+        alert(`${data.message}`)
+        window.location.assign("/secured/invoice");
+      }
+    });
+  },
+  50);
+ 
 };
