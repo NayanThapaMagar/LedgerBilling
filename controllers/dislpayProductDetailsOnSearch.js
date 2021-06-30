@@ -10,40 +10,40 @@ const db = mysql.createConnection({
 });
 let count = 0;
 module.exports = (req, res) => {
-  const { product, productId, productRate } = req.body;
+  const { productName, productId, productRate } = req.body;
   // all entered(name, product Id and product rate)
-  if (product && productId && productRate) {
+  if (productName && productId && productRate) {
     // productName, productRate, prodcutStock
-    const sql = `SELECT * FROM productdetails WHERE productName = '${product}' AND productId = '${productId}' AND productRate = '${productRate}'`;
+    const sql = `SELECT * FROM productdetails WHERE productName = '${productName}' AND productId = '${productId}' AND productRate = '${productRate}'`;
     db.query(sql, (err, result) => {
       if (result.length == 0) {
-        return res.json({ success: false, message: `Product with product name: '${product}', product Id: '${productId}'  and product rate: '${productRate}' doesn't exist!!!` });
+        return res.json({ success: false, message: `Product with product name: '${productName}', product Id: '${productId}'  and product rate: '${productRate}' doesn't exist!!!` });
       }
       return res.json({ success: true, result });
     });
   };
   //name and product Id entered not product rate
-  if (product && productId && !productRate) {
-    const sql = `SELECT * FROM productdetails WHERE productName = '${product}' AND productId = '${productId}'`;
+  if (productName && productId && !productRate) {
+    const sql = `SELECT * FROM productdetails WHERE productName = '${productName}' AND productId = '${productId}'`;
     db.query(sql, (err, result) => {
       if (result.length == 0) {
-        return res.json({ success: false, message: `Product with product name: '${product}'and product Id: '${productId}' doesn't exist!!!` });
+        return res.json({ success: false, message: `Product with product name: '${productName}'and product Id: '${productId}' doesn't exist!!!` });
       }
       return res.json({ success: true, result });
     });
   };
   //name and product rate entered not product Id
-  if (product && !productId && productRate) {
-    const sql = `SELECT * FROM productdetails WHERE productName = '${product}' AND productRate = '${productRate}'`;
+  if (productName && !productId && productRate) {
+    const sql = `SELECT * FROM productdetails WHERE productName = '${productName}' AND productRate = '${productRate}'`;
     db.query(sql, (err, result) => {
       if (result.length == 0) {
-        return res.json({ success: false, message: `Product with product name: '${product}' and product rate: '${productRate}' doesn't exist!!!` });
+        return res.json({ success: false, message: `Product with product name: '${productName}' and product rate: '${productRate}' doesn't exist!!!` });
       }
       return res.json({ success: true, result });
     });
   };
   //product Id and product rate entered not name
-  if (!product && productId && productRate) {
+  if (!productName && productId && productRate) {
     const sql = `SELECT * FROM productdetails WHERE productId = '${productId}' AND productRate = '${productRate}'`;
     db.query(sql, (err, result) => {
       if (result.length == 0) {
@@ -53,17 +53,17 @@ module.exports = (req, res) => {
     });
   };
   //only name entered
-  if (product && !productId && !productRate) {
-    const sql = `SELECT * FROM productdetails WHERE productName = '${product}'`;
+  if (productName && !productId && !productRate) {
+    const sql = `SELECT * FROM productdetails WHERE productName = '${productName}'`;
     db.query(sql, (err, result) => {
       if (result.length == 0) {
-        return res.json({ success: false, message: `Product with product name: '${product}' doesn't exist!!!` });
+        return res.json({ success: false, message: `Product with product name: '${productName}' doesn't exist!!!` });
       }
       return res.json({ success: true, result });
     });
   };
   //only product Id entered
-  if (!product && productId && !productRate) {
+  if (!productName && productId && !productRate) {
     const sql = `SELECT * FROM productdetails WHERE productId = '${productId}'`;
     db.query(sql, (err, result) => {
       if (result.length == 0) {
@@ -73,7 +73,7 @@ module.exports = (req, res) => {
     });
   };
   //only product rate entered
-  if (!product && !productId && productRate) {
+  if (!productName && !productId && productRate) {
     const sql = `SELECT * FROM productdetails WHERE productRate = '${productRate}'`;
     db.query(sql, (err, result) => {
       if (result.length == 0) {

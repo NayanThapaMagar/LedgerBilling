@@ -1,114 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/home.css">
-    <link rel="stylesheet" href="./css/deleteProduct.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/deleteProduct.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <title>Home</title>
-</head>
+  </head>
 
-<div class="nav-and-arrow">
+  <div class="nav-and-arrow">
     <nav>
-        <div class="logo">
-            <h4 id="logo">The Nuss</h4>
-        </div>
-        <div class="navbar">
-            <span class="dropdown">
-                <a href="/secured/home">Home</a>
-            </span>
-            <span class="dropdown" id="accountBtn">
-                <button 
-                class="dropbtn">Customer Account
-                </button>
-                <div class="dropdown-content" id="account">
-                    <a href="/secured/addAccount">Add Account</a>
-                    <a href="" >Delete Account</a>
-                    <a href="/secured/searchAccount">Search Account</a>
-                </div>
-            </span>
-            <span class="dropdown" id="ledgerBtn">
-                <a href="/secured/invoice">Invoice</a>
-            </span>                
-            <span class="dropdown" id="ledgerBtn">
-                <a href="/secured/ledger">Ledger</a>
-            </span>
-            <span class="dropdown" id="productBtn">
-                <button 
-                class="dropbtn">Products
-                </button>
-                <div class="dropdown-content" id="product">
-                    <a href="/secured/addProduct">Add Products</a>
-                    <a href="">Delete Products</a>
-                    <a href="#">Search Products</a>
-                    <a href="#">Stock</a>
-                </div>
-            </span>
-            <span class="dropdown">
-                <a href="#">Cash Bill</a>
-            </span>
-            <span class="settings-and-logout">
-                <a href="#">Admin</a>
-            </span >
-            <span class="settings-and-logout">
-                <a href="#">Privacy Settings</a>
-            </span>
-            <span class="settings-and-logout">
-                <a href="/secured/redirectToChangePassword">Change admin password</a>
-            </span>
-            <span class="settings-and-logout">
-                <a href="#" id="logout0">Log out</a>
-            </span>
-        </div>
-        <span class="dropdown" id="down-arrow">
-            <div class="arrow-down" ></div>
-            <div class="dropdown-content" id="system">
-                <a href="#">Admin</a>
-                <a href="#">Privacy Settings</a>
-                <a href="/secured/redirectToChangePassword">Change admin password</a>
-                <!-- <button id="logout">Log out</button> -->
-                <a href="" id="logout">Log out</a>
-            </div>
+      <div class="logo">
+        <h4 id="logo">The Nuss</h4>
+      </div>
+      <div class="navbar">
+        <span class="dropdown">
+          <a href="/secured/home">Home</a>
         </span>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
+        <span class="dropdown" id="accountBtn">
+          <button class="dropbtn">Customer Account</button>
+          <div class="dropdown-content" id="account">
+            <a href="/secured/addAccount">Add Account</a>
+            <a href="">Delete Account</a>
+            <a href="/secured/searchAccount">Search Account</a>
+          </div>
+        </span>
+        <span class="dropdown" id="ledgerBtn">
+          <a href="/secured/invoice">Invoice</a>
+        </span>
+        <span class="dropdown" id="ledgerBtn">
+          <a href="/secured/ledger">Ledger</a>
+        </span>
+        <span class="dropdown" id="productBtn">
+          <button class="dropbtn">Products</button>
+          <div class="dropdown-content" id="product">
+            <a href="/secured/addProduct">Add Product</a>
+            <a href="/secured/deleteProduct">Delete Product</a>
+            <a href="/secured/searchProduct">Search Products</a>
+            <a href="#">Stock</a>
+          </div>
+        </span>
+        <span class="dropdown">
+          <a href="#">Cash Bill</a>
+        </span>
+        <span class="settings-and-logout">
+          <a href="#">Admin</a>
+        </span>
+        <span class="settings-and-logout">
+          <a href="#">Privacy Settings</a>
+        </span>
+        <span class="settings-and-logout">
+          <a href="/secured/redirectToChangePassword">Change admin password</a>
+        </span>
+        <span class="settings-and-logout">
+          <a href="#" id="logout0">Log out</a>
+        </span>
+      </div>
+      <span class="dropdown" id="down-arrow">
+        <div class="arrow-down"></div>
+        <div class="dropdown-content" id="system">
+          <a href="#">Admin</a>
+          <a href="#">Privacy Settings</a>
+          <a href="/secured/redirectToChangePassword">Change admin password</a>
+          <a href="" id="logout">Log out</a>
         </div>
+      </span>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
     </nav>
-</div>
-<body >
- <div class="body">
-    <div id="h2"><h2>Delete Product</h2></div>
-    <div class="add">
-
-        <!-- <form onsubmit="addProduct(event)"> -->
-            <div >
-                <div class="padding">
-                <label class="label" for="Name">
-                    <span>Product Name: <br><input type="text" placeholder="Enter product name" name="pname" id="productName" required> </span> </label>
-                </div>
-
-                <div class="padding">
-                <label for="Rate">
-                    <span>Product Id:<br><input type="integer" placeholder="Enter Rate" name="productRate" id="productRate" required> <br>
-                    </span></label>
-                </div>
-            </div>
-        
+  </div>
+  <body>
+    <div class="body">
+      <div class="body">
+        <div id="h2"><h2>Delete Product</h2></div>
+        <div class="add">
+          <form onsubmit="deleteProduct(event)">
             <div>
-                <!-- <button class="btn">Add</button> -->
-                <input type="submit" value="Delete" class="btn">
-            </div>
-        </form>
+              <div class="padding">
+                <label class="label" for="Name">
+                  <span>Product Name: <br />
+                    <select class="select-options-product"
+                    onchange="productOnChange(event,this.value)" style="width:200px">
+                    <option>-------select-------</option>
+                </select>
+                  </span>
+                </label>
+              </div>
 
+              <div class="padding">
+                <label for="Rate">
+                  <span
+                    >Product Id:<br /><select class="productID" style="width:70px">
+                    <option>------</option>
+                </select> </span
+                ></label>
+              </div>
+            </div>
+
+            <div>
+              <input type="submit" value="Delete" class="btn" />
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
- </div>
-</body>
-<script src="./js/home.js"></script>
-<script src="./js/addProduct.js"></script>
+  </body>
+  <script src="./js/home.js"></script>
+  <script src="./js/deleteProduct.js"></script>
 </html>

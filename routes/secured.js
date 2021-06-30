@@ -14,14 +14,14 @@ router.use(express.json({ limit: "1mb" }));
 //use authentication middleware
 router.use(verify);
 
+// changing login info
+const changeloginInfo = require("../controllers/changeloginInfo");
+
 //displaying costumer details
 const dislpayCustomerDetails = require("../controllers/dislpayCustomerDetails");
 
 // connecting to backend to display products 
 const dislpayProductDetails = require("../controllers/dislpayProductDetails");
-
-// changing login info
-const changeloginInfo = require("../controllers/changeloginInfo");
 
 //displaying desired customer's details on search
 const dislpayCustomerDetailsOnSearch = require("../controllers/dislpayCustomerDetailsOnSearch");
@@ -37,6 +37,9 @@ const addCustomerDetails = require("../controllers/addCustomerDetails");
 
 // to add products
 const addProduct = require("../controllers/addProduct");
+
+// to delete Product
+const deleteProduct = require("../controllers/deleteProduct");
 
 // to add selected product detials of invoice to database 
 const addInvoiceProductDetails = require("../controllers/addInvoiceProductDetails");
@@ -65,7 +68,7 @@ router.get("/home", (req, res) => {
 router.get("/redirectToChangePassword", (req, res) => {
   res.sendFile(staticDir + "/changeLoginInfo.html");
 });
-//securely redirecting to accounts
+//securely redirecting to Add account
 router.get("/addAccount", (req, res) => {
   res.sendFile(staticDir + "/addAccount.html");
 });
@@ -85,12 +88,18 @@ router.get("/ledger", (req, res) => {
 router.get("/addProduct", (req, res) => {
   res.sendFile(staticDir + "/addProduct.html");
 });
-
+//deleteProduct display securely
+router.get("/deleteProduct", (req, res) => {
+  res.sendFile(staticDir + "/deleteProduct.html");
+});
+//searchProduct display securely
+router.get("/searchProduct", (req, res) => {
+  res.sendFile(staticDir + "/searchProduct.html");
+});
 // personal account display secuerly
 router.get("/personal-account", (req, res) => {
   res.sendFile(staticDir + "/personalAccount.html");
 });
-
 // invoice details display secuerly
 router.get("/invoice-details", (req, res) => {
   res.sendFile(staticDir + "/invoiceDetails.html");
@@ -126,6 +135,9 @@ router.post("/dislpayInvoiceDetailsOnSearch", dislpayInvoiceDetailsOnSearch);
 
 // adding product
 router.post("/addProduct", addProduct);
+
+// deleting Product
+router.post("/deleteProduct", deleteProduct);
 
 // adding selected product detials of invoice to database 
 router.post("/addInvoiceProductDetails", addInvoiceProductDetails);
