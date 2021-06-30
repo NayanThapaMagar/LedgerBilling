@@ -39,7 +39,7 @@ $(document).ready(function () {
 const productOnChange = (e, selectedProduct) => {
   e.preventDefault();
   clearProductIDs();
-  const product = selectedProduct;
+  const productName = selectedProduct;
   const productId = "";
   const productRate = "";
   const fetchOptions = {
@@ -47,7 +47,7 @@ const productOnChange = (e, selectedProduct) => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ product, productId, productRate }),
+    body: JSON.stringify({ productName, productId, productRate }),
   };
   fetch("/secured/dislpayProductDetailsOnSearch", fetchOptions)
     .then((res) => res.json())

@@ -205,7 +205,7 @@ const productOnChange1 = (e,selectedProduct) => {
   calculateGrandTotal();
   paidAmountOnInput();
   // to show product's IDs
-  const product = selectedProduct;
+  const productName = selectedProduct;
   const productId = "";
   const productRate = "";
   const fetchOptions = {
@@ -213,7 +213,7 @@ const productOnChange1 = (e,selectedProduct) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ product, productId, productRate }),
+      body: JSON.stringify({ productName, productId, productRate }),
   };
   fetch("/secured/dislpayProductDetailsOnSearch", fetchOptions)
   .then((res) => res.json())
@@ -243,7 +243,7 @@ const productOnChange = (e,selectedProduct,className) => {
   calculateGrandTotal();
   paidAmountOnInput();
   // to show product's IDs
-  const product = selectedProduct;
+  const productName = selectedProduct;
   const productId = "";
   const productRate = "";
   const fetchOptions = {
@@ -251,7 +251,7 @@ const productOnChange = (e,selectedProduct,className) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ product, productId, productRate }),
+      body: JSON.stringify({ productName, productId, productRate }),
   };
   fetch("/secured/dislpayProductDetailsOnSearch", fetchOptions)
   .then((res) => res.json())
@@ -270,7 +270,7 @@ const productOnChange = (e,selectedProduct,className) => {
 const productIdOnChange1 = (e,selectedProductId) => {
   e.preventDefault();
   // to display product rate
-  const product = "";
+  const productName = "";
   const productId = selectedProductId;
   const productRate = "";
   const fetchOptions = {
@@ -278,7 +278,7 @@ const productIdOnChange1 = (e,selectedProductId) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ product, productId, productRate }),
+      body: JSON.stringify({ productName, productId, productRate }),
   };
   fetch("/secured/dislpayProductDetailsOnSearch", fetchOptions)
   .then((res) => res.json())
@@ -310,7 +310,7 @@ const productIdOnChange = (e,selectedProductId,className) => {
   const no = className.split(" ")[0];
   const num = no.split("D")[1];
   // to display product rate
-  const product = "";
+  const productName = "";
   const productId = selectedProductId;
   const productRate = "";
   const fetchOptions = {
@@ -318,7 +318,7 @@ const productIdOnChange = (e,selectedProductId,className) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ product, productId, productRate }),
+      body: JSON.stringify({ productName, productId, productRate }),
   };
   fetch("/secured/dislpayProductDetailsOnSearch", fetchOptions)
   .then((res) => res.json())
