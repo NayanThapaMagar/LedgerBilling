@@ -20,7 +20,7 @@ const addCustomerDetails = (e) => {
       } else {
         //Data inserted
         alert("Data Inserted");
-        window.location.assign("/secured/account");
+        window.location.assign("/secured/addAccount");
       }
     });
 };

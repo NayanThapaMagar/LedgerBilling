@@ -89,7 +89,7 @@
         <main id="center_whole_content">
             <div class="whole border-outline">
 
-                <form id="invoiceForm" onsubmit="saveInvoiceData(event)">
+                <form id="invoiceForm">
 
 
                 <!-- bill HTML -->
@@ -109,7 +109,7 @@
 
                             <tr align="center">
                                 <td id="invoiceNo">00</td>
-                                <td><input type="date" id="date" required></td>
+                                <td id="date"></td>
                             </tr>
                         </table>
                     </div>
@@ -157,10 +157,7 @@
                                 </tr>
                                 <tr>
                                     <td>Contact number:</td>
-                                    <td> <select id="select-options-customer"
-                                            onchange="contactOnChange(event,this.value)" style="width:130px">
-                                            <option id="contactNumber">----select----</option>
-                                        </select> </td>
+                                    <td id="contactNo"></td>
                                 </tr>
                             </table>
                         </div>
@@ -182,17 +179,10 @@
                             <tbody class="product-details">
                                 <tr align="center">
                                     <td class="SN1">1</td>
-                                    <td><select class="select-options-product1"
-                                            onchange="productOnChange1(event,this.value)" style="width:200px">
-                                            <option>----select----</option>
-                                        </select></td>
-                                    <td class="widthQTY"><select class="productID1"
-                                            onchange="productIdOnChange1(event,this.value)" style="width:70px">
-                                            <option>-----</option>
-                                        </select></td>
+                                    <td></td>
+                                    <td class="widthQTY"></td>
                                     <td class="productRate1"></td>
-                                    <td class="widthQTY"><input type="text" class="productQty1"
-                                            oninput="productQtyOnChange1()" required></td>
+                                    <td class="widthQTY"></td>
                                     <td class="productAmount1">0</td>
                                 </tr>
                             </tbody>
@@ -201,12 +191,6 @@
                     </div>
 
                     <br>
-
-                    <div>
-                        <button onclick="addRow(event)">Add row</button>
-                        <button onclick="deleteRow(event)">Remove row</button>
-                    </div>
-
                     <br>
 
                     <div class="flex2">
@@ -233,8 +217,7 @@
                                 </tr>
                                 <tr>
                                     <td>Paid amount:</td>
-                                    <td> <input type="text" id="paidAmount" oninput="paidAmountOnInput()"
-                                            required></td>
+                                    <td id="paidAmount"></td>
                                 </tr>
                                 <tr>
                                     <td>Due amount:</td>
@@ -247,37 +230,29 @@
                             <table>
                                 <tr>
                                     <td> Delivery By:</td>
-                                    <td><input type="text" id="deliveredBy" required></td>
+                                    <td id="deliveredBy"></td>
                                 </tr>
                                 <tr>
                                     <td>Checked By:</td>
-                                    <td><input type="text" id="checkedBy" required></td>
+                                    <td id="checkedBy"></td>
                                 </tr>
-                                <!-- <tr>
-                                <td>Received By:</td>
-                                <td><input type="text"></td>
-                            </tr> -->
                                 <br>
                                 <br>
                                 <tr>
                                     <td>Authorized signature:</td>
-                                    <td><input type="text"></td>
+                                    <td></td>
                                 </tr>
                             </table>
                         </div>
                     </div>
 
-                    <div>
-                        <!-- <button onclick="saveInvoiceData(event)">Continue</button> -->
-                        <input type="submit" value="Continue">
-                    </div>
                 </form>
 
             </div>
         </main>
     </div>
 </body>
-<script src="./js/invoice.js"></script>
+<!-- <script src="./js/invoice.js"></script> -->
 <script src="./js/home.js"></script>
 
 </html>

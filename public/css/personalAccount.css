@@ -134,15 +134,15 @@ table{
 
 
 
-#tableData{
+.tableData{
     text-align: center;
-
     height: 27px;
 }
 
-#totalBottom{
+.totalBottom{
     text-align: center;
-    background-color: #7a7d80;
+    color: white;
+    background-color: #5c5858;
     height: 27px;
 }
 

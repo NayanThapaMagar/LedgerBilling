@@ -12,7 +12,7 @@ const db = mysql.createConnection({
 module.exports = (req, res) => {
   const { customerId } = req.body;
   const sql = ` SELECT 
-  SUM(((total*0.13)+total-(0.05*(total+(total*0.13))))-paidAmount) as balance
+  SUM((total+(0.13*total)-(0.05*(total+(0.13*total))))-paidAmount) as balance
   FROM
   invoicedetails where customerId = '${customerId}'`;
   db.query(sql, (err, result) => {
