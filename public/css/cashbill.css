@@ -2,6 +2,21 @@
     margin: 0px;
     padding:0px;
 }
+.title{
+    background-color:  #363636;;
+    height: 40px;
+    width: 200px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 4px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight:bold;
+    font-size: 24px;
+
+}
 
 input{
     border: none;
@@ -12,7 +27,7 @@ input{
 .whole{
     border: 1px solid #c4c6ca;
     box-shadow: 0px 0px 15px;
-    width:600px;
+    width:690px;
    padding: 40px 20px;
    /* background-color: #B1B3B3FF; */
 
@@ -29,7 +44,7 @@ input{
 }
 .center{
     display: flex;
-    height: 100vh;
+    height: 80vh;
     justify-content: center;
     align-items: center;
 }
@@ -47,7 +62,7 @@ input{
     width: 240px;
 }
 .rupee input{
-    width: 180px;
+    width: 150px;
 }
 .cashrupee{
     margin-bottom: 20px;
@@ -57,7 +72,7 @@ input{
     margin-bottom: 20px;
 }
 .amount_word input{
-    width: 400px;
+    width: 523px;
 }
 .for input{
    width: 509px;
@@ -75,7 +90,7 @@ h4{
     display: flex;
     justify-content: space-between;
 }
-@media (max-width:672px){
+@media (max-width:715px){
     .whole{
         width: 500px;
     }
@@ -84,7 +99,7 @@ h4{
         flex-direction: column;
     }
     .cashreceived input{
-       width: 350px;
+       width: 450px;
     }
     .cashreceived{
         margin-bottom: 20px;
@@ -93,7 +108,7 @@ h4{
         width:450px ;
     }
     .amount_word input{
-        width: 350px;
+        width: 450px;
     }
     .for input{
         width: 457px;
@@ -109,7 +124,7 @@ h4{
        flex-direction: column;
    }
    .cashreceived input{
-      width: 280px;
+      width: 380px;
    }
    .cashreceived{
        margin-bottom: 20px;
@@ -118,7 +133,7 @@ h4{
        width:380px ;
    }
    .amount_word input{
-       width: 275px;
+       width: 380px;
    }
    .for input{
        width: 385px;
