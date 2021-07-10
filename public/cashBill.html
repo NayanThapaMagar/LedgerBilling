@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/home.css">
-    <link rel="stylesheet" href="./css/searchAccount.css">
+    <link rel="stylesheet" href="./css/cashBill.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap" rel="stylesheet">
@@ -83,74 +83,91 @@
 </div>
 <body >
  <div class="body">
-
-    <div id="head">
-        <p>Search Product</p>
-    </div>
-
-
     <div class="center">
-        
-        
-        
-        <div id="whole_content">
-            <form id="productInfoDisplsying-form" onsubmit="dislpayProductDetailsOnSearch(event)">
-                <div>
-
-                    <div class="media_center">
-
-                        <div class="name_contact">
-                        <label for="product">
-                            <span>Product Name: <input type="text" placeholder="Enter product name"
-                                    name="product" id="productName">
-                            </span>
-                        </label>
-
-
-
-                        <label for="productId">
-                            <span>Product Id: <input type="text" placeholder="Enter product Id"
-                                    name="productId" id="productId">
-                            </span>
-                        </label>
-                        </div>
-                        <div class="flex">
-                            <!-- <div class="address">
-                                <label for="productRate">
-                                    <span>Quantity: <input type="text" placeholder="Enter rate" name="productRate"
-                                            id="productRate">
-                                    </span>
-                                </label>
-                            </div> -->
-                            <div class="button">
-                                <input type="submit" value="Search" class="btn2">
-                                </input>
-                                <button class="btn2"><a href="/secured/searchProduct" class="btn2">Cancel</a></button>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>SN.</th>
-                                <th class="width_name">Product Name</th>
-                                <th>Id</th>
-                                <th>Rate</th>
-                                <th>Stock Qty</th>
-                            </tr>
-                        </thead>
-                        <tbody id="product-details">
-                        </tbody>
-                    </table>
-                </div>
-            </form>
+        <div class="whole">
+            <div class="heading">
+            <h2>Company Name:</h2>
+            </div>
+    
+            <div class="companydetails">
+                <table>
+         <tr>
+             <td>Address:</td>
+             <td></td>
+         </tr>
+         <tr>
+             <td>Contact Number:</td>
+             <td></td>
+         </tr>
+         <tr>
+            <td>Email:</td>
+            <td></td>
+         </tr>
+            </table>
         </div>
+    
+    <div class="flex">
+        <div>
+     <table>
+         <tr>
+             <td> Cash Receipt #:</td>
+             <td></td>
+            </tr>
+     </table>
     </div>
+    
+    <div>
+        <label for="date">Date:</label>
+        <input type="date" id="date">
+    </div>
+    </div>
+    
+    <div class="cashrupee">
+        <div class="cashreceived">
+            <label for="name">Cash Received from:</label>
+            <input type="text" id="name">
+            </div>
+            <div class="rupee">
+            <label for="rupees">Amount in Figure</label>
+            <input type="text" id="rupees">
+                </span>
+    </div>
+    </div>
+    
+    <div class="amount_word">
+    <label for="word">Amount in words:</label>
+    <input type="text" id="word">
+    </div>
+    
+    <!-- <div class="for">
+        <label for="for">For:</label>
+        <input type="text" id="for">
+    </div> -->
+    
+    <div class="checkbox">
+    <h4>Payment received in:</h4>
+    <form action="">
+    <label for="cash">Cash</label>
+    <input type="checkbox" id="cash">
+    <label for="Cheque">Cheque</label>
+    <input type="checkbox" id="Cheque">
+    <!-- <label for="others">Others</label>
+    <input type="checkbox" id="others"> -->
+    </form>
+        </div>
+    
+        <div class="flex2">
+        <div>
+        <span>Autorized Signature:</span><input type="text">
+        </div>
+        <div>
+            <label for="receivedby">Received by:</label>
+            <input type="text" id="received by">
+        </div>
+    
+        </div>
+        </div>
  </div>
 </body>
-<script src="./js/displayProducts.js"></script>
 <script src="./js/home.js"></script>
 </html>

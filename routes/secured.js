@@ -104,6 +104,10 @@ router.get("/personal-account", (req, res) => {
 router.get("/invoice-details", (req, res) => {
   res.sendFile(staticDir + "/invoiceDetails.html");
 });
+// cashBill display secuerlycashBill
+router.get("/cashBill", (req, res) => {
+  res.sendFile(staticDir + "/cashBill.html");
+});
 
 
 // changing login info
