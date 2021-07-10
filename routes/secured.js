@@ -96,6 +96,10 @@ router.get("/deleteProduct", (req, res) => {
 router.get("/searchProduct", (req, res) => {
   res.sendFile(staticDir + "/searchProduct.html");
 });
+//addStock display securely
+router.get("/addStock", (req, res) => {
+  res.sendFile(staticDir + "/addStock.html");
+});
 // personal account display secuerly
 router.get("/personal-account", (req, res) => {
   res.sendFile(staticDir + "/personalAccount.html");
