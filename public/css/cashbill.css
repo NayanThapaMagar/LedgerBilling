@@ -7,14 +7,14 @@ input{
     border: none;
     outline:none;
     border-bottom:2px solid #424040; 
-    background-color: #B1B3B3FF;
+    /* background-color: #ffffff; */
 }
 .whole{
     border: 1px solid #c4c6ca;
     box-shadow: 0px 0px 15px;
     width:600px;
    padding: 40px 20px;
-   background-color: #B1B3B3FF;
+   /* background-color: #B1B3B3FF; */
 
 }
 .heading{
