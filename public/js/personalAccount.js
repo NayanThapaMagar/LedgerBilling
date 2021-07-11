@@ -1,10 +1,12 @@
-const personalAccount = (e, Id, invoiceNo) => {
+const personalAccount = (e, Id, reciptNo, transactionType) => {reciptNo
   e.preventDefault();
-  console.log(Id); 
-  window.location.assign(`/secured/invoice-details?id=${Id}&invoiceNo=${invoiceNo}`);
+  if (transactionType==1) {
+    window.location.assign(`/secured/invoice-details?id=${Id}&invoiceNo=${reciptNo}`);
+  }
+  if (transactionType==2) {
+    window.location.assign(`/secured/cashBill-details?id=${Id}&cashBillNo=${reciptNo}`);
+  }
 };
-
-
 
 //to display transaction summary
 const customerId = window.location.href.split("=")[1];
@@ -51,22 +53,33 @@ fetch("/secured/personalAccountDetails", fetchOptions)
         status = "Clear";
       }
       let prdt0 = "";
-      let products = "";
-      productData.forEach((productData) => {
-        if (invoice.invoiceNo == productData.invoiceNo && count < 3) {
-          count++;
-          const prdt1 = productData.productName + ",";
-          prdt0 += prdt1;
-        }
-      });
-      products = prdt0 + "...";
+      let transactionOf = "";
+      let reciptNo = "";
+      let transactionType = "";
+      if (invoice.invoiceNo!="****") {
+        productData.forEach((productData) => {
+          if (invoice.invoiceNo == productData.invoiceNo && count < 3) {
+            count++;
+            const prdt1 = productData.productName + ",";
+            prdt0 += prdt1;
+          }
+        });
+        transactionOf = prdt0 + "...";
+        reciptNo = invoice.invoiceNo;
+        transactionType = 1;
+      } else {
+        transactionOf = "CASH";
+        reciptNo = invoice.cashBillNo;
+        transactionType = 2;
+      }
+
       const tbody = document.getElementById("invoice-transaction-details");
       const row = document.createElement("tr");
       row.innerHTML = `
       <td class="sn tableData">${sn}</td>
       <td class="tableData">${date}</td>
-      <td class="tableData"><button class="btn22" onclick="personalAccount(event,${customer.customerId},${invoice.invoiceNo})">${products}</button></td>
-      <td class="tableData">${invoice.invoiceNo}</td>
+      <td class="tableData"><button class="btn22" onclick="personalAccount( event, ${customer.customerId}, ${reciptNo}, ${transactionType})">${transactionOf}</button></td>
+      <td class="tableData">${reciptNo}</td>
       <td class="tableData">${invoice.paidAmount}</td>
       <td class="tableData">${grandTotal}</td>
       <td class="tableData">${status}</td>

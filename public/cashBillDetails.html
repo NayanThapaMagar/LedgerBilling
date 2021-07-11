@@ -118,31 +118,29 @@
 
               <div>
                 <label for="date">Date:</label>
-                <input type="date" id="date" required />
+                <input type="date" id="date" readonly/>
               </div>
             </div>
 
             <div class="cashrupee">
               <div class="cashreceived">
                 <label for="customerName">Cash Received from:</label>
-                <input type="text" id="customerName" required readonly/>
+                <input type="text" id="customerName" readonly/>
                 <!-- <span id="customerName"></span> -->
               </div>
               <div class="rupee">
                 <label for="rupees">Contact</label>
-                <select id="select-options-customer" onchange="contactOnChange(event,this.value)" style="width: 130px">
-                  <option id="contactNumber">----select----</option>
-                </select>
+                <input id="customerContact" style="width: 130px" readonly/>
               </div>
               <div class="rupee">
                 <label for="rupees">Amount in figure</label>
-                <input type="text" id="rupees" oninput="amountOnInput(event,this.value)" placeholder="******" required/>
+                <input type="text" id="rupees"  placeholder="******" readonly/>
               </div>
             </div>
 
             <div class="amount_word">
               <label for="word">Amount in words:</label>
-              <input type="text" id="word" required readonly/>
+              <input type="text" id="word" readonly/>
             </div>
 
             <div class="checkbox">
@@ -161,14 +159,11 @@
                 <input type="text" id="received by" readonly/>
               </div>
             </div>
-            <div>
-              <input type="submit" value="Continue" />
-            </div>
           </div>
         </form>
       </div>
     </div>
   </body>
   <script src="./js/home.js"></script>
-  <script src="./js/cashBill.js"></script>
+  <script src="./js/displayCashBillDetails.js"></script>
 </html>

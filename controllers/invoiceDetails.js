@@ -19,14 +19,7 @@ module.exports = (req, res) => {
     const sql2 = `SELECT * FROM invoiceproductdetails WHERE customerId = ${id} AND invoiceNo = ${invoiceNo}`;
     db.query(sql2, (err, result2) => {
       if (err) throw err;
-    //   if (result1.length == 0) {
-    //     return res.json({ success: false, result1, result2  });
-    //   }
-    //   if (result1.length != 0) {
-        return res.json({ success: true, result1, result2 });
-    //   }
-    // console.log(result1);
-    // console.log(result2);
+      return res.json({ success: true, result1, result2 });
     });
   });
 };

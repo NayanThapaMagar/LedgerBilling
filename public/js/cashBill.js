@@ -1,3 +1,9 @@
+//displaying company details
+document.getElementById("companyName").innerHTML = localStorage.getItem("companyName");
+document.getElementById("companyAddress").innerHTML = localStorage.getItem("address");
+document.getElementById("companyContact").innerHTML = localStorage.getItem("contact");
+document.getElementById("companyEmail").innerHTML = localStorage.getItem("email");
+
 // applying search feature on select
 $(document).ready(function () {
   $("select").select2();
@@ -46,7 +52,7 @@ const contactOnChange = (e, selectedNo) => {
         data.result.forEach((customer) => {
           document.getElementById("customerName").value =
             customer.customerName +
-            ` (${customer.customerAddress},id:${customer.customerId})`;
+            ` (${customer.customerAddress},ID:${customer.customerId})`;
           customerName = customer.customerName;
           customerId = customer.customerId;
           customerAddress = customer.customerAddress;

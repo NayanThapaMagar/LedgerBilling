@@ -53,6 +53,9 @@ const personalAccountDetails = require("../controllers/personalAccountDetails");
 // to display invoice Details 
 const invoiceDetails = require("../controllers/invoiceDetails");
 
+// to display cashBill Details 
+const cashBillDetails = require("../controllers/cashBillDetails");
+
 // to add detials of invoice to database 
 const addInvoiceDetails = require("../controllers/addInvoiceDetails");
 
@@ -108,9 +111,13 @@ router.get("/addStock", (req, res) => {
 router.get("/personal-account", (req, res) => {
   res.sendFile(staticDir + "/personalAccount.html");
 });
-// invoice details display secuerly
+// particular invoice details of particular person displaying secuerly
 router.get("/invoice-details", (req, res) => {
   res.sendFile(staticDir + "/invoiceDetails.html");
+});
+// particular cashBill details of particulay person displaying secuerly
+router.get("/cashBill-details", (req, res) => {
+  res.sendFile(staticDir + "/cashBillDetails.html");
 });
 // cashBill display secuerlycashBill
 router.get("/cashBill", (req, res) => {
@@ -135,6 +142,9 @@ router.post("/personalAccountDetails", personalAccountDetails);
 
 // displaying invoice Details on invoice selected
 router.post("/invoiceDetails", invoiceDetails);
+
+// displaying cashBill Details on invoice selected
+router.post("/cashBillDetails", cashBillDetails);
 
 // displaying desired customer's details on search
 router.post("/dislpayCustomerDetailsOnSearch", dislpayCustomerDetailsOnSearch);
