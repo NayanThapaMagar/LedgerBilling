@@ -61,7 +61,7 @@ const productOnChange = (e, selectedProduct) => {
 };
 
 //delete product
-const deleteProduct = (e) => {
+const addStock = (e) => {
   e.preventDefault();
   if (document.querySelector(".select-options-product").value == "-------select-------") {
     alert("Product not selected!!");
@@ -71,32 +71,26 @@ const deleteProduct = (e) => {
     alert("Product ID not selected!!");
     return;
   }
-  var txt;
-  var r = confirm("Are you sure you want to continue?");
-  if (r != true) {
+  if (isNaN(document.querySelector("#stockQty").value)) {
+    alert("Invalid Stock value!!");
     return;
   }
-  // const name = document.querySelector(".select-options-product").value;
-  const id = document.querySelector(".productID").value;
-  // console.log(name);
-  // console.log(id);
+  const stockQty = document.querySelector("#stockQty").value;
+  const productID = document.querySelector(".productID").value;
   const fetchOptions = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ id }),
+    body: JSON.stringify({ stockQty, productID }),
   };
-  fetch("/secured/deleteProduct", fetchOptions)
+  fetch("/secured/updateProduct", fetchOptions)
     .then((res) => res.json())
     .then((data) => {
-      if (!data.success) {
-        //failed to delete product
-        alert("Failed to delete product");
-      } else {
-        //Product deleted
-        alert("Product deleted");
-        window.location.assign("/secured/deleteProduct");
+      if (data.success) {
+        //Stock Updated
+        alert("Stock Updated");
+        window.location.assign("/secured/addStock");
       }
     });
 };

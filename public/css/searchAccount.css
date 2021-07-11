@@ -7,7 +7,7 @@
   width: 160px;
   color: white;
   margin: auto;
-  margin-top: 60px;
+  margin-top: 80px;
   height:40px;
   font-size: 23px;
   border-radius: 4px;
@@ -17,7 +17,7 @@
 
 }
 .center{
-  height: 30vh;
+  height: 40vh;
 display: flex;
 justify-content: center;
 align-items: center;

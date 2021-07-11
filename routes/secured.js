@@ -41,6 +41,9 @@ const addProduct = require("../controllers/addProduct");
 // to delete Product
 const deleteProduct = require("../controllers/deleteProduct");
 
+// to updateProduct
+const updateProduct = require("../controllers/updateProduct");
+
 // to add selected product detials of invoice to database 
 const addInvoiceProductDetails = require("../controllers/addInvoiceProductDetails");
 
@@ -55,6 +58,7 @@ const addInvoiceDetails = require("../controllers/addInvoiceDetails");
 
 // to calculate and store customer balance amount 
 const customerBalance = require("../controllers/customerBalance");
+
 
 
 //logging out
@@ -146,6 +150,9 @@ router.post("/addProduct", addProduct);
 
 // deleting Product
 router.post("/deleteProduct", deleteProduct);
+
+// updateProduct
+router.post("/updateProduct", updateProduct);
 
 // adding selected product detials of invoice to database 
 router.post("/addInvoiceProductDetails", addInvoiceProductDetails);

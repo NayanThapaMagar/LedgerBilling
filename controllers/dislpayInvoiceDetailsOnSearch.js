@@ -10,12 +10,21 @@ const db = mysql.createConnection({
 });
 
 module.exports = (req, res) => {
-  const { invoiceId } = req.body;
-  const sql = `SELECT * FROM invoicedetails WHERE customerId = "${invoiceId}";`;
-  db.query(sql, (err, result) => {
+  const { customerId, check } = req.body;
+  if (check=="invoice") {
+    const sql = `SELECT * FROM invoicedetails WHERE customerId = "${customerId}"  AND cashBillNo = "****"`;
+    db.query(sql, (err, result) => {
     if (err) throw err;
     let length = result.length;
     return res.json({ length, result });
-    // return;
   });
+  }
+  if (check=="cashBill") {
+    const sql = `SELECT * FROM invoicedetails WHERE customerId = "${customerId}" AND invoiceNo = "****"`;
+    db.query(sql, (err, result) => {
+    if (err) throw err;
+    let length = result.length;
+    return res.json({ length, result });
+  });
+  }
 };
