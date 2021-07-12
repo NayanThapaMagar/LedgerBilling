@@ -37,12 +37,12 @@ const wrapCustomerDetails = (customer) => {
     // console.log("negative");
     status = "Dr";
     balance = -1 * balance0;
-  } else if (balance0 >= 0) {
+  } else if (balance0 > 0) {
     // console.log("positive");
     status = "Cr";
     balance = 1 * balance0;
   } else {
-    status = "***";
+    status = "Clear";
     balance = 0;
   }
   const row = document.createElement("tr");

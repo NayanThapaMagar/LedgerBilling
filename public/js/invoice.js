@@ -331,24 +331,116 @@ const productIdOnChange = (e, selectedProductId, className) => {
 
 //calculating amount(of first row) on input
 const productQtyOnChange1 = () => {
+  //checking if product selected or not
+  if (
+    document.querySelector(".select-options-product1").value == "----select----"
+  ) {
+    alert("Product not selected!!!");
+    document.querySelector(".productQty1").value = "";
+    return;
+  }
+  if (document.querySelector(".productID1").value == "-----") {
+    alert("Product Id not selected!!!");
+    document.querySelector(".productQty1").value = "";
+    return;
+  }
+  //---------------//
   const inputQty = document.querySelector(".productQty1").value;
-  const rate = document.querySelector(`.productRate1`).innerHTML;
-  const amount = inputQty * rate;
-  document.querySelector(`.productAmount1`).innerHTML = amount;
-  calculateGrandTotal();
-  paidAmountOnInput();
+  var stock = "";
+  const productName = "";
+  const productId = document.querySelector(".productID1").value;
+  const productRate = "";
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ productName, productId, productRate }),
+  };
+  fetch("/secured/dislpayProductDetailsOnSearch", fetchOptions)
+    .then((res) => res.json())
+    .then((data) => {
+      if (!data.success) {
+        alert(`${data.message}`);
+      } else {
+        const product = data.result[0];
+        stock = product.productStock;
+      }
+    });
+  setTimeout(function () {
+    //calculating amount
+    var inputQty = document.querySelector(".productQty1").value;
+    const rate = document.querySelector(".productRate1").innerHTML;
+    //checking if stock is available or not
+    if (inputQty > stock) {
+      alert("Stock not available!!!");
+      inputQty = parseInt(inputQty / 10);
+      document.querySelector(".productQty1").value = inputQty;
+    }
+    //displaying amount
+    const amount = parseFloat(inputQty) * parseFloat(rate);
+    document.querySelector(".productAmount1").innerHTML = parseFloat(amount);
+    calculateGrandTotal();
+    paidAmountOnInput();
+  }, 50);
 };
 
 //calculating amount on input
 const productQtyOnChange = (className) => {
   const num = className.split("y")[1];
-  //calculating amount
-  const inputQty = document.querySelector(`.productQty${num}`).value;
-  const rate = document.querySelector(`.productRate${num}`).innerHTML;
-  const amount = parseFloat(inputQty) * parseFloat(rate);
-  document.querySelector(`.productAmount${num}`).innerHTML = parseFloat(amount);
-  calculateGrandTotal();
-  paidAmountOnInput();
+  //checking if product selected or not
+  if (
+    document.querySelector(`.select-options-product${num}`).value ==
+    "----select----"
+  ) {
+    alert("Product not selected!!!");
+    document.querySelector(`.productQty${num}`).value = "";
+    return;
+  }
+  if (document.querySelector(`.productID${num}`).value == "-----") {
+    alert("Product Id not selected!!!");
+    document.querySelector(`.productQty${num}`).value = "";
+    return;
+  }
+  //---------------//
+  var stock = "";
+  const productName = "";
+  const productId = document.querySelector(`.productID${num}`).value;
+  const productRate = "";
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ productName, productId, productRate }),
+  };
+  fetch("/secured/dislpayProductDetailsOnSearch", fetchOptions)
+    .then((res) => res.json())
+    .then((data) => {
+      if (!data.success) {
+        alert(`${data.message}`);
+      } else {
+        const product = data.result[0];
+        stock = product.productStock;
+      }
+    });
+  setTimeout(function () {
+    //calculating amount
+    var inputQty = document.querySelector(`.productQty${num}`).value;
+    const rate = document.querySelector(`.productRate${num}`).innerHTML;
+    //checking if stock is available or not
+    if (inputQty > stock) {
+      alert("Stock not available!!!");
+      inputQty = parseInt(inputQty / 10);
+      document.querySelector(`.productQty${num}`).value = inputQty;
+    }
+    //displaying amount
+    const amount = parseFloat(inputQty) * parseFloat(rate);
+    document.querySelector(`.productAmount${num}`).innerHTML =
+      parseFloat(amount);
+    calculateGrandTotal();
+    paidAmountOnInput();
+  }, 50);
 };
 
 //calculating total on input
@@ -430,6 +522,7 @@ const saveInvoiceData = (e) => {
     let productID = document.querySelector(`.productID${i}`).value;
     let productRate = document.querySelector(`.productRate${i}`).innerHTML;
     let productQty = document.querySelector(`.productQty${i}`).value;
+    //adding purchased products to database
     const fetchOptions = {
       method: "POST",
       headers: {
@@ -453,6 +546,8 @@ const saveInvoiceData = (e) => {
         }
       });
   }
+
+  // adding invoice invormation to database(customer details,total amount, paid amount)
   const cashBillNo = "****";
   const fetchOptions = {
     method: "POST",
@@ -488,13 +583,47 @@ const saveInvoiceData = (e) => {
     },
     body: JSON.stringify({ customerId }),
   };
+  const Quantity = [];
+  const ID = [];
+  ID[0]="";
+  Quantity[0]="";
+  // setTimeout(function () {
+  for (let i = 1; i <= num; i++) {
+    ID[i] = document.querySelector(`.productID${i}`).value;
+    Quantity[i] = document.querySelector(`.productQty${i}`).value;
+  }
+  // console.log(Quantity);
+  // console.log(ID);
+  // }, 50);
+  // -----------------------Updating Product Stock--------------------------//
+  // let qty = productQty;
+  let status = "subtract";
+  let qty = Quantity;
+  let productID = ID;
+  // console.log(qty);
+  // console.log(productID);
+  const fetchOptions2 = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ qty, productID, status }),
+  };
+  fetch("/secured/updateProduct", fetchOptions2)
+    .then((res) => res.json())
+    .then((data) => {
+      if (!data.success) {
+        //Stock Updated failed
+        alert("Stock Update Failed!!!");
+      }
+    });
   setTimeout(function () {
     fetch("/secured/customerBalance", fetchOptions1)
       .then((res) => res.json())
       .then((data) => {
         if (!data.success) {
           //failed to insert data
-          alert("Failed to insert Devit/Credit amount!!!");
+          alert("Failed to update Devit/Credit amount!!!");
         } else {
           //Data inserted
           alert(`${data.message}`);

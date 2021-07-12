@@ -75,14 +75,15 @@ const addStock = (e) => {
     alert("Invalid Stock value!!");
     return;
   }
-  const stockQty = document.querySelector("#stockQty").value;
+  const qty = document.querySelector("#stockQty").value;
   const productID = document.querySelector(".productID").value;
+  const status = "add";
   const fetchOptions = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ stockQty, productID }),
+    body: JSON.stringify({ qty, productID, status }),
   };
   fetch("/secured/updateProduct", fetchOptions)
     .then((res) => res.json())

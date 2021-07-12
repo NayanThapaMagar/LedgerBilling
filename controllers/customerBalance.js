@@ -14,7 +14,7 @@ module.exports = (req, res) => {
   const sql = ` SELECT 
   SUM((total+(0.13*total)-(0.05*(total+(0.13*total))))-paidAmount) as balance
   FROM
-  invoicedetails where customerId = '${customerId}'`;
+  invoicedetails WHERE customerId = '${customerId}'`;
   db.query(sql, (err, result) => {
     if (err) throw err;
     const balance0 = result[0];
