@@ -1,15 +1,24 @@
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 
-h1 {
-  font-size: 50px;
+h2 {
+  height: 30px;
+  border-radius: 4px;
   margin-top: 40px;
   margin-bottom: 25px;
-  text-align: center;
-  text-shadow: rgb(75, 68, 82);
-  color: #52c3f8;
+  color: white;
   text-decoration-style: solid;
+  width: 150px;
+  background-color: #424040;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-div {
+.header{
+  display: flex;
+  justify-content: center;
+}
+.container {
   width: 400px;
   border: 1px solid #c4c6ca;
   padding-top: 50px;
@@ -32,7 +41,7 @@ div {
   background: #f9f9f9;
 }
 .btncolour {
-  background: #52c3f8;
+  background: #424040;;
   color: white;
 }
 .btn {
@@ -53,15 +62,14 @@ div {
   left: 50%;
   /* -ms-transform: translate(-50%, -50%); */
   transform: translate(-50%, -50%);
-  border: 2px solid #52c3f8;
 }
 .btn:hover {
-  box-shadow: inset 170px 0 0 0 #47a9d6;
+  box-shadow: inset 170px 0 0 0 #5c5858;;
   /* background-color: rgb(20, 103, 141); */
 }
 .l {
   border: none;
-  border-bottom: 2px solid #52c3f8;
+  border-bottom: 2px solid #424040;
   overflow: hidden;
   padding: 8px 0px;
   margin: 8px 0px;
@@ -70,6 +78,8 @@ div {
 }
 input {
   width: 200px;
+  background: none;
+  outline: none;
 }
 
 #login-form{
