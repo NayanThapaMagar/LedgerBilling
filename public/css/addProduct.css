@@ -12,7 +12,7 @@ input{
 
 
 #h2{
-    background-color:  #363636;;
+    background-color:  #363636;
     height: 40px;
     width: 200px;
     margin: 60px auto;
@@ -24,7 +24,6 @@ h2{
     justify-content: center;
     padding-top: 5px;
     color: white;
-    font-family: 'Jura', sans-serif;
 }
 .add{
     border: 1px solid #424040;

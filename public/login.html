@@ -7,27 +7,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>E-Billing</title>
   <link rel="stylesheet" href="./css/login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+  <div id="center">
   <div id="body">
-    <h1>LOGIN</h1>
+    <div id="heading">
+    <h2>LOGIN</h2>
+    </div>
     <div class="container">
       <form id="login-form" onsubmit="login(event)">
-
+           
+        <div class="firstInput">
         <i class="fa fa-user" aria-hidden="true"></i>
-        <input class="l" type="text" id="userName" name="userName" placeholder="Enter username" required /><br /><br />
+          <input class="l" type="text" id="userName" name="userName" placeholder="Enter username" required />
+        
+       </div>
 
+       <div class="secondInput">
         <i class="fa fa-lock" aria-hidden="true"></i>
         <input type="password" id="password" name="password" placeholder="Enter password" class="l"
-          required /><br /><br />
-        <br />
+          required />
+        </div>
 
         <input type="submit" value="Log In" class="btn btncolour" />
-        <span>Don't have an account?    <a href="/register">Register here</a></span>
+        <div class="sentence">Don't have an account?    <a href="/register">Register here</a></div>
       </form>
       <script src="./js/login.js"></script>
     </div>
+  </div>
   </div>
 </body>
 

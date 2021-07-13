@@ -14,12 +14,12 @@ input{
   justify-content:center;
 
 }
-h1 {
+h2 {
   color: white;
   margin-top: 40px;
   border-radius: 4px;
   width: 250px;
-  background-color:  #424040;
+  background-color: #363636;
   display: flex;
   justify-content: center;
   align-items: center;
