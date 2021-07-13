@@ -3,7 +3,7 @@
   padding: 0px;
 }
 body{
-  background-image: url("../background.jpg");
+  background-image: url("../background1.jpg");
   background-size: cover;  
 }
 #center{
@@ -26,11 +26,20 @@ h2 {
     border-radius: 4px;
     
   }
+  
+  
 input{
   outline:none;
   height: 30px;
-  border-radius: 4px;
+  background:none;
+  font-size: 14px;
 }
+
+::-webkit-input-placeholder{
+  color:rgba(14, 2, 2, 0.795);
+  font-weight: lighter;
+}
+
 #heading{
   display: flex;
   justify-content: center;
