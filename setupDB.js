@@ -17,10 +17,11 @@ const tables = [
   "CREATE TABLE invoicedetails (Id INT AUTO_INCREMENT UNIQUE, customerName TINYTEXT NOT NULL, customerId INT NOT NULL, customerAddress VARCHAR(255) NOT NULL, customerContact VARCHAR(10) NOT NULL, invoiceNo VARCHAR(255), date DATE NOT NULL, total FLOAT, paidAmount FLOAT NOT NULL, deliveredBy VARCHAR(255), checkedBy VARCHAR(255), cashBillNo VARCHAR(255), PRIMARY KEY(Id));",
   "CREATE TABLE invoiceproductdetails (Id INT AUTO_INCREMENT UNIQUE, invoiceNo INT NOT NULL, customerId INT NOT NULL, productId INT NOT NULL, productName TINYTEXT NOT NULL, productRate INT NOT NULL, prodcutQty INT NOT NULL, PRIMARY KEY(Id));",
 ];
-
+let i = 1;
 tables.forEach((table) => {
   db.query(table, (err, result) => {
     if (err) throw err;
-    console.log(`Table created`);
+    console.log(`Table ${i} created`);
   });
+  i++;
 });
