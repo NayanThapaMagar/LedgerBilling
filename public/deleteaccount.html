@@ -8,9 +8,15 @@
     <link rel="stylesheet" href="./css/deleteProduct.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <title>Home</title>
   </head>
@@ -28,7 +34,7 @@
           <button class="dropbtn">Customer Account</button>
           <div class="dropdown-content" id="account">
             <a href="/secured/addAccount">Add Account</a>
-            <a href="">Delete Account</a>
+            <a href="/secured/deleteAccount">Delete Account</a>
             <a href="/secured/searchAccount">Search Account</a>
           </div>
         </span>
@@ -81,34 +87,40 @@
   </div>
   <body>
     <div class="body">
-      <div class="body">
-        <div id="h2"><h2>Delete Account</h2></div>
-        <div class="add">
-          <form>
-            <div>
-              <div class="padding">
-                <label class="label" for="Name">
-                  <span>Customer Name: <br />
-                  </span>
-                  <input type="text" id="Name" placeholder="Enter customer name">
-                </label>
-              </div>
-
-              <div class="padding">
-                <label for="Contact">
-                  <span
-                    >Contact no:<br /> </span>
-                <input type="text" id="Contact" placeholder="Enter contact number">
-                </label>
-              </div>
+      <div id="h2"><h2>Delete Account</h2></div>
+      <div class="add">
+        <form onsubmit="deleteCustomer(event)"> 
+          <div>
+            <div class="padding">
+              <label class="label" for="Name">
+                <span>Customer Name: <br /> </span>
+                <select
+                  class="select-options-customer"
+                  onchange="customerOnChange(event,this.value)"
+                  style="width: 130px"
+                >
+                  <option>----select----</option>
+                </select>
+              </label>
             </div>
 
-            <div>
-              <input type="submit" value="Delete" class="btn" />
+            <div class="padding">
+              <label for="Contact">
+                <span>Contact no:<br /> </span>
+                <select class="customerContact" style="width: 130px">
+                  <option>**********</option>
+                </select>
+              </label>
             </div>
-          </form>
-        </div>
+          </div>
+
+          <div>
+            <input type="submit" value="Delete" class="btn" />
+          </div>
+        </form>
       </div>
     </div>
   </body>
+  <script src="./js/home.js"></script>
+  <script src="./js/deleteAccount.js"></script>
 </html>

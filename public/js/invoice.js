@@ -469,7 +469,7 @@ const paidAmountOnInput = () => {
   document.querySelector("#dueAmount").innerHTML = dueAmount;
 };
 
-//-------------------------------------INSERTING INVOICE DATA TO DATABASE----------------------------------------------//
+//--------------------------------------------------------------INSERTING INVOICE DATA TO DATABASE---------------------------------------------------------------//
 
 //calculating due amount on input
 const saveInvoiceData = (e) => {
@@ -587,21 +587,15 @@ const saveInvoiceData = (e) => {
   const ID = [];
   ID[0]="";
   Quantity[0]="";
-  // setTimeout(function () {
   for (let i = 1; i <= num; i++) {
     ID[i] = document.querySelector(`.productID${i}`).value;
     Quantity[i] = document.querySelector(`.productQty${i}`).value;
   }
-  // console.log(Quantity);
-  // console.log(ID);
-  // }, 50);
+
   // -----------------------Updating Product Stock--------------------------//
-  // let qty = productQty;
   let status = "subtract";
   let qty = Quantity;
   let productID = ID;
-  // console.log(qty);
-  // console.log(productID);
   const fetchOptions2 = {
     method: "POST",
     headers: {

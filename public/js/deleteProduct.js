@@ -76,10 +76,7 @@ const deleteProduct = (e) => {
   if (r != true) {
     return;
   }
-  // const name = document.querySelector(".select-options-product").value;
   const id = document.querySelector(".productID").value;
-  // console.log(name);
-  // console.log(id);
   const fetchOptions = {
     method: "POST",
     headers: {

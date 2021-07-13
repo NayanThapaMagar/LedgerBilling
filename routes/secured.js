@@ -41,6 +41,9 @@ const addProduct = require("../controllers/addProduct");
 // to delete Product
 const deleteProduct = require("../controllers/deleteProduct");
 
+// to delete Customer
+const deleteCustomer = require("../controllers/deleteCustomer");
+
 // to updateProduct
 const updateProduct = require("../controllers/updateProduct");
 
@@ -78,6 +81,10 @@ router.get("/redirectToChangePassword", (req, res) => {
 //securely redirecting to Add account
 router.get("/addAccount", (req, res) => {
   res.sendFile(staticDir + "/addAccount.html");
+});
+//securely redirecting to delete Account
+router.get("/deleteAccount", (req, res) => {
+  res.sendFile(staticDir + "/deleteAccount.html");
 });
 //securely redirecting to search account
 router.get("/searchAccount", (req, res) => {
@@ -160,6 +167,9 @@ router.post("/addProduct", addProduct);
 
 // deleting Product
 router.post("/deleteProduct", deleteProduct);
+
+// deleting Customer
+router.post("/deleteCustomer", deleteCustomer);
 
 // updateProduct
 router.post("/updateProduct", updateProduct);
