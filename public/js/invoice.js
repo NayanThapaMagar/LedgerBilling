@@ -30,7 +30,7 @@ const addRow = (e) => {
     </select>
   </td>
   <td class="widthQTY" align="center">
-    <select  class="productID${count}" onchange="productIdOnChange(event,this.value,this.className)" style="width:70px"> 
+    <select  class="productID${count} IDs" onchange="productIdOnChange(event,this.value,this.className)" style="width:70px"> 
       <option>-----</option>
     </select>
   </td>
@@ -259,6 +259,41 @@ const productOnChange = (e, selectedProduct, className) => {
 //on changing product (with product class no 1) displaying product ids
 const productIdOnChange1 = (e, selectedProductId) => {
   e.preventDefault();
+  // checking if this product is already selected or not
+  let rowCount = $(".product-details tr").length;
+  for (i = 2; i <= rowCount; i++) {
+    if (document.querySelector(`.productID${i}`).value != "-----") {
+      if (document.querySelector(`.productID${i}`).value == selectedProductId) {
+        alert(
+          `Product with product Id: ${selectedProductId} is already selected!!!\n You cannot select same product twice.`
+        );
+        clearProductIDs(1);
+        document.querySelector(`.productRate${1}`).innerHTML = 0;
+        document.querySelector(`.productQty${1}`).value = 0;
+        document.querySelector(`.productAmount${1}`).innerHTML = 0;
+        calculateGrandTotal();
+        paidAmountOnInput();
+        // to show product's IDs
+        const productName = "";
+        const productId = selectedProductId;
+        const productRate = "";
+        const fetchOptions = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ productName, productId, productRate }),
+        };
+        fetch("/secured/dislpayProductDetailsOnSearch", fetchOptions)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.success) {
+              data.result.forEach((product) => wrapProductIDs(product, 1));
+            }
+          });
+      }
+    }
+  }
   // to display product rate
   const productName = "";
   const productId = selectedProductId;
@@ -273,9 +308,7 @@ const productIdOnChange1 = (e, selectedProductId) => {
   fetch("/secured/dislpayProductDetailsOnSearch", fetchOptions)
     .then((res) => res.json())
     .then((data) => {
-      if (!data.success) {
-        alert(`${data.message}`);
-      } else {
+      if (data.success) {
         data.result.forEach((product) => {
           document.querySelector(`.productRate1`).innerHTML =
             product.productRate;
@@ -296,6 +329,41 @@ const productIdOnChange = (e, selectedProductId, className) => {
   //getting class name's number
   const no = className.split(" ")[0];
   const num = no.split("D")[1];
+  // checking if this product is already selected or not
+  let rowCount = $(".product-details tr").length;
+  for (i = 1; i <= rowCount; i++) {
+    if (num != i && document.querySelector(`.productID${i}`).value != "-----") {
+      if (document.querySelector(`.productID${i}`).value == selectedProductId) {
+        alert(
+          `Product with product Id: ${selectedProductId} is already selected!!!\n You cannot select same product twice.`
+        );
+        clearProductIDs(num);
+        document.querySelector(`.productRate${num}`).innerHTML = 0;
+        document.querySelector(`.productQty${num}`).value = 0;
+        document.querySelector(`.productAmount${num}`).innerHTML = 0;
+        calculateGrandTotal();
+        paidAmountOnInput();
+        // to show product's IDs
+        const productName = "";
+        const productId = selectedProductId;
+        const productRate = "";
+        const fetchOptions = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ productName, productId, productRate }),
+        };
+        fetch("/secured/dislpayProductDetailsOnSearch", fetchOptions)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.success) {
+              data.result.forEach((product) => wrapProductIDs(product, num));
+            }
+          });
+      }
+    }
+  }
   // to display product rate
   const productName = "";
   const productId = selectedProductId;
@@ -310,9 +378,7 @@ const productIdOnChange = (e, selectedProductId, className) => {
   fetch("/secured/dislpayProductDetailsOnSearch", fetchOptions)
     .then((res) => res.json())
     .then((data) => {
-      if (!data.success) {
-        alert(`${data.message}`);
-      } else {
+      if (data.success) {
         data.result.forEach((product) => {
           document.querySelector(`.productRate${num}`).innerHTML =
             product.productRate;
@@ -333,19 +399,24 @@ const productIdOnChange = (e, selectedProductId, className) => {
 const productQtyOnChange1 = () => {
   //checking if product selected or not
   if (
-    document.querySelector(".select-options-product1").value == "----select----"
+    document.querySelector(".select-options-product1").value ==
+      "----select----" &&
+    document.querySelector(".productQty1").value != 0
   ) {
     alert("Product not selected!!!");
-    document.querySelector(".productQty1").value = "";
+    document.querySelector(".productQty1").value = 0;
     return;
   }
-  if (document.querySelector(".productID1").value == "-----") {
+  if (
+    document.querySelector(".productID1").value == "-----" &&
+    document.querySelector(".productQty1").value != 0
+  ) {
     alert("Product Id not selected!!!");
-    document.querySelector(".productQty1").value = "";
+    document.querySelector(".productQty1").value = 0;
     return;
   }
   //---------------//
-  const inputQty = document.querySelector(".productQty1").value;
+  // const inputQty = document.querySelector(".productQty1").value;
   var stock = "";
   const productName = "";
   const productId = document.querySelector(".productID1").value;
@@ -367,6 +438,9 @@ const productQtyOnChange1 = () => {
         stock = product.productStock;
       }
     });
+  if (document.querySelector(".productID1").value == "-----") {
+    stock = 0;
+  }
   setTimeout(function () {
     //calculating amount
     var inputQty = document.querySelector(".productQty1").value;
@@ -389,17 +463,14 @@ const productQtyOnChange1 = () => {
 const productQtyOnChange = (className) => {
   const num = className.split("y")[1];
   //checking if product selected or not
-  if (
-    document.querySelector(`.select-options-product${num}`).value ==
-    "----select----"
-  ) {
+  if (document.querySelector(`.select-options-product${num}`).value == "----select----" && document.querySelector(`.productQty${num}`).value != 0) {
     alert("Product not selected!!!");
-    document.querySelector(`.productQty${num}`).value = "";
+    document.querySelector(`.productQty${num}`).value = 0;
     return;
   }
-  if (document.querySelector(`.productID${num}`).value == "-----") {
+  if (document.querySelector(`.productID${num}`).value == "-----" && document.querySelector(`.productQty${num}`).value != 0) {
     alert("Product Id not selected!!!");
-    document.querySelector(`.productQty${num}`).value = "";
+    document.querySelector(`.productQty${num}`).value = 0;
     return;
   }
   //---------------//
@@ -424,6 +495,9 @@ const productQtyOnChange = (className) => {
         stock = product.productStock;
       }
     });
+    if (document.querySelector(`.productID${num}`).value == "-----") {
+      stock = 0;
+    }
   setTimeout(function () {
     //calculating amount
     var inputQty = document.querySelector(`.productQty${num}`).value;
@@ -585,8 +659,8 @@ const saveInvoiceData = (e) => {
   };
   const Quantity = [];
   const ID = [];
-  ID[0]="";
-  Quantity[0]="";
+  ID[0] = "";
+  Quantity[0] = "";
   for (let i = 1; i <= num; i++) {
     ID[i] = document.querySelector(`.productID${i}`).value;
     Quantity[i] = document.querySelector(`.productQty${i}`).value;
