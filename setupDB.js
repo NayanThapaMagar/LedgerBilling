@@ -117,11 +117,11 @@ tables.forEach((table) => {
 //    total float,
 //    PRIMARY KEY(customerId)
 //    );
-//    CREATE TABLE productdetails (
+// CREATE TABLE productdetails (
 //   productId INT AUTO_INCREMENT UNIQUE,
 //   productName TINYTEXT NOT NULL,
 //   productRate INT NOT NULL,
-//   prodcutStock INT,
+//   productStock INT,
 //   PRIMARY KEY(productId)
 //    );
 //   CREATE TABLE invoicedetails (
@@ -130,12 +130,13 @@ tables.forEach((table) => {
 //   customerId INT NOT NULL,
 //   customerAddress VARCHAR(255) NOT NULL,
 //   customerContact VARCHAR(10) NOT NULL,
-//   invoiceNo INT NOT NULL,
+//   invoiceNo VARCHAR(255),
 //   date DATE NOT NULL,
-//   total FLOAT NOT NULL,
+//   total FLOAT,
 //   paidAmount FLOAT NOT NULL,
-//   deliveredBy VARCHAR(255) NOT NULL,
-//   checkedBy VARCHAR(255) NOT NULL,
+//   deliveredBy VARCHAR(255),
+//   checkedBy VARCHAR(255),
+//   cashBillNo VARCHAR(255),
 //   PRIMARY KEY(Id)
 //    );
 //    CREATE TABLE invoiceproductdetails (
