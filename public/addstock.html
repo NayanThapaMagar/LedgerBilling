@@ -8,79 +8,89 @@
     <link rel="stylesheet" href="./css/addProduct.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <title>Home</title>
   </head>
 
-  <div class="nav-and-arrow">
-    <nav>
-      <div class="logo">
-        <h4 id="logo">The Nuss</h4>
-      </div>
-      <div class="navbar">
-        <span class="dropdown">
-          <a href="/secured/home">Home</a>
-        </span>
-        <span class="dropdown" id="accountBtn">
-          <button class="dropbtn">Customer Account</button>
-          <div class="dropdown-content" id="account">
-            <a href="/secured/addAccount">Add Account</a>
-            <a href="/secured/deleteAccount" >Delete Account</a>
-            <a href="/secured/searchAccount">Search Account</a>
-          </div>
-        </span>
-        <span class="dropdown" id="ledgerBtn">
-          <a href="/secured/invoice">Invoice</a>
-        </span>
-        <span class="dropdown" id="ledgerBtn">
-          <a href="/secured/ledger">Ledger</a>
-        </span>
-        <span class="dropdown" id="productBtn">
-          <button class="dropbtn">Products</button>
-          <div class="dropdown-content" id="product">
-            <a href="/secured/addProduct">Add Product</a>
-            <a href="/secured/deleteProduct">Delete Product</a>
-            <a href="/secured/searchProduct">Search Products</a>
-            <a href="/secured/addStock">Add Stock</a>
-          </div>
-        </span>
-        <span class="dropdown">
-          <a href="/secured/cashBill">Cash Bill</a>
-        </span>
-        <span class="settings-and-logout">
-          <a href="#">Admin</a>
-        </span>
-        <span class="settings-and-logout">
-          <a href="#">Privacy Settings</a>
-        </span>
-        <span class="settings-and-logout">
-          <a href="/secured/redirectToChangePassword">Change admin password</a>
-        </span>
-        <span class="settings-and-logout">
-          <a href="#" id="logout0">Log out</a>
-        </span>
-      </div>
-      <span class="dropdown" id="down-arrow">
-        <div class="arrow-down"></div>
-        <div class="dropdown-content" id="system">
-          <a href="#">Admin</a>
-          <a href="#">Privacy Settings</a>
-          <a href="/secured/redirectToChangePassword">Change admin password</a>
-          <!-- <button id="logout">Log out</button> -->
-          <a href="" id="logout">Log out</a>
-        </div>
-      </span>
-      <div class="burger">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
-    </nav>
-  </div>
   <body>
+    <div class="nav-and-arrow">
+      <nav>
+        <div class="logo">
+          <h4 id="logo">The Nuss</h4>
+        </div>
+        <div class="navbar">
+          <span class="dropdown">
+            <a href="/secured/home">Home</a>
+          </span>
+          <span class="dropdown" id="accountBtn">
+            <button class="dropbtn">Customer Account</button>
+            <div class="dropdown-content" id="account">
+              <a href="/secured/addAccount">Add Account</a>
+              <a href="/secured/deleteAccount">Delete Account</a>
+              <a href="/secured/searchAccount">Search Account</a>
+            </div>
+          </span>
+          <span class="dropdown" id="ledgerBtn">
+            <a href="/secured/invoice">Invoice</a>
+          </span>
+          <span class="dropdown" id="ledgerBtn">
+            <a href="/secured/ledger">Ledger</a>
+          </span>
+          <span class="dropdown" id="productBtn">
+            <button class="dropbtn">Products</button>
+            <div class="dropdown-content" id="product">
+              <a href="/secured/addProduct">Add Product</a>
+              <a href="/secured/deleteProduct">Delete Product</a>
+              <a href="/secured/searchProduct">Search Products</a>
+              <a href="/secured/addStock">Add Stock</a>
+            </div>
+          </span>
+          <span class="dropdown">
+            <a href="/secured/cashBill">Cash Bill</a>
+          </span>
+          <span class="settings-and-logout">
+            <a href="#">Admin</a>
+          </span>
+          <span class="settings-and-logout">
+            <a href="#">Privacy Settings</a>
+          </span>
+          <span class="settings-and-logout">
+            <a href="/secured/redirectToChangePassword"
+              >Change admin password</a
+            >
+          </span>
+          <span class="settings-and-logout">
+            <a href="#" id="logout0">Log out</a>
+          </span>
+        </div>
+        <span class="dropdown" id="down-arrow">
+          <div class="arrow-down"></div>
+          <div class="dropdown-content" id="system">
+            <a href="#">Admin</a>
+            <a href="#">Privacy Settings</a>
+            <a href="/secured/redirectToChangePassword"
+              >Change admin password</a
+            >
+            <!-- <button id="logout">Log out</button> -->
+            <a href="" id="logout">Log out</a>
+          </div>
+        </span>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </div>
     <div class="body">
       <div id="h2"><h2>Add Stock</h2></div>
       <div class="add">

@@ -1,293 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./css/home.css">
-    <link rel="stylesheet" href="./css/invoice.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/invoice.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <title>Home</title>
-</head>
-
-<div class="nav-and-arrow">
-    <nav>
+  </head>
+  
+  <body onload="dislpayDetails(event)">
+    <div class="nav-and-arrow">
+      <nav>
         <div class="logo">
-            <h4 id="logo">The Nuss</h4>
+          <h4 id="logo">The Nuss</h4>
         </div>
         <div class="navbar">
-            <span class="dropdown">
-                <a href="/secured/home">Home</a>
-            </span>
-            <span class="dropdown" id="accountBtn">
-                <button class="dropbtn">Customer Account
-                </button>
-                <div class="dropdown-content" id="account">
-                    <a href="/secured/addAccount">Add Account</a>
-                    <a href="/secured/deleteAccount" >Delete Account</a>
-                    <a href="/secured/searchAccount">Search Account</a>
-                </div>
-            </span>
-            <span class="dropdown" id="ledgerBtn">
-                <a href="/secured/invoice">Invoice</a>
-            </span>
-            <span class="dropdown" id="ledgerBtn">
-                <a href="/secured/ledger">Ledger</a>
-            </span>
-            <span class="dropdown" id="productBtn">
-                <button class="dropbtn">Products
-                </button>
-                <div class="dropdown-content" id="product">
-                    <a href="/secured/addProduct">Add Product</a>
-                    <a href="/secured/deleteProduct">Delete Product</a>
-                    <a href="/secured/searchProduct">Search Products</a>
-                    <a href="/secured/addStock">Add Stock</a>
-                </div>
-            </span>
-            <span class="dropdown">
-                <a href="/secured/cashBill">Cash Bill</a>
-            </span>
-            <span class="settings-and-logout">
-                <a href="#">Admin</a>
-            </span>
-            <span class="settings-and-logout">
-                <a href="#">Privacy Settings</a>
-            </span>
-            <span class="settings-and-logout">
-                <a href="/secured/redirectToChangePassword">Change admin password</a>
-            </span>
-            <span class="settings-and-logout">
-                <a href="#" id="logout0">Log out</a>
-            </span>
+          <span class="dropdown">
+            <a href="/secured/home">Home</a>
+          </span>
+          <span class="dropdown" id="accountBtn">
+            <button class="dropbtn">Customer Account</button>
+            <div class="dropdown-content" id="account">
+              <a href="/secured/addAccount">Add Account</a>
+              <a href="/secured/deleteAccount">Delete Account</a>
+              <a href="/secured/searchAccount">Search Account</a>
+            </div>
+          </span>
+          <span class="dropdown" id="ledgerBtn">
+            <a href="/secured/invoice">Invoice</a>
+          </span>
+          <span class="dropdown" id="ledgerBtn">
+            <a href="/secured/ledger">Ledger</a>
+          </span>
+          <span class="dropdown" id="productBtn">
+            <button class="dropbtn">Products</button>
+            <div class="dropdown-content" id="product">
+              <a href="/secured/addProduct">Add Product</a>
+              <a href="/secured/deleteProduct">Delete Product</a>
+              <a href="/secured/searchProduct">Search Products</a>
+              <a href="/secured/addStock">Add Stock</a>
+            </div>
+          </span>
+          <span class="dropdown">
+            <a href="/secured/cashBill">Cash Bill</a>
+          </span>
+          <span class="settings-and-logout">
+            <a href="#">Admin</a>
+          </span>
+          <span class="settings-and-logout">
+            <a href="#">Privacy Settings</a>
+          </span>
+          <span class="settings-and-logout">
+            <a href="/secured/redirectToChangePassword"
+              >Change admin password</a
+            >
+          </span>
+          <span class="settings-and-logout">
+            <a href="#" id="logout0">Log out</a>
+          </span>
         </div>
         <span class="dropdown" id="down-arrow">
-            <div class="arrow-down"></div>
-            <div class="dropdown-content" id="system">
-                <a href="#">Admin</a>
-                <a href="#">Privacy Settings</a>
-                <a href="/secured/redirectToChangePassword">Change admin password</a>
-                <!-- <button id="logout">Log out</button> -->
-                <a href="" id="logout">Log out</a>
-            </div>
+          <div class="arrow-down"></div>
+          <div class="dropdown-content" id="system">
+            <a href="#">Admin</a>
+            <a href="#">Privacy Settings</a>
+            <a href="/secured/redirectToChangePassword"
+              >Change admin password</a
+            >
+            <!-- <button id="logout">Log out</button> -->
+            <a href="" id="logout">Log out</a>
+          </div>
         </span>
         <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
         </div>
-    </nav>
-</div>
-
-<body onload="dislpayDetails(event)">
+      </nav>
+    </div>
     <div class="body">
-        <main id="center_whole_content">
-            <div class="whole border-outline">
+      <main id="center_whole_content">
+        <div class="whole border-outline">
+          <form id="invoiceForm" onsubmit="saveInvoiceData(event)">
+            <!-- bill HTML -->
 
-                <form id="invoiceForm" onsubmit="saveInvoiceData(event)">
+            <div id="heading">
+              <h2 id="companyName">Company Name: Nuss</h2>
+            </div>
 
+            <div id="companyDetails">
+              <h4 id="companyAddress">Company Name: Nuss</h4>
+              <h4 id="companyContact">Company Name: Nuss</h4>
+              <h4 id="companyEmail">Company Name: Nuss</h4>
+            </div>
 
-                <!-- bill HTML -->
+            <div class="billno all">
+              <table>
+                <tr>
+                  <th>Invoice no:</th>
+                  <th>Date:</th>
+                </tr>
 
-                    <div id="heading">
-                        <h2 id="companyName">Company Name: Nuss</h2>
-                    </div>
+                <tr align="center">
+                  <td id="invoiceNo">00</td>
+                  <td><input type="date" id="date" required /></td>
+                </tr>
+              </table>
+            </div>
 
-                    <div id="companyDetails">
-                        <h4 id="companyAddress">Company Name: Nuss</h4>
-                        <h4 id="companyContact">Company Name: Nuss</h4>
-                        <h4 id="companyEmail">Company Name: Nuss</h4>
-                    </div>
+            <br /><br />
 
+            <div class="flex1">
+              <div class="customerId all">
+                <table>
+                  <tr>
+                    <th>CUTOMER ID</th>
+                    <th>TERMS</th>
+                  </tr>
+                  <td id="customerId">00</td>
+                  <td>Due Upon Receipt</td>
+                  <tr></tr>
+                </table>
+              </div>
 
-                    <div class="billno all">
-                        <table>
-                            <tr>
-                                <th>Invoice no:</th>
-                                <th>Date:</th>
-                            </tr>
+              <div class="billto all2">
+                <table>
+                  <tr>
+                    <th colspan="2">Bill To</th>
+                  </tr>
 
-                            <tr align="center">
-                                <td id="invoiceNo">00</td>
-                                <td><input type="date" id="date" required></td>
-                            </tr>
-                        </table>
-                    </div>
+                  <tr>
+                    <td>Name:</td>
+                    <td id="customerName"></td>
+                  </tr>
 
-                    <br><br>
+                  <tr>
+                    <td>Address:</td>
+                    <td id="customerAddress"></td>
+                  </tr>
 
-                    <div class="flex1">
+                  <tr>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Contact number:</td>
+                    <td>
+                      <select
+                        id="select-options-customer"
+                        onchange="contactOnChange(event,this.value)"
+                        style="width: 130px"
+                      >
+                        <option id="contactNumber">----select----</option>
+                      </select>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
 
+            <div class="particulars all2">
+              <table>
+                <tr>
+                  <th class="widthSN">SN</th>
+                  <th class="widthParticulars">Particulars</th>
+                  <th class="widthQTY">Id</th>
+                  <th class="width_Rate_Amount">Rate</th>
+                  <th class="widthQTY">Qty</th>
+                  <th class="width_Rate_Amount">Amount</th>
+                </tr>
 
-                        <div class="customerId all">
-                            <table>
-                                <tr>
-                                    <th>CUTOMER ID</th>
-                                    <th>TERMS</th>
-                                </tr>
-                                <td id="customerId">00</td>
-                                <td>Due Upon Receipt</td>
-                                <tr>
+                <tbody class="product-details">
+                  <tr align="center">
+                    <td class="SN1">1</td>
+                    <td>
+                      <select
+                        class="select-options-product1"
+                        onchange="productOnChange1(event,this.value)"
+                        style="width: 200px"
+                      >
+                        <option>----select----</option>
+                      </select>
+                    </td>
+                    <td class="widthQTY">
+                      <select
+                        class="productID1"
+                        onchange="productIdOnChange1(event,this.value)"
+                        style="width: 70px"
+                      >
+                        <option>-----</option>
+                      </select>
+                    </td>
+                    <td class="productRate1"></td>
+                    <td class="widthQTY">
+                      <input
+                        type="text"
+                        class="productQty1"
+                        oninput="productQtyOnChange1()"
+                        required
+                      />
+                    </td>
+                    <td class="productAmount1">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-                                </tr>
-                            </table>
-                        </div>
+            <br />
 
-                        <div class="billto all2">
-                            <table>
-                                <tr>
-                                    <th colspan="2">Bill To </th>
+            <div class="button">
+              <div class="btn1">
+                <button onclick="addRow(event)">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="btn2">
+                <button onclick="deleteRow(event)">
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
 
-                                </tr>
+            <br />
 
+            <div class="flex2">
+              <div class="total input">
+                <table>
+                  <tr>
+                    <td>Total:</td>
+                    <td id="total"></td>
+                  </tr>
+                  <tr>
+                    <td>Vat:</td>
+                    <td id="vat"></td>
+                  </tr>
+                  <tr>
+                    <td>Discount:</td>
+                    <td id="discount"></td>
+                  </tr>
+                  <tr>
+                    <td>Grand Total:</td>
+                    <td id="grandTotal"></td>
+                  </tr>
+                  <tr>
+                    <td>Paid amount:</td>
+                    <td>
+                      <input
+                        type="text"
+                        id="paidAmount"
+                        oninput="paidAmountOnInput()"
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Due amount:</td>
+                    <td id="dueAmount"></td>
+                  </tr>
+                </table>
+              </div>
 
-                                <tr>
-                                    <td>Name:</td>
-                                    <td id="customerName"></td>
-
-                                </tr>
-
-                                <tr>
-                                    <td>Address:</td>
-                                    <td id="customerAddress"></td>
-                                </tr>
-
-                                <tr>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Contact number:</td>
-                                    <td> <select id="select-options-customer"
-                                            onchange="contactOnChange(event,this.value)" style="width:130px">
-                                            <option id="contactNumber">----select----</option>
-                                        </select> </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div class="particulars all2">
-
-                        <table>
-                            <tr>
-                                <th class="widthSN"> SN </th>
-                                <th class="widthParticulars">Particulars</th>
-                                <th class="widthQTY">Id</th>
-                                <th class="width_Rate_Amount">Rate</th>
-                                <th class="widthQTY">Qty</th>
-                                <th class="width_Rate_Amount">Amount</th>
-
-                            </tr>
-
-                            <tbody class="product-details">
-                                <tr align="center">
-                                    <td class="SN1">1</td>
-                                    <td><select class="select-options-product1"
-                                            onchange="productOnChange1(event,this.value)" style="width:200px">
-                                            <option>----select----</option>
-                                        </select></td>
-                                    <td class="widthQTY"><select class="productID1" 
-                                            onchange="productIdOnChange1(event,this.value)" style="width:70px">
-                                            <option>-----</option>
-                                        </select></td>
-                                    <td class="productRate1"></td>
-                                    <td class="widthQTY"><input type="text" class="productQty1"
-                                            oninput="productQtyOnChange1()" required></td>
-                                    <td class="productAmount1">0</td>
-                                </tr>
-                            </tbody>
-
-                        </table>
-                    </div>
-
-                    <br>
-
-                    <div class="button">
-                        <div class="btn1">
-                        <button onclick="addRow(event)"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                        </div>
-                        <div class="btn2">
-                        <button onclick="deleteRow(event)"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                        </div>
-                    </div>
-
-                    <br>
-
-                    <div class="flex2">
-
-
-                        <div class="total input">
-                            <table>
-
-                                <tr>
-                                    <td>Total:</td>
-                                    <td id="total"></td>
-                                </tr>
-                                <tr>
-                                    <td>Vat:</td>
-                                    <td id="vat"></td>
-                                </tr>
-                                <tr>
-                                    <td>Discount:</td>
-                                    <td id="discount"></td>
-                                </tr>
-                                <tr>
-                                    <td>Grand Total:</td>
-                                    <td id="grandTotal"></td>
-                                </tr>
-                                <tr>
-                                    <td>Paid amount:</td>
-                                    <td> <input type="text" id="paidAmount" oninput="paidAmountOnInput()"
-                                            required></td>
-                                </tr>
-                                <tr>
-                                    <td>Due amount:</td>
-                                    <td id="dueAmount"></td>
-                                </tr>
-                            </table>
-                        </div>
-
-                        <div class="delivery input">
-                            <table>
-                                <tr>
-                                    <td> Delivery By:</td>
-                                    <td><input type="text" id="deliveredBy" required></td>
-                                </tr>
-                                <tr>
-                                    <td>Checked By:</td>
-                                    <td><input type="text" id="checkedBy" required></td>
-                                </tr>
-                                <!-- <tr>
+              <div class="delivery input">
+                <table>
+                  <tr>
+                    <td>Delivery By:</td>
+                    <td><input type="text" id="deliveredBy" required /></td>
+                  </tr>
+                  <tr>
+                    <td>Checked By:</td>
+                    <td><input type="text" id="checkedBy" required /></td>
+                  </tr>
+                  <!-- <tr>
                                 <td>Received By:</td>
                                 <td><input type="text"></td>
                             </tr> -->
-                                <br>
-                                <br>
-                                <tr>
-                                    <td>Authorized signature:</td>
-                                    <td><input type="text" readonly></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div class="continueButton">
-                        <!-- <button onclick="saveInvoiceData(event)">Continue</button> -->
-                        <input type="submit" value="Continue">
-                    </div>
-                </form>
-
+                  <br />
+                  <br />
+                  <tr>
+                    <td>Authorized signature:</td>
+                    <td><input type="text" readonly /></td>
+                  </tr>
+                </table>
+              </div>
             </div>
-        </main>
-    </div>
-</body>
-<script src="./js/invoice.js"></script>
-<script src="./js/home.js"></script>
 
+            <div class="continueButton">
+              <!-- <button onclick="saveInvoiceData(event)">Continue</button> -->
+              <input type="submit" value="Continue" />
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script src="./js/invoice.js"></script>
+  <script src="./js/home.js"></script>
 </html>
