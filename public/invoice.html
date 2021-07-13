@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/invoice.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -207,9 +208,13 @@
 
                     <br>
 
-                    <div>
-                        <button onclick="addRow(event)">Add row</button>
-                        <button onclick="deleteRow(event)">Remove row</button>
+                    <div class="button">
+                        <div class="btn1">
+                        <button onclick="addRow(event)"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                        </div>
+                        <div class="btn2">
+                        <button onclick="deleteRow(event)"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                        </div>
                     </div>
 
                     <br>
@@ -272,7 +277,7 @@
                         </div>
                     </div>
 
-                    <div>
+                    <div class="continueButton">
                         <!-- <button onclick="saveInvoiceData(event)">Continue</button> -->
                         <input type="submit" value="Continue">
                     </div>
