@@ -144,11 +144,14 @@ margin-top: 20px;
     
 }
 .btn2 button{
-    background-color: rgb(158, 12, 12);
+    background-color: rgba(158, 12, 12, 0.726);
 
 }
-.button button:hover{
-    background-color: cadetblue;
+.btn1 button:hover{
+    background-color: rgb(66, 201, 66)
+}
+.btn2 button:hover{
+    background-color: rgb(212, 16, 16);
 }
 .continueButton input{
     background-color: #363636;
