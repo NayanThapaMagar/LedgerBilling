@@ -362,3 +362,22 @@ nav {
 }
 /*up to here css of header*/
 
+/* css for all content */
+.leftContent{
+    width: 25%;
+    height: 80vh;
+    background-color: red;
+}
+.mainContent{
+    width: 50%;
+    height: 80vh;
+    background-color: green;
+}
+.rightContent{
+    width: 25%;
+    height: 80vh;
+    background-color: yellow;
+}
+.wholeContent{
+    display: flex;
+}
