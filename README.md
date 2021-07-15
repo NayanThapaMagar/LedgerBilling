@@ -1,5 +1,6 @@
 # LedgerBilling
 USE MYSQL batabase
+Google as browser
 Create a .env file inside LedgerBilling. Inside .env file enter
 DB_PASSWORD = 
 DB_USER = 
