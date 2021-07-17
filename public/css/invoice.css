@@ -2,11 +2,29 @@
     margin:0px;
     padding:0px;
 }
-#center_whole_content{
+p{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    color: white;
+    height: 40px;
+    width: 150px;
+    background-color: #363636;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+.heading{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+#center_whole_content{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
     
 }
 .border-outline input{
