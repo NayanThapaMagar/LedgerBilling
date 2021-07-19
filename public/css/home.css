@@ -366,17 +366,17 @@ nav {
 .leftContent{
     width: 25%;
     height: 80vh;
-    background-color: red;
+    background-color: #e6e5e0;
 }
 .mainContent{
     width: 50%;
     height: 80vh;
-    background-color: #DDE0E5;
+    background-color: #ffff;
 }
 .rightContent{
     width: 25%;
     height: 80vh;
-    background-color: yellow;
+    background-color: #e6e5e0;
 }
 .wholeContent{
     display: flex;

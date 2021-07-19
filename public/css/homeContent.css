@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    /* background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(homeImg.jpg); */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+
+/* .text-box{
+    width: 90%;
+    color: rgba(212, 203, 203, 0.849);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    border: 1px solid black;
+} */
+
+
+
+
+
+
+/* ledger section */
+
+#ledgerSection{
+
+        width: 90%;
+        /* color: rgba(212, 203, 203, 0.849); */
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        /* border: 1px solid black; */
+        /* margin-top: 20px; */
+  
+}
+#L-table{
+    /* text-align: center; */
+    border: 1px solid rgb(14, 13, 13);
+    margin: 0 auto;
+    /* background-color: #ffff; */
+}
+
+
+
+
+
+
+
+/* ..................................... */
+
+/* ................ */
+/* ........................ */
+/* .................. */
+/* ..................................... */
+
+/* ................ */
+/* ........................ */
+/* .................. */
+/* ..................................... */
+
+/* ................ */
+/* ........................ */
+/* .................. */
+/* ..................................... */
+
+/* ................ */
+/* ........................ */
+/* .................. */
+
+
+#tableMain{
+
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:20vh;
+
+
+}
+/* ...............................................................................for border................................... */
+#ledgerSection table{
+    border-collapse: collapse;
+}
+#ledgerSection td,th{
+    border: 0.5px solid black;
+}
+#ledgerSection table th{
+    height: 30px;
+}
+/* ........................................................................................................................... */
+#tableHeading{
+    width: 120px;
+    background-color: #363636;
+    color: #f3ebeb;
+
+}
+#tableHeadingSn{
+    width: 40px;
+    background-color: #424040;
+    color: white;
+
+}
+#tableHeadingName{
+    width: 132px;
+    background-color: #424040;
+    color: white;
+
+}
+#tableHeadingId{
+    width: 110px;
+    background-color: #424040;
+    color: white;
+
+}
+#tableHeadingAddress{
+    width: 100px;
+    background-color: #424040;
+    color: white;
+
+}
+#tableHeadingCr{
+    width: 83px;
+    background-color: #424040;
+    color: white;
+
+}
+#tableHeadingAmount{
+    width: 90px;
+    background-color: #424040;
+    color: white;
+
+}
+
+
+
+/* ............................highly purched item................................. */
+
+.highlyPurched{
+    /* border: 1px solid white; */
+    margin-top: 10px;
+}
+h2{
+    color: rgb(34, 33, 33);
+    margin-top: 2%;
+    margin-bottom: 0.5%;
+}
