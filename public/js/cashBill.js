@@ -147,12 +147,13 @@ function inWords(num) {
   return str;
 }
 
-const amountOnInput = (e, amount) => {
+const amountOnInput = (e, amount0) => {
   e.preventDefault();
   if (isNaN(document.querySelector("#rupees").value)) {
     alert("Paid amount invalid!!");
     return;
   }
+  const amount = parseInt(amount0);
   document.querySelector("#word").value = inWords(amount);
 };
 

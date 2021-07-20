@@ -27,18 +27,15 @@ let count = 0;
 //to display customer info
 const wrapCustomerDetails = (customer) => {
   count++;
-  // console.log(customer.total);
-  var blnc = parseFloat(customer.total);
-  var balance0 = blnc.toFixed(3);
+  var blnc = parseFloat(customer.dueBalance);
+  var balance0 = blnc;
   let balance = 0;
   let status = "check";
   // checking is customer balance is in credit or devit or no transaction
-  if (balance0 < 0) {
-    // console.log("negative");
+  if (balance0 < -0.0001) {
     status = "Dr";
     balance = -1 * balance0;
-  } else if (balance0 > 0) {
-    // console.log("positive");
+  } else if (balance0 > 0.0001) {
     status = "Cr";
     balance = 1 * balance0;
   } else {
@@ -53,7 +50,7 @@ const wrapCustomerDetails = (customer) => {
   <td>${customer.customerContact}</td>
   <td>${customer.customerAddress}</td>
   <td>${status}</td>
-  <td>${balance}</td>`;
+  <td>${balance.toFixed(3)}</td>`;
   tbody.appendChild(row);
 };
 // displaying customer info on load

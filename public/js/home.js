@@ -18,15 +18,7 @@ const navSlide = () => {
             }
         });
         burger.classList.toggle('toggle');
-        // trying to make dropdown overlap other
-        // const dropdownContentLinks = document.querySelector('.dropdown-content');
-        // dropdownContentLinks.style.cssText = 'display: absolute; transform: translateX(-70%);';
     });
-   //     static
-// relative
-// fixed
-// absolute
-// sticky
  
 }
 navSlide();
@@ -77,10 +69,6 @@ logoutFunction();
 const dropdownContentAccount = document.getElementById("account");
 const dropdownContentProduct = document.getElementById("product");
 const dropdownContentSystem = document.getElementById("system");
-// const navbarA =document.querySelectorAll('.navbar a');
-// const dropdownbtn =document.querySelectorAll('.dropdown .dropbtn');
-// const downArrow =document.querySelectorAll('#down-arrow');
-
 
 // display none on body click
 const body = document.querySelector('.body');
@@ -152,6 +140,13 @@ downArrow.addEventListener('click', () => {
         
     }
 });
+//=====================================================DISPLAYING REQUIRED INFORMATION SECTION========================================//
 
-
-// up to here js of header
+fetch("/secured/dislpayHomePageDetails")
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.success) {
+        
+        // data.result.forEach((customer) => wrapCustomerContacts(customer));
+      }
+    });

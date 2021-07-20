@@ -14,6 +14,11 @@ router.use(express.json({ limit: "1mb" }));
 //use authentication middleware
 router.use(verify);
 
+
+
+//displaying dislpayHomePageDetails
+const dislpayHomePageDetails = require("../controllers/dislpayHomePageDetails");
+
 // changing login info
 const changeloginInfo = require("../controllers/changeloginInfo");
 
@@ -131,6 +136,9 @@ router.get("/cashBill", (req, res) => {
   res.sendFile(staticDir + "/cashBill.html");
 });
 
+
+//displaying dislpayHomePageDetails
+router.get("/dislpayHomePageDetails", dislpayHomePageDetails);
 
 // changing login info
 router.post("/changeloginInfo", changeloginInfo);

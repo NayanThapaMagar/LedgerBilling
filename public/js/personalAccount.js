@@ -37,20 +37,21 @@ fetch("/secured/personalAccountDetails", fetchOptions)
     invoice.forEach((invoice) => {
       count = 0;
       const total = invoice.total;
-      const grandTotal0 = (total + (0.13 * total) - (0.05 * ((0.13 * total)+total)));
-      const grandTotal = grandTotal0.toFixed(3);
-      dueAmount0 += (total + (0.13 * total) - (0.05 * ((0.13 * total)+total)) - invoice.paidAmount);
-      dueAmount = dueAmount0.toFixed(3);
+      const grandTotal0 = (total+(0.13*total)-(0.05*(total+(0.13*total))));
+      const grandTotal = grandTotal0;
+      dueAmount0 += ((total+(0.13*total)-(0.05*(total+(0.13*total)))) - invoice.paidAmount);
+      dueAmount = dueAmount0;
       const date0 = invoice.date;
       const date = date0.split("T")[0];
-      if (dueAmount > 0) {
+      if (dueAmount0 > 0.0001) {
         status = "Cr";
         dueAmount = 1*dueAmount;
-      } else if (dueAmount < 0) {
+      } else if (dueAmount0 < -0.0001) {
         status = "Dr";
         dueAmount = -1*dueAmount;
       } else {
         status = "Clear";
+        dueAmount = 0;
       }
       let prdt0 = "";
       let transactionOf = "";
@@ -81,12 +82,12 @@ fetch("/secured/personalAccountDetails", fetchOptions)
       <td class="tableData"><button class="btn22" onclick="personalAccount( event, ${customer.customerId}, ${reciptNo}, ${transactionType})">${transactionOf}</button></td>
       <td class="tableData">${reciptNo}</td>
       <td class="tableData">${invoice.paidAmount}</td>
-      <td class="tableData">${grandTotal}</td>
+      <td class="tableData">${grandTotal.toFixed(3)}</td>
       <td class="tableData">${status}</td>
-      <td class="tableData">${dueAmount}</td>`;
+      <td class="tableData">${dueAmount.toFixed(3)}</td>`;
       tbody.appendChild(row);
       sn++;
     });
     document.querySelector(".status").innerHTML = status;
-    document.querySelector(".balance").innerHTML = dueAmount;
+    document.querySelector(".balance").innerHTML = dueAmount.toFixed(3);
   });

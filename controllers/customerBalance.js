@@ -18,8 +18,9 @@ module.exports = (req, res) => {
   db.query(sql, (err, result) => {
     if (err) throw err;
     const balance0 = result[0];
-    const balance = Object.values(JSON.parse(JSON.stringify(balance0)));
-    const sql1 = `UPDATE customerdetails SET total='${balance}' WHERE CustomerID='${customerId}'`;
+    // const balance = Object.values(JSON.parse(JSON.stringify(balance0)));
+    const dueBalance = balance0.balance;
+    const sql1 = `UPDATE customerdetails SET duebalance='${dueBalance}' WHERE CustomerID='${customerId}'`;
     db.query(sql1, (err, result) => {
       if (err) throw err;
         return res.json({ success: true, message: "Data Inserted", result });

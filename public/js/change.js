@@ -1,4 +1,4 @@
-//changing login information
+//changing login information//changing login password
 const changeloginInfo = (e) => {
     e.preventDefault();
     const oldPassword = document.getElementById("oldPassword").value;

@@ -529,10 +529,9 @@ const calculateGrandTotal = () => {
   const discount = 0.05 * (total + vat);
   const grandTotal = total + vat - discount;
   document.querySelector("#total").innerHTML = total;
-  document.querySelector("#vat").innerHTML = vat;
-  document.querySelector("#discount").innerHTML = discount;
-  document.querySelector("#grandTotal").innerHTML = grandTotal;
-  document.querySelector("#grandTotal").innerHTML = grandTotal;
+  document.querySelector("#vat").innerHTML = vat.toFixed(3);
+  document.querySelector("#discount").innerHTML = discount.toFixed(3);
+  document.querySelector("#grandTotal").innerHTML = grandTotal.toFixed(3);
 };
 
 //calculating due amount on input
@@ -540,7 +539,7 @@ const paidAmountOnInput = () => {
   const paidAmount = document.getElementById("paidAmount").value;
   const grandTotal = document.querySelector("#grandTotal").innerHTML;
   const dueAmount = grandTotal - paidAmount;
-  document.querySelector("#dueAmount").innerHTML = dueAmount;
+  document.querySelector("#dueAmount").innerHTML = dueAmount.toFixed(3);
 };
 
 //--------------------------------------------------------------INSERTING INVOICE DATA TO DATABASE---------------------------------------------------------------//
@@ -685,6 +684,7 @@ const saveInvoiceData = (e) => {
         alert("Stock Update Failed!!!");
       }
     });
+  //---------------------------------------------Updating customer balance-------------------------------------------------//
   setTimeout(function () {
     fetch("/secured/customerBalance", fetchOptions1)
       .then((res) => res.json())
