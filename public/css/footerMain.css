@@ -7,6 +7,32 @@
 .fcontainer{
     max-width: 1170px;
     margin: auto;
+    position: relative;
+    bottom: 20px;
+ }
+ 
+.mainContent{
+    background-image: url("../back3.jpg");
+    background-size:100% 100%;
+} 
+/*.leftContent{
+    background-image: url("../side.jpg");
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+.rightContent{
+    background-image: url("../side.jpg");
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    opacity: 0.5; */
+/* } */
+.footer{
+    height: 120px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
 }
 
 .f-row{
@@ -14,9 +40,9 @@
     flex-wrap: wrap;
 }
 
-
 ul{
     list-style: none;
+    
 }
 
 .footer{
@@ -27,6 +53,7 @@ ul{
 .footer-col{
     width: 33%;
     padding: 0 15px;
+    display: ;
 }
 .footer-col h4{
     font-size: 19px;
@@ -44,7 +71,7 @@ ul{
     bottom: -10px;
     background-color: #e91e63;
     height: 2px;
-    width: 110px;
+    width: 130px;
 }
 .footer-col ul li:not(:last-child){
     margin-bottom: 10px;

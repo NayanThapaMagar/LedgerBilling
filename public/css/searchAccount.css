@@ -13,7 +13,8 @@
   border-radius: 4px;
   display: flex;
   justify-content: center;
-  align-items: center;
+
+  /* align-items: center; */
 
 }
 .center{
@@ -86,7 +87,7 @@ border: 1px solid black;
   }
   .body{
     margin: 0%;
-    margin-top: 170px;
+    margin-top: 40px;
     height: fit-content;
   }
   .center{
