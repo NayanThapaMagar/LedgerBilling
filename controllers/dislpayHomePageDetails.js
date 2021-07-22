@@ -19,6 +19,7 @@ module.exports = (req, res) => {
   let dailyTransaction;
   let mostSoldProducts;
   let lowStockProducts;
+  let goodCustomerCandidate;
 
   const sql0 = `SELECT * FROM invoicedetails WHERE date = "${today}"`;
   db.query(sql0, (err, dailyTransaction0) => {
@@ -35,58 +36,33 @@ module.exports = (req, res) => {
     if (err) throw err;
     lowStockProducts = lowStockProducts0;
   });
-  // const sql3 = `SELECT customerId FROM customerdetails WHERE dueBalance < 200000`;
-  // db.query(sql3, (err, goodCustomerId) => {
-  //   if (err) throw err;
-  //   goodCustomerId.forEach((goodCustomerId) => {
-  //     let goodCustomerCandidate;
-  //     const sql = `SELECT customerName, customerId, customerAddress, customerContact, SUM(total) AS totalExpense FROM invoicedetails WHERE customerId = '${goodCustomerId.customerId}'`;
-  //     db.query(sql, (err, goodCustomerCandidate0) => {
-  //       goodCustomerCandidate = goodCustomerCandidate0[0];
-  //       if (goodCustomerCandidate.totalExpense >= 1000000) {
-  //         console.log(
-  //           "--------------------------------------------------------------------------"
-  //         );
-  //         console.log(goodCustomerCandidate.customerName);
-  //         console.log(goodCustomerCandidate.totalExpense);
-  //         console.log(
-  //           "--------------------------------------------------------------------------"
-  //         );
-  //         //   return res.json({ success: true, result });
-  //       }
-  //     });
-  //   });
-  //   console.log(
-  //     "+++++++++++++++++++++++++___________________________--------____________________________+++++++++++++++++++++++++++++++"
-  //   );
-  //   console.log(
-  //     "=========================================================================="
-  //   );
-  //   console.log("dailyTransaction");
-  //   console.log(dailyTransaction);
-  //   console.log(
-  //     "=========================================================================="
-  //   );
-  //   console.log("        ++++++++++++++++");
-  //   console.log(
-  //     "=========================================================================="
-  //   );
-  //   console.log("mostSoldProducts");
-  //   console.log(mostSoldProducts);
-  //   console.log(
-  //     "=========================================================================="
-  //   );
-  //   console.log("        ++++++++++++++++");
-  //   console.log(
-  //     "=========================================================================="
-  //   );
-  //   console.log("lowStockProducts");
-  //   console.log(lowStockProducts);
-  //   console.log(
-  //     "=========================================================================="
-  //   );
-  //   console.log(
-  //     "+++++++++++++++++++++++++___________________________--------____________________________+++++++++++++++++++++++++++++++"
-  //   );
-  // });
+  const sql3 = `SELECT customerId FROM customerdetails WHERE dueBalance < 200000`;
+  db.query(sql3, (err, goodCustomerId) => {
+    if (err) throw err;
+    goodCustomerId.forEach((goodCustomerId) => {
+      const sql = `SELECT customerName, customerId, customerAddress, customerContact, SUM(total) AS totalExpense FROM invoicedetails WHERE customerId = '${goodCustomerId.customerId}'`;
+      db.query(sql, (err, goodCustomerCandidate0) => {
+        if (err) throw err;
+        const goodCustomerCandidate1 = goodCustomerCandidate0[0];
+        goodCustomerCandidate = {...goodCustomerCandidate, ...goodCustomerCandidate1 }
+        // if (goodCustomerCandidate.totalExpense >= 1000000) {
+        //   console.log(
+        //     "--------------------------------------------------------------------------"
+        //   );
+        //   console.log(goodCustomerCandidate.customerName);
+        //   console.log(goodCustomerCandidate.totalExpense);
+        //   console.log(
+        //     "--------------------------------------------------------------------------"
+        //   );
+        // }
+      });
+    });
+    return res.json({
+      success: true,
+      goodCustomerCandidate,
+      dailyTransaction,
+      mostSoldProducts,
+      lowStockProducts,
+    });
+  });
 };
