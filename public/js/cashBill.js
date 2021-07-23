@@ -149,30 +149,30 @@ function inWords(num) {
 
 const amountOnInput = (e, amount0) => {
   e.preventDefault();
-  if (isNaN(document.querySelector("#rupees").value)) {
+  if (isNaN(document.querySelector("#rupees").value.trim())) {
     alert("Paid amount invalid!!");
     return;
   }
   const amount = parseInt(amount0);
   document.querySelector("#word").value = inWords(amount);
 };
-
+// inserting cash bill
 const uploadCashBill = (e) => {
   e.preventDefault();
   if (
-    document.querySelector("#select-options-customer").value == "----select----"
+    document.querySelector("#select-options-customer").value.trim() == "----select----"
   ) {
     alert("Customer Contact not selected!!");
     return;
   }
-  if (isNaN(document.querySelector("#rupees").value)) {
+  if (isNaN(document.querySelector("#rupees").value.trim())) {
     alert("Paid amount invalid!!");
     return;
   }
   // assigining null values to NA data
   const invoiceNo = "****";
   const total = 0;
-  const paidAmount = document.querySelector("#rupees").value;
+  const paidAmount = document.querySelector("#rupees").value.trim();
   const deliveredBy = "****";
   const checkedBy = "****";
   const date = document.getElementById("date").value;

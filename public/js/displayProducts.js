@@ -31,10 +31,9 @@ const clearProductInfoTable = () => {
 const dislpayProductDetailsOnSearch = (e) => {
   e.preventDefault();
   count = 0;
-  const productName = document.getElementById("productName").value;
-  const productId = document.getElementById("productId").value;
+  const productName = document.getElementById("productName").value.trim();
+  const productId = document.getElementById("productId").value.trim();
   const productRate = "";
-//   const productRate = document.getElementById("productRate").value;
   if (productName === "" && productId === "" && productRate === "") {
     return alert("Enter atleast one parameter");
   }

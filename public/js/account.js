@@ -1,9 +1,9 @@
 //adding new customer info
 const addCustomerDetails = (e) => {
   e.preventDefault();
-  const name = document.getElementById("name").value;
-  const address = document.getElementById("address").value;
-  const contact = document.getElementById("contact").value;
+  const name = document.getElementById("name").value.trim();
+  const address = document.getElementById("address").value.trim();
+  const contact = document.getElementById("contact").value.trim();
   const fetchOptions = {
     method: "POST",
     headers: {
@@ -16,7 +16,7 @@ const addCustomerDetails = (e) => {
     .then((data) => {
       if (!data.success) {
         //failed to insert data
-        alert(`${data.message}`)
+        alert(`${data.message}`);
       } else {
         //Data inserted
         alert("Data Inserted");
@@ -24,7 +24,6 @@ const addCustomerDetails = (e) => {
       }
     });
 };
-
 
 let count = 0;
 //to display customer info
@@ -54,36 +53,35 @@ const dislpayCustomerDetails = (e) => {
 //removing previous data before displaying new
 const clearCustomerInfoTable = () => {
   while (tbody.firstChild) {
-      tbody.removeChild(tbody.firstChild);
+    tbody.removeChild(tbody.firstChild);
   }
 };
-  
-  //displaying customer info on search
-  const dislpayCustomerDetailsOnSearch = (e) => {
-    e.preventDefault();
-    count = 0;
-    const searchCustomer = document.getElementById("searchCustomer").value;
-    const searchContact = document.getElementById("searchContact").value;
-    const searchAddress = document.getElementById("searchAddress").value;
-    if ( searchCustomer === "" && searchContact === "" && searchAddress === "") {
-      return alert("Enter atleast one parameter");
-    } 
-    clearCustomerInfoTable();
-    const fetchOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ searchCustomer, searchContact, searchAddress }),
-    };
-    fetch("/secured/dislpayCustomerDetailsOnSearch", fetchOptions)
+
+//displaying customer info on search
+const dislpayCustomerDetailsOnSearch = (e) => {
+  e.preventDefault();
+  count = 0;
+  const searchCustomer = document.getElementById("searchCustomer").value.trim();
+  const searchContact = document.getElementById("searchContact").value.trim();
+  const searchAddress = document.getElementById("searchAddress").value.trim();
+  if (searchCustomer === "" && searchContact === "" && searchAddress === "") {
+    return alert("Enter atleast one parameter");
+  }
+  clearCustomerInfoTable();
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ searchCustomer, searchContact, searchAddress }),
+  };
+  fetch("/secured/dislpayCustomerDetailsOnSearch", fetchOptions)
     .then((res) => res.json())
     .then((data) => {
       if (!data.success) {
-        alert(`${data.message}`)
+        alert(`${data.message}`);
       } else {
-        data.result.forEach((customer) => wrapCustomerDetails(customer))
+        data.result.forEach((customer) => wrapCustomerDetails(customer));
       }
-    }
-    );
-  };
+    });
+};

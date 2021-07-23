@@ -139,23 +139,23 @@ downArrow.addEventListener("click", () => {
 });
 //=====================================================DISPLAYING REQUIRED INFORMATION SECTION========================================//
 
-fetch("/secured/dislpayHomePageDetails")
-  .then((res) => res.json())
-  .then((data) => {
-    if (data.success) {
-      const MostSoldProducts = data.mostSoldProducts;
-      const LowStockProducts = data.lowStockProducts;
-      const DailyTransaction = data.dailyTransaction;
-      const GoodCustomerCandidate = data.goodCustomerCandidate;
-      console.log("DailyTransaction");
-      console.log(DailyTransaction);
-      console.log("MostSoldProducts");
-      console.log(MostSoldProducts);
-      console.log("GoodCustomerCandidate");
-      console.log(GoodCustomerCandidate);
-      console.log("LowStockProducts");
-      console.log(LowStockProducts);
+// fetch("/secured/dislpayHomePageDetails")
+//   .then((res) => res.json())
+//   .then((data) => {
+//     if (data.success) {
+//       const MostSoldProducts = data.mostSoldProducts;
+//       const LowStockProducts = data.lowStockProducts;
+//       const DailyTransaction = data.dailyTransaction;
+//       const GoodCustomerCandidate = data.goodCustomerCandidate;
+//       console.log("DailyTransaction");
+//       console.log(DailyTransaction);
+//       console.log("MostSoldProducts");
+//       console.log(MostSoldProducts);
+//       console.log("GoodCustomerCandidate");
+//       console.log(GoodCustomerCandidate);
+//       console.log("LowStockProducts");
+//       console.log(LowStockProducts);
       
-      // data.result.forEach((customer) => wrapCustomerContacts(customer));
-    }
-  });
+//       // data.result.forEach((customer) => wrapCustomerContacts(customer));
+//     }
+//   });

@@ -64,20 +64,20 @@ const customerOnChange = (e, selectedCustomer) => {
   //delete customer
   const deleteCustomer = (e) => {
     e.preventDefault();
-    if (document.querySelector(".select-options-customer").value == "----select----") {
+    if (document.querySelector(".select-options-customer").value.trim() == "----select----") {
       alert("Customer not selected!!");
       return;
     }
-    if (document.querySelector(".customerContact").value == "**********") {
+    if (document.querySelector(".customerContact").value.trim() == "**********") {
       alert("Customer ID not selected!!");
       return;
     }
     var txt;
-    var r = confirm(`Are you sure you want to continue?\n All the information related to\n ${document.querySelector(".select-options-customer").value}(${document.querySelector(".customerContact").value})\n will be deleted!!!`);
+    var r = confirm(`Are you sure you want to continue?\n All the information related to\n ${document.querySelector(".select-options-customer").value.trim()}(${document.querySelector(".customerContact").value.trim()})\n will be deleted!!!`);
     if (r != true) {
       return;
     }
-    const customerContact = document.querySelector(".customerContact").value;
+    const customerContact = document.querySelector(".customerContact").value.trim();
     const fetchOptions = {
       method: "POST",
       headers: {

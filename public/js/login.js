@@ -1,7 +1,7 @@
 const login = (e) => {
   e.preventDefault();
-  const userName = document.getElementById("userName").value;
-  const password = document.getElementById("password").value;
+  const userName = document.getElementById("userName").value.trim();
+  const password = document.getElementById("password").value.trim();
 
   const fetchOptions = {
     method: "POST",

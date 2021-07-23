@@ -63,20 +63,20 @@ const productOnChange = (e, selectedProduct) => {
 //delete product
 const addStock = (e) => {
   e.preventDefault();
-  if (document.querySelector(".select-options-product").value == "-------select-------") {
+  if (document.querySelector(".select-options-product").value.trim() == "-------select-------") {
     alert("Product not selected!!");
     return;
   }
-  if (document.querySelector(".productID").value == "------") {
+  if (document.querySelector(".productID").value.trim() == "------") {
     alert("Product ID not selected!!");
     return;
   }
-  if (isNaN(document.querySelector("#stockQty").value)) {
+  if (isNaN(document.querySelector("#stockQty").value.trim())) {
     alert("Invalid Stock value!!");
     return;
   }
-  const qty = document.querySelector("#stockQty").value;
-  const productID = document.querySelector(".productID").value;
+  const qty = document.querySelector("#stockQty").value.trim();
+  const productID = document.querySelector(".productID").value.trim();
   const status = "add";
   const fetchOptions = {
     method: "POST",

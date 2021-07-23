@@ -63,11 +63,11 @@ const productOnChange = (e, selectedProduct) => {
 //delete product
 const deleteProduct = (e) => {
   e.preventDefault();
-  if (document.querySelector(".select-options-product").value == "-------select-------") {
+  if (document.querySelector(".select-options-product").value.trim() == "-------select-------") {
     alert("Product not selected!!");
     return;
   }
-  if (document.querySelector(".productID").value == "------") {
+  if (document.querySelector(".productID").value.trim() == "------") {
     alert("Product ID not selected!!");
     return;
   }
@@ -76,7 +76,7 @@ const deleteProduct = (e) => {
   if (r != true) {
     return;
   }
-  const id = document.querySelector(".productID").value;
+  const id = document.querySelector(".productID").value.trim();
   const fetchOptions = {
     method: "POST",
     headers: {

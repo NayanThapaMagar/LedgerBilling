@@ -12,7 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="./css/footerMain.css" />
     <title>Home</title>
   </head>
@@ -93,7 +96,7 @@
 
       <div class="main">
         <div>
-          <div id="searchCustomer">
+          <div id="customer-details">
             <tr>
               <th class="thop">Name:&nbsp;</th>
               <td>
@@ -101,6 +104,7 @@
                   type="text"
                   placeholder="Enter customer name"
                   class="no-outline"
+                  id="searchCustomer"
                 />
               </td>
               &nbsp;
@@ -112,8 +116,9 @@
               <td>
                 <input
                   type="text"
-                  placeholder="Enter customerID"
+                  placeholder="Enter contact"
                   class="no-outline"
+                  id="searchContact"
                 />&nbsp;
               </td>
               <br />
@@ -125,16 +130,19 @@
                   type="text"
                   placeholder="Enter customer name"
                   class="no-outline"
+                  id="searchAddress"
                 />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
                   type="submit"
                   value="Search"
                   id="searchIcon"
-                />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
-                  type="submit"
-                  value="Cancle"
-                  id="cancleIcon"
-                />
+                  class="btn2"
+                  onclick="dislpayCustomerDetailsOnSearch(event)"
+                />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button
+                  class="btn2"
+                >
+                  <a href="/secured/ledger" class="btn2">Cancel</a>
+                </button>
               </td>
             </tr>
 
@@ -177,10 +185,18 @@
           <div class="footer-col">
             <h4>follow us on</h4>
             <div class="social-links">
-              <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://mobile.twitter.com/login"><i class="fab fa-twitter"></i></a>
-              <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-              <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://mobile.twitter.com/login"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.instagram.com/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.linkedin.com"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
             </div>
           </div>
         </div>

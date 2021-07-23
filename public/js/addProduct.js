@@ -1,9 +1,9 @@
 //adding new customer info
 const addProduct = (e) => {
     e.preventDefault();
-    const name = document.getElementById("productName").value;
-    const rate = document.getElementById("productRate").value;
-    const stockQty = document.getElementById("stockQty").value;
+    const name = document.getElementById("productName").value.trim();
+    const rate = document.getElementById("productRate").value.trim();
+    const stockQty = document.getElementById("stockQty").value.trim();
     const fetchOptions = {
       method: "POST",
       headers: {

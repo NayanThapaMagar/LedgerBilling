@@ -416,10 +416,9 @@ const productQtyOnChange1 = () => {
     return;
   }
   //---------------//
-  // const inputQty = document.querySelector(".productQty1").value;
   var stock = "";
   const productName = "";
-  const productId = document.querySelector(".productID1").value;
+  const productId = document.querySelector(".productID1").value.trim();
   const productRate = "";
   const fetchOptions = {
     method: "POST",
@@ -443,7 +442,7 @@ const productQtyOnChange1 = () => {
   }
   setTimeout(function () {
     //calculating amount
-    var inputQty = document.querySelector(".productQty1").value;
+    var inputQty = document.querySelector(".productQty1").value.trim();
     const rate = document.querySelector(".productRate1").innerHTML;
     //checking if stock is available or not
     if (inputQty > stock) {
@@ -463,12 +462,12 @@ const productQtyOnChange1 = () => {
 const productQtyOnChange = (className) => {
   const num = className.split("y")[1];
   //checking if product selected or not
-  if (document.querySelector(`.select-options-product${num}`).value == "----select----" && document.querySelector(`.productQty${num}`).value != 0) {
+  if (document.querySelector(`.select-options-product${num}`).value == "----select----" && document.querySelector(`.productQty${num}`).value.trim() != 0) {
     alert("Product not selected!!!");
     document.querySelector(`.productQty${num}`).value = 0;
     return;
   }
-  if (document.querySelector(`.productID${num}`).value == "-----" && document.querySelector(`.productQty${num}`).value != 0) {
+  if (document.querySelector(`.productID${num}`).value == "-----" && document.querySelector(`.productQty${num}`).value.trim() != 0) {
     alert("Product Id not selected!!!");
     document.querySelector(`.productQty${num}`).value = 0;
     return;
@@ -476,7 +475,7 @@ const productQtyOnChange = (className) => {
   //---------------//
   var stock = "";
   const productName = "";
-  const productId = document.querySelector(`.productID${num}`).value;
+  const productId = document.querySelector(`.productID${num}`).value.trim();
   const productRate = "";
   const fetchOptions = {
     method: "POST",
@@ -500,7 +499,7 @@ const productQtyOnChange = (className) => {
     }
   setTimeout(function () {
     //calculating amount
-    var inputQty = document.querySelector(`.productQty${num}`).value;
+    var inputQty = document.querySelector(`.productQty${num}`).value.trim();
     const rate = document.querySelector(`.productRate${num}`).innerHTML;
     //checking if stock is available or not
     if (inputQty > stock) {
@@ -536,7 +535,7 @@ const calculateGrandTotal = () => {
 
 //calculating due amount on input
 const paidAmountOnInput = () => {
-  const paidAmount = document.getElementById("paidAmount").value;
+  const paidAmount = document.getElementById("paidAmount").value.trim();
   const grandTotal = document.querySelector("#grandTotal").innerHTML;
   const dueAmount = grandTotal - paidAmount;
   document.querySelector("#dueAmount").innerHTML = dueAmount.toFixed(3);
@@ -548,15 +547,15 @@ const paidAmountOnInput = () => {
 const saveInvoiceData = (e) => {
   e.preventDefault();
   const invoiceNo = document.getElementById("invoiceNo").innerHTML;
-  const date = document.getElementById("date").value;
+  const date = document.getElementById("date").value.trim();
   const customerId = document.getElementById("customerId").innerHTML;
   const customerName = document.getElementById("customerName").innerHTML;
   const customerAddress = document.getElementById("customerAddress").innerHTML;
-  const contactNo = document.getElementById("select-options-customer").value;
+  const contactNo = document.getElementById("select-options-customer").value.trim();
   const total = document.getElementById("total").innerHTML;
-  const paidAmount = document.getElementById("paidAmount").value;
-  const deliveredBy = document.getElementById("deliveredBy").value;
-  const checkedBy = document.getElementById("checkedBy").value;
+  const paidAmount = document.getElementById("paidAmount").value.trim();
+  const deliveredBy = document.getElementById("deliveredBy").value.trim();
+  const checkedBy = document.getElementById("checkedBy").value.trim();
   const num = tbody.childElementCount;
   for (let i = 1; i <= num; i++) {
     let productName = document.querySelector(
@@ -592,9 +591,9 @@ const saveInvoiceData = (e) => {
     let productName = document.querySelector(
       `.select-options-product${i}`
     ).value;
-    let productID = document.querySelector(`.productID${i}`).value;
+    let productID = document.querySelector(`.productID${i}`).value.trim();
     let productRate = document.querySelector(`.productRate${i}`).innerHTML;
-    let productQty = document.querySelector(`.productQty${i}`).value;
+    let productQty = document.querySelector(`.productQty${i}`).value.trim();
     //adding purchased products to database
     const fetchOptions = {
       method: "POST",
@@ -661,8 +660,8 @@ const saveInvoiceData = (e) => {
   ID[0] = "";
   Quantity[0] = "";
   for (let i = 1; i <= num; i++) {
-    ID[i] = document.querySelector(`.productID${i}`).value;
-    Quantity[i] = document.querySelector(`.productQty${i}`).value;
+    ID[i] = document.querySelector(`.productID${i}`).value.trim();
+    Quantity[i] = document.querySelector(`.productQty${i}`).value.trim();
   }
 
   // -----------------------Updating Product Stock--------------------------//

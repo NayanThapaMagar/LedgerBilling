@@ -95,5 +95,5 @@ fetch("/secured/cashBillDetails", fetchOptions)
     document.querySelector("#customerName").value = `${customer.customerName} (${customer.customerAddress},ID:${customerId})`;
     document.querySelector("#customerContact").value = customer.customerContact;
     document.querySelector("#rupees").value = customer.paidAmount;
-    document.querySelector("#word").value = inWords(customer.paidAmount);
+    document.querySelector("#word").value = inWords(parseInt(customer.paidAmount));
   });

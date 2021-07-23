@@ -1,9 +1,9 @@
 //changing login information//changing login password
 const changeloginInfo = (e) => {
     e.preventDefault();
-    const oldPassword = document.getElementById("oldPassword").value;
-    const newPassword = document.getElementById("newPassword").value;
-    const confirmPassword = document.getElementById("confirmPassword").value;
+    const oldPassword = document.getElementById("oldPassword").value.trim();
+    const newPassword = document.getElementById("newPassword").value.trim();
+    const confirmPassword = document.getElementById("confirmPassword").value.trim();
     const fetchOptions = {
       method: "POST",
       headers: {
