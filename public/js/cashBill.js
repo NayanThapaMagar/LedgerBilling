@@ -225,5 +225,5 @@ const uploadCashBill = (e) => {
         window.location.assign("/secured/cashBill");
       }
     });
-  }, 5);
+  }, 50);
 };
