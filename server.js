@@ -51,7 +51,7 @@ app.get("/", (req, res) => {
       }
     }
   }
-  return res.sendFile(staticDir+"/register.html");
+  return res.sendFile(staticDir+"/login.html");
 })
 
 
