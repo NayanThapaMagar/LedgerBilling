@@ -1,277 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/footerMain.css" />
+    <link rel="stylesheet" href="./css/homeContent.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <title>Home</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/home.css" />
-  <link rel="stylesheet" href="./css/footerMain.css" />
-  <link rel="stylesheet" href="./css/homeContent.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <title>Home</title>
-</head>
-
-<body>
-  <div class="nav-and-arrow">
-    <nav>
-      <div class="logo">
-        <h4 id="logo">The Nuss</h4>
-      </div>
-      <div class="navbar">
-        <span class="dropdown">
-          <a href="/secured/home">Home</a>
-        </span>
-        <span class="dropdown" id="accountBtn">
-          <button class="dropbtn">Customer Account</button>
-          <div class="dropdown-content" id="account">
-            <a href="/secured/addAccount">Add Account</a>
-            <a href="/secured/deleteAccount">Delete Account</a>
-            <a href="/secured/searchAccount">Search Account</a>
-          </div>
-        </span>
-        <span class="dropdown" id="ledgerBtn">
-          <a href="/secured/invoice">Invoice</a>
-        </span>
-        <span class="dropdown" id="ledgerBtn">
-          <a href="/secured/ledger">Ledger</a>
-        </span>
-        <span class="dropdown" id="productBtn">
-          <button class="dropbtn">Products</button>
-          <div class="dropdown-content" id="product">
-            <a href="/secured/addProduct">Add Product</a>
-            <a href="/secured/deleteProduct">Delete Product</a>
-            <a href="/secured/searchProduct">Search Products</a>
-            <a href="/secured/addStock">Add Stock</a>
-          </div>
-        </span>
-        <span class="dropdown">
-          <a href="/secured/cashBill">Cash Bill</a>
-        </span>
-        <span class="settings-and-logout">
-          <a href="#">Admin</a>
-        </span>
-        <span class="settings-and-logout">
-          <a href="#">Privacy Settings</a>
-        </span>
-        <span class="settings-and-logout">
-          <a href="/secured/redirectToChangePassword"
-            >Change admin password</a
-          >
-        </span>
-        <span class="settings-and-logout">
-          <a href="#" id="logout0">Log out</a>
-        </span>
-      </div>
-      <span class="dropdown" id="down-arrow">
-        <div class="arrow-down"></div>
-        <div class="dropdown-content" id="system">
-          <a href="#">Admin</a>
-          <a href="#">Privacy Settings</a>
-          <a href="/secured/redirectToChangePassword"
-            >Change admin password</a
-          >
-          <!-- <button id="logout">Log out</button> -->
-          <a href="" id="logout">Log out</a>
+  <body>
+    <div class="nav-and-arrow">
+      <nav>
+        <div class="logo">
+          <h4 id="logo">The Nuss</h4>
         </div>
-      </span>
-      <div class="burger">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
-    </nav>
-  </div>
-  <div class="mainContent">
-    <P></P>
+        <div class="navbar">
+          <span class="dropdown">
+            <a href="/secured/home">Home</a>
+          </span>
+          <span class="dropdown" id="accountBtn">
+            <button class="dropbtn">Customer Account</button>
+            <div class="dropdown-content" id="account">
+              <a href="/secured/addAccount">Add Account</a>
+              <a href="/secured/deleteAccount">Delete Account</a>
+              <a href="/secured/searchAccount">Search Account</a>
+            </div>
+          </span>
+          <span class="dropdown" id="ledgerBtn">
+            <a href="/secured/invoice">Invoice</a>
+          </span>
+          <span class="dropdown" id="ledgerBtn">
+            <a href="/secured/ledger">Ledger</a>
+          </span>
+          <span class="dropdown" id="productBtn">
+            <button class="dropbtn">Products</button>
+            <div class="dropdown-content" id="product">
+              <a href="/secured/addProduct">Add Product</a>
+              <a href="/secured/deleteProduct">Delete Product</a>
+              <a href="/secured/searchProduct">Search Products</a>
+              <a href="/secured/addStock">Add Stock</a>
+            </div>
+          </span>
+          <span class="dropdown">
+            <a href="/secured/cashBill">Cash Bill</a>
+          </span>
+          <span class="settings-and-logout">
+            <a href="#">Admin</a>
+          </span>
+          <span class="settings-and-logout">
+            <a href="#">Privacy Settings</a>
+          </span>
+          <span class="settings-and-logout">
+            <a href="/secured/redirectToChangePassword"
+              >Change admin password</a
+            >
+          </span>
+          <span class="settings-and-logout">
+            <a href="#" id="logout0">Log out</a>
+          </span>
+        </div>
+        <span class="dropdown" id="down-arrow">
+          <div class="arrow-down"></div>
+          <div class="dropdown-content" id="system">
+            <a href="#">Admin</a>
+            <a href="#">Privacy Settings</a>
+            <a href="/secured/redirectToChangePassword"
+              >Change admin password</a
+            >
+            <a href="" id="logout">Log out</a>
+          </div>
+        </span>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
     </div>
-
-  <!-- home page whole content and footer -->
-<!-- 
-  <div class="wholeContent body">
-    <div class="leftContent"></div>
     <div class="mainContent">
-      <p></p> -->
-    
-      
-        <!-- <img src="invoice.jpg" alt="wall"> -->
+      <p></p>
+    </div>
 
-
-        <!-- <div id="ledgerSection">
-          <h2>Daily Transaction</h2>
-          <table id="L-table">
-            <tr id="heigth">
-              <th id="tableHeadingSn">S.N.</th>
-              <th id="tableHeadingName">Name</th>
-              <th id="tableHeadingId">CustomerID</th>
-              <th id="tableHeadingId">Contact No.</th>
-              <th id="tableHeadingAddress">Address</th>
-              <th id="tableHeadingCr">Dr/Cr</th>
-              <th id="tableHeadingAmount">Amount</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>susil</td>
-              <td>43343</td>
-              <td>983492934</td>
-              <td>dang</td>
-              <td>33</td>
-              <td>4344</td>
-            </tr>
-
-
-            <tr>
-              <td>1</td>
-              <td>susil</td>
-              <td>43343</td>
-              <td>983492934</td>
-              <td>dang</td>
-              <td>33</td>
-              <td>4344</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>susil</td>
-              <td>43343</td>
-              <td>983492934</td>
-              <td>dang</td>
-              <td>33</td>
-              <td>4344</td>
-            </tr>
-
-            <tr>
-              <td>1</td>
-              <td>susil</td>
-              <td>43343</td>
-              <td>983492934</td>
-              <td>dang</td>
-              <td>33</td>
-              <td>4344</td>
-            </tr>
-
-
-            <tr>
-              <td>1</td>
-              <td>susil</td>
-              <td>43343</td>
-              <td>983492934</td>
-              <td>dang</td>
-              <td>33</td>
-              <td>4344</td>
-            </tr>
-          </table> -->
-
-          <!-- ..................highly purched ............................. -->
-
-          <!-- <div class="highlyPurched">
-            <h2>Frequently Transacted Products</h2>
+    <div class="wholeContent body">
+      <div class="mainContent"></div>
+    </div>
+    <footer class="footer">
+      <div class="fcontainer">
+        <div class="f-row">
+          <div class="footer-col">
+            <h4>Designed By</h4>
+            <ul>
+              <li><a href="#">NUSS CS2019 KU</a></li>
+            </ul>
           </div>
-
-          <table id="L-table">
-            <tr id="heigth">
-              <th id="tableHeadingSn">S.N.</th>
-              <th id="tableHeadingName">Product Name</th>
-              <th id="tableHeadingId">Rate</th>
-              <th id="tableHeadingId">Stock</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>susil</td>
-              <td>43343</td>
-              <td>983492934</td>
-            </tr>
-          </table> -->
-
-
-
-
-          <!--................................ repeted customer.............................. -->
-
-          <!-- <div class="highlyPurched">
-            <h2>Good Customers</h2>
+          <div class="footer-col">
+            <h4>More About Us</h4>
+            <ul>
+              <li><a href="#">Our Services</a></li>
+              <li><a href="#">privacy services</a></li>
+            </ul>
           </div>
-
-          <table id="L-table">
-            <tr id="heigth">
-              <th id="tableHeadingSn">S.N.</th>
-              <th id="tableHeadingName">Customer Name</th>
-              <th id="tableHeadingId">Address</th>
-              <th id="tableHeadingId">Contact No.</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>susil</td>
-              <td>43343</td>
-              <td>983492934</td>
-            </tr>
-          </table> -->
-
-
-          <!-- ...................................low stock products........................................... -->
-          <!-- <div class="highlyPurched">
-            <h2>Low Stock Products</h2>
-          </div>
-
-          <table id="L-table">
-            <tr id="heigth">
-              <th id="tableHeadingSn">S.N.</th>
-              <th id="tableHeadingName">Product Name</th>
-              <th id="tableHeadingId">Stock Quantity</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>susil</td>
-              <td>43343</td>
-            </tr>
-          </table>
-
-
-
-
-        </div> -->
-
-        <!-- highly purched item -->
-        <!-- <div class="highlyPurched">
-            susil
-        </div> -->
-
-
-    
-    <!-- </div> -->
-    <!-- <div class="rightContent"></div>  -->
-  <!-- </div>  -->
-  <footer class="footer">
-    <div class="fcontainer">
-      <div class="f-row">
-        <div class="footer-col">
-          <h4>Designed By</h4>
-          <ul>
-            <li><a href="#">NUSS CS2019 KU</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>More About Us</h4>
-          <ul>
-            <li><a href="#">Our Services</a></li>
-            <li><a href="#">privacy services</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>follow us on</h4>
-          <div class="social-links">
-            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://mobile.twitter.com/login"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+          <div class="footer-col">
+            <h4>follow us on</h4>
+            <div class="social-links">
+              <a href="https://www.facebook.com/"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://mobile.twitter.com/login"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.instagram.com/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.linkedin.com"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
-</body>
-<script src="./js/home.js"></script>
-
+    </footer>
+  </body>
+  <script src="./js/home.js"></script>
 </html>
