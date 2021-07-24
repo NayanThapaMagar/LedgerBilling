@@ -29,10 +29,6 @@ const login = (e) => {
     });
 };
 
-//redirecting to change password page
-// const redirectToChangePassword = (e) => {
-//   window.location.assign("/secured/redirectToChangePassword");
-// };
 
 
 
