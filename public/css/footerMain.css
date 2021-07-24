@@ -11,11 +11,6 @@
     bottom: 20px;
  }
  
-.mainContent{
-    background-image: url("../back3.jpg");
-    background-size:100% 100%;
-    z-index: -4;
-} 
 /*.leftContent{
     background-image: url("../side.jpg");
     background-size:100% 100%;

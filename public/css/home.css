@@ -12,10 +12,12 @@
 
 }
 
-body{
-    background-image: url("../back.jpg");
-    background-size: cover;  
-  }
+.mainContent{
+    background-image: url("../back3.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+} 
+
 nav {
     width: 95%;
     margin: auto;
