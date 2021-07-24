@@ -462,12 +462,19 @@ const productQtyOnChange1 = () => {
 const productQtyOnChange = (className) => {
   const num = className.split("y")[1];
   //checking if product selected or not
-  if (document.querySelector(`.select-options-product${num}`).value == "----select----" && document.querySelector(`.productQty${num}`).value.trim() != 0) {
+  if (
+    document.querySelector(`.select-options-product${num}`).value ==
+      "----select----" &&
+    document.querySelector(`.productQty${num}`).value.trim() != 0
+  ) {
     alert("Product not selected!!!");
     document.querySelector(`.productQty${num}`).value = 0;
     return;
   }
-  if (document.querySelector(`.productID${num}`).value == "-----" && document.querySelector(`.productQty${num}`).value.trim() != 0) {
+  if (
+    document.querySelector(`.productID${num}`).value == "-----" &&
+    document.querySelector(`.productQty${num}`).value.trim() != 0
+  ) {
     alert("Product Id not selected!!!");
     document.querySelector(`.productQty${num}`).value = 0;
     return;
@@ -494,9 +501,9 @@ const productQtyOnChange = (className) => {
         stock = product.productStock;
       }
     });
-    if (document.querySelector(`.productID${num}`).value == "-----") {
-      stock = 0;
-    }
+  if (document.querySelector(`.productID${num}`).value == "-----") {
+    stock = 0;
+  }
   setTimeout(function () {
     //calculating amount
     var inputQty = document.querySelector(`.productQty${num}`).value.trim();
@@ -551,7 +558,9 @@ const saveInvoiceData = (e) => {
   const customerId = document.getElementById("customerId").innerHTML;
   const customerName = document.getElementById("customerName").innerHTML;
   const customerAddress = document.getElementById("customerAddress").innerHTML;
-  const contactNo = document.getElementById("select-options-customer").value.trim();
+  const contactNo = document
+    .getElementById("select-options-customer")
+    .value.trim();
   const total = document.getElementById("total").innerHTML;
   const paidAmount = document.getElementById("paidAmount").value.trim();
   const deliveredBy = document.getElementById("deliveredBy").value.trim();
@@ -700,22 +709,23 @@ const saveInvoiceData = (e) => {
   }, 50);
 };
 //-------------------------------------------------------printing the invoice------------------------------------------------------//
-const elem = document.querySelector(".invoiceForm");
-function PrintElem(elem)
-{
-    var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+// function PrintInvoice(elem) {
+//   var mywindow = window.open("", "PRINT", "height=600,width=1000");
 
-    mywindow.document.write('<html><head><title>' + document.title  + '</title>');
-    mywindow.document.write('</head><body >');
-    mywindow.document.write('<h1>' + document.title  + '</h1>');
-    mywindow.document.write(document.getElementById(elem).innerHTML);
-    mywindow.document.write('</body></html>');
+//   // mywindow.document.write("<html><head><title>" + document.title + "</title>");
+//   // mywindow.document.write("</head><body >");
+//   // mywindow.document.write("<h1>" + document.title + "</h1>");
+//   mywindow.document.write(document.getElementById(elem).innerHTML);
+//   // mywindow.document.write("</body></html>");
 
-    mywindow.document.close(); // necessary for IE >= 10
-    mywindow.focus(); // necessary for IE >= 10*/
+//   mywindow.document.close(); 
+//   mywindow.focus(); 
+//   mywindow.print();
+//   mywindow.close();
 
-    mywindow.print();
-    mywindow.close();
-
-    return true;
-}
+//   return true;
+// }
+// const toPrint = (e) => {
+//   e.preventDefault();
+//   PrintInvoice("invoiceForm");
+// };
