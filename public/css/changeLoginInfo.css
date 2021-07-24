@@ -1,17 +1,27 @@
 /* @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"; */
 
-h1{
-    font-size: 50px;
+h2{
+    width: 220px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 4px;
     margin-top: 100px;
     margin-bottom: 50px;
     text-align: center;
     text-shadow: rgb(75, 68, 82);
-    color: #52c3f8;
+    color:white; 
+    background: #424040; 
     text-decoration-style: solid;
+}
+.heading{
+    display: flex;
+    justify-content: center;
 }
 input{
     outline: none;
+    background: none;
 }
+
 .container {
     width: 400px;
     height:400px;
@@ -36,14 +46,14 @@ input{
 
 .btn{
     
-    background:   #52c3f8;
+    background: #424040; 
     cursor: pointer;;
     border: none;
     border-radius: 4px;
     padding: 5px;
     letter-spacing: 1px;
-    width: 170px;
-    height:55px;
+    width: 150px;
+    height:50px;
     color: white;
     outline: none;
     transition: ease-out 0.3s;
@@ -58,14 +68,14 @@ input{
     
 }
 .btn:hover{
-    box-shadow: inset 170px 0 0 0 #47a9d6;
+    box-shadow: inset 170px 0 0 0 #5c5858;
 }
 
 
 
 .l{
 border: none;
-    border-bottom: 2px solid #52c3f8;
+    border-bottom: 2px solid #424040; 
     overflow: hidden;
     padding: 8px 0px;
     margin: 8px 0px;
