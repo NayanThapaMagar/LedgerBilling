@@ -83,5 +83,5 @@ function PrintInvoice(elem) {
 }
 const toPrint = (e) => {
   e.preventDefault();
-  PrintInvoice("invoiceForm");
+  PrintInvoice("inv");
 };
