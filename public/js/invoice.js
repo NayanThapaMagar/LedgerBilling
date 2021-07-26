@@ -35,8 +35,8 @@ const addRow = (e) => {
     </select>
   </td>
   <td class="productRate${count}" align="center"></td>
-  <td class="widthQTY" align="center">
-    <input type="text" class="productQty${count}" oninput="productQtyOnChange(this.className)" required>
+  <td class="widthQTY" align="center" id="ProductQty${count}">
+    <input type="text" class="productQty${count}" id="productQty${count}" oninput="productQtyOnChange(this.className)" required>
   </td>
   <td class="productAmount${count}" align="center">0</td>`;
   tbody.appendChild(row);
@@ -548,6 +548,18 @@ const paidAmountOnInput = () => {
   document.querySelector("#dueAmount").innerHTML = dueAmount.toFixed(3);
 };
 
+//--------------------------------------------------------------------------PRINTING INVOICE-----------------------------------------------------------------------//
+function PrintInvoice(elem) {
+  var printContents = document.getElementById(elem).innerHTML;
+  var originalContents = document.body.innerHTML;
+  document.body.innerHTML = printContents;
+  window.focus();
+  window.print();
+  document.body.innerHTML = originalContents;
+  window.location.assign("/secured/invoice");
+  return true;
+}
+
 //--------------------------------------------------------------INSERTING INVOICE DATA TO DATABASE---------------------------------------------------------------//
 
 //calculating due amount on input
@@ -555,6 +567,7 @@ const saveInvoiceData = (e) => {
   e.preventDefault();
   const invoiceNo = document.getElementById("invoiceNo").innerHTML;
   const date = document.getElementById("date").value.trim();
+  document.getElementById("date").value = date;
   const customerId = document.getElementById("customerId").innerHTML;
   const customerName = document.getElementById("customerName").innerHTML;
   const customerAddress = document.getElementById("customerAddress").innerHTML;
@@ -703,29 +716,28 @@ const saveInvoiceData = (e) => {
         } else {
           //Data inserted
           alert(`${data.message}`);
-          window.location.assign("/secured/invoice");
         }
       });
   }, 50);
+
+  //-------------------preparing to print invoice--------------------------------------------//
+  setTimeout(function () {
+    document.getElementById("Date").innerHTML =
+      document.getElementById("date").value;
+    document.getElementById("PaidAmount").innerHTML =
+      document.getElementById("paidAmount").value;
+    document.getElementById("DeliveredBy").innerHTML =
+      document.getElementById("deliveredBy").value;
+    document.getElementById("CheckedBy").innerHTML =
+      document.getElementById("checkedBy").value;
+    document.getElementById("AuthorizedSignature").innerHTML = "";
+    const num = tbody.childElementCount;
+    for (i = 1; i <= num; i++) {
+      document.getElementById(`ProductQty${i}`).innerHTML =
+        document.getElementById(`productQty${i}`).value;
+    }
+    document.querySelector(".button").innerHTML = "";
+    document.querySelector(".continueButton").innerHTML = "";
+    PrintInvoice("center_whole_content");
+  }, 100);
 };
-//-------------------------------------------------------printing the invoice------------------------------------------------------//
-function PrintInvoice(elem) {
-  var mywindow = window.open("", "PRINT", "height=600,width=1000");
-
-  mywindow.document.write("<html><head><title>" + document.title + "</title>");
-  mywindow.document.write("</head><body >");
-  // mywindow.document.write("<h1>" + document.title + "</h1>");
-  // mywindow.document.write(document.getElementById(elem).innerHTML);
-  mywindow.document.write("</body></html>");
-
-  mywindow.document.close(); 
-  mywindow.focus(); 
-  mywindow.print();
-  mywindow.close();
-
-  return true;
-}
-// const toPrint = (e) => {
-//   e.preventDefault();
-//   PrintInvoice("invoiceForm");
-// };
