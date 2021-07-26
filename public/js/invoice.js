@@ -725,7 +725,7 @@ function PrintInvoice(elem) {
 
   return true;
 }
-const toPrint = (e) => {
-  e.preventDefault();
-  PrintInvoice("invoiceForm");
-};
+// const toPrint = (e) => {
+//   e.preventDefault();
+//   PrintInvoice("invoiceForm");
+// };
