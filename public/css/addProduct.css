@@ -76,19 +76,7 @@ span{
     position: relative;
     bottom: 20px;
  }
- 
-/*.leftContent{
-    background-image: url("../side.jpg");
-    background-size:100% 100%;
-    background-repeat: no-repeat;
-    opacity: 0.5;
-}
-.rightContent{
-    background-image: url("../side.jpg");
-    background-size:100% 100%;
-    background-repeat: no-repeat;
-    opacity: 0.5; */
-/* } */
+
 .footer{
     height: 120px;
     position: fixed;

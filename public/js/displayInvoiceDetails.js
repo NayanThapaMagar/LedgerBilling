@@ -65,23 +65,25 @@ fetch("/secured/invoiceDetails", fetchOptions)
     document.querySelector("#deliveredBy").innerHTML = customer.deliveredBy;
     document.querySelector("#checkedBy").innerHTML = customer.checkedBy;
   });
-function PrintInvoice(elem) {
-  var mywindow = window.open("", "PRINT", "height=400,width=700");
 
-  // mywindow.document.write("<html><head><title>" + document.title + "</title>");
-  // mywindow.document.write("</head><body >");
-  // mywindow.document.write("<h1>" + document.title + "</h1>");
-  mywindow.document.write(document.getElementById(elem).innerHTML);
-  // mywindow.document.write("</body></html>");
 
-  mywindow.document.close();
-  mywindow.focus();
-  mywindow.print();
-  mywindow.close();
+// function PrintInvoice(elem) {
+//   var mywindow = window.open("", "PRINT", "height=400,width=700");
 
-  return true;
-}
-const toPrint = (e) => {
-  e.preventDefault();
-  PrintInvoice("inv");
-};
+//   // mywindow.document.write("<html><head><title>" + document.title + "</title>");
+//   // mywindow.document.write("</head><body >");
+//   // mywindow.document.write("<h1>" + document.title + "</h1>");
+//   mywindow.document.write(document.getElementById(elem).innerHTML);
+//   // mywindow.document.write("</body></html>");
+
+//   mywindow.document.close();
+//   mywindow.focus();
+//   mywindow.print();
+//   mywindow.close();
+
+//   return true;
+// }
+// const toPrint = (e) => {
+//   e.preventDefault();
+//   PrintInvoice("inv");
+// };

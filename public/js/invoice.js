@@ -709,23 +709,23 @@ const saveInvoiceData = (e) => {
   }, 50);
 };
 //-------------------------------------------------------printing the invoice------------------------------------------------------//
-// function PrintInvoice(elem) {
-//   var mywindow = window.open("", "PRINT", "height=600,width=1000");
+function PrintInvoice(elem) {
+  var mywindow = window.open("", "PRINT", "height=600,width=1000");
 
-//   // mywindow.document.write("<html><head><title>" + document.title + "</title>");
-//   // mywindow.document.write("</head><body >");
-//   // mywindow.document.write("<h1>" + document.title + "</h1>");
-//   mywindow.document.write(document.getElementById(elem).innerHTML);
-//   // mywindow.document.write("</body></html>");
+  mywindow.document.write("<html><head><title>" + document.title + "</title>");
+  mywindow.document.write("</head><body >");
+  // mywindow.document.write("<h1>" + document.title + "</h1>");
+  // mywindow.document.write(document.getElementById(elem).innerHTML);
+  mywindow.document.write("</body></html>");
 
-//   mywindow.document.close(); 
-//   mywindow.focus(); 
-//   mywindow.print();
-//   mywindow.close();
+  mywindow.document.close(); 
+  mywindow.focus(); 
+  mywindow.print();
+  mywindow.close();
 
-//   return true;
-// }
-// const toPrint = (e) => {
-//   e.preventDefault();
-//   PrintInvoice("invoiceForm");
-// };
+  return true;
+}
+const toPrint = (e) => {
+  e.preventDefault();
+  PrintInvoice("invoiceForm");
+};
