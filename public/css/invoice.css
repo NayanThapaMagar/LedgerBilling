@@ -189,7 +189,27 @@ th {
 .particulars table {
   width: 555px;
 }
-
+.print button{
+  background:   #424040;
+  cursor: pointer;;
+  border: none;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  width: 80px;
+  height:35px;
+  color: white;
+  outline: none;
+  transition: ease-out 0.3s;
+  font-size: 15px;
+}
+.print button:hover{
+  box-shadow: inset 80px 0 0 0 #5c5858;
+  color: white;
+}
+.print{
+  display: flex;
+  justify-content: center;
+}
 
 /* for resizing */
 @media (max-width: 654px) {
