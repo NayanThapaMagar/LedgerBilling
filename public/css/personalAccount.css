@@ -41,7 +41,24 @@
 
 table{
     width: fit-content;
+    max-height: 250px;
+    display: inline-block;
+    overflow-y: auto;
 }
+th{
+    position: sticky;
+    top: 0px;
+
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    border: 1px solid #c4c6ca;
+  }
+  ::-webkit-scrollbar-thumb{
+    background-color:#a5a0a0;
+    border-radius:6px;
+  }
 
 #information{
   
@@ -64,11 +81,15 @@ table{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height:20vh;
+    /* min-height:20vh; */
     
 
 }
+tr:last-child{
+    position: sticky;
+    bottom: 0px;
 
+}
 #tableMain table{
     border-collapse: collapse;
 }
@@ -78,6 +99,8 @@ table{
 }
 #tableMain .noLine{
     border: 0.5px solid white;
+    background-color:#5c5858;;
+    border: 1px solid #5c5858;
 }
 
 #heigth{
