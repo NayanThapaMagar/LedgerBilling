@@ -382,6 +382,20 @@ nav {
     /* background-color: yellow; */
     z-index: -4;
 }
+/* .....................................................................SUSILDON............................................ */
+.susilDon{
+    text-align: center;
+    /* border: 1px solid black; */
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 10%;
+}
+.susilDon h1{
+    font-size: 62px;
+    color: #c7c3c3;
+    font-family:  'Arial Narrow Bold', sans-serif;
+}
+/* ..........................................................END SUSILDON...................................... */
 .rightContent{
     width: 25%;
     height: 80vh;
