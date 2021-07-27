@@ -96,7 +96,9 @@ fetch("/secured/cashBillDetails", fetchOptions)
     const date = date0.split("T")[0];
     document.querySelector("#cashBillNo").innerHTML = customer.cashBillNo;
     document.querySelector("#date").value = date;
-    document.querySelector("#customerName").value = `${customer.customerName} (${customer.customerAddress},ID:${customerId})`;
+    document.querySelector(
+      "#customerName"
+    ).value = `${customer.customerName} (${customer.customerAddress},ID:${customerId})`;
     document.querySelector("#customerContact").value = customer.customerContact;
     document.querySelector("#rupees").value = customer.paidAmount;
     document.querySelector("#word").value = inWords(
@@ -105,21 +107,28 @@ fetch("/secured/cashBillDetails", fetchOptions)
   });
 
 function PrintInvoice(elem) {
-  var printContents = document.getElementById(elem).innerHTML;
-  var originalContents = document.body.innerHTML;
-  document.body.innerHTML = printContents;
-  window.focus();
-  window.print();
-  document.body.innerHTML = originalContents;
+  // setTimeout(function () {
+    var printContents = document.getElementById(elem).innerHTML;
+    var originalContents = document.body.innerHTML;
+    document.body.innerHTML = printContents;
+    window.focus();
+    window.print();
+    document.body.innerHTML = originalContents;
+  // }, 0.00000000001);
   window.location.reload();
   return true;
 }
 const toPrint = () => {
-  document.getElementById("Date").innerHTML = document.getElementById("date").value;
-  document.getElementById("CustomerName").innerHTML = document.getElementById("customerName").value;
-  document.getElementById("CustomerContact").innerHTML = document.getElementById("customerContact").value;
-  document.getElementById("Rupees").innerHTML = document.getElementById("rupees").value;
-  document.getElementById("Word").innerHTML = document.getElementById("word").value;
+  document.getElementById("Date").innerHTML =
+    document.getElementById("date").value;
+  document.getElementById("CustomerName").innerHTML =
+    document.getElementById("customerName").value;
+  document.getElementById("CustomerContact").innerHTML =
+    document.getElementById("customerContact").value;
+  document.getElementById("Rupees").innerHTML =
+    document.getElementById("rupees").value;
+  document.getElementById("Word").innerHTML =
+    document.getElementById("word").value;
   document.getElementById("PrintButton").innerHTML = "";
   PrintInvoice("cashBillPrint");
 };
