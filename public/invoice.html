@@ -21,6 +21,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
       rel="stylesheet"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <title>Home</title>
   </head>
@@ -101,6 +105,7 @@
       </div>
       <main id="center_whole_content">
         <div class="whole border-outline">
+         <div id="invoice">
           <form id="invoiceForm" onsubmit="saveInvoiceData(event)">
             <!-- bill HTML -->
 
@@ -123,7 +128,7 @@
 
                 <tr align="center">
                   <td id="invoiceNo">00</td>
-                  <td><input type="date" id="date" required /></td>
+                  <td id="Date"><input type="date" id="date" required /></td>
                 </tr>
               </table>
             </div>
@@ -211,10 +216,11 @@
                       </select>
                     </td>
                     <td class="productRate1"></td>
-                    <td class="widthQTY">
+                    <td class="widthQTY" align="center" id="ProductQty1">
                       <input
                         type="text"
                         class="productQty1"
+                        id="productQty1"
                         oninput="productQtyOnChange1()"
                         required
                       />
@@ -263,7 +269,7 @@
                   </tr>
                   <tr>
                     <td>Paid amount:</td>
-                    <td>
+                    <td id="PaidAmount">
                       <input
                         type="text"
                         id="paidAmount"
@@ -283,11 +289,11 @@
                 <table>
                   <tr>
                     <td>Delivery By:</td>
-                    <td><input type="text" id="deliveredBy" required /></td>
+                    <td id="DeliveredBy"><input type="text" id="deliveredBy" required /></td>
                   </tr>
                   <tr>
                     <td>Checked By:</td>
-                    <td><input type="text" id="checkedBy" required /></td>
+                    <td id="CheckedBy"><input type="text" id="checkedBy" required /></td>
                   </tr>
                   <!-- <tr>
                                 <td>Received By:</td>
@@ -297,7 +303,7 @@
                   <br />
                   <tr>
                     <td>Authorized signature:</td>
-                    <td><input type="text" readonly /></td>
+                    <td id="AuthorizedSignature"><input type="text" readonly /></td>
                   </tr>
                 </table>
               </div>
@@ -306,11 +312,54 @@
             <div class="continueButton">
               <!-- <button onclick="saveInvoiceData(event)">Continue</button> -->
               <input type="submit" value="Continue" />
+             
             </div>
+            <!-- <button
+            class="btn22"
+          >
+            <a onclick="toPrint(event)" class="btn22" id="printBtn">Print</a>
+          </button> -->
           </form>
+         </div>
         </div>
       </main>
     </div>
+    <footer class="footer">
+      <div class="fcontainer">
+        <div class="f-row">
+          <div class="footer-col">
+            <h4>Designed By</h4>
+            <ul>
+              <li><a href="#">NUSS CS2019 KU</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>More About Us</h4>
+            <ul>
+              <li><a href="#">Our Services</a></li>
+              <li><a href="#">privacy services</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>follow us on</h4>
+            <div class="social-links">
+              <a href="https://www.facebook.com/"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://mobile.twitter.com/login"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.instagram.com/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.linkedin.com"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
   <script src="./js/invoice.js"></script>
   <script src="./js/home.js"></script>

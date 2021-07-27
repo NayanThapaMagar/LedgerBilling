@@ -1,8 +1,12 @@
 //displaying company name
-document.getElementById("companyName").innerHTML = localStorage.getItem("companyName");
-document.getElementById("companyAddress").innerHTML = localStorage.getItem("address");
-document.getElementById("companyContact").innerHTML = localStorage.getItem("contact");
-document.getElementById("companyEmail").innerHTML = localStorage.getItem("email");
+document.getElementById("companyName").innerHTML =
+  localStorage.getItem("companyName");
+document.getElementById("companyAddress").innerHTML =
+  localStorage.getItem("address");
+document.getElementById("companyContact").innerHTML =
+  localStorage.getItem("contact");
+document.getElementById("companyEmail").innerHTML =
+  localStorage.getItem("email");
 // to display selected invoice details
 const customerId0 = window.location.href.split("=")[1];
 const customerId = customerId0.split("&")[0];
@@ -61,3 +65,19 @@ fetch("/secured/invoiceDetails", fetchOptions)
     document.querySelector("#deliveredBy").innerHTML = customer.deliveredBy;
     document.querySelector("#checkedBy").innerHTML = customer.checkedBy;
   });
+
+
+function PrintInvoice(elem) {
+  var printContents = document.getElementById(elem).innerHTML;
+  var originalContents = document.body.innerHTML;
+  document.body.innerHTML = printContents;
+  window.focus();
+  window.print();
+  document.body.innerHTML = originalContents;
+  window.location.reload();
+  return true;
+}
+const toPrint = (e) => {
+  e.preventDefault();
+  PrintInvoice("invoicePrint");
+};

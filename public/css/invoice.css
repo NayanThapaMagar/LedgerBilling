@@ -1,239 +1,360 @@
-*{
-    margin:0px;
-    padding:0px;
+* {
+  margin: 0px;
+  padding: 0px;
 }
-p{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    height: 40px;
-    width: 150px;
-    background-color: #363636;
-    border-radius: 4px;
-    font-size: 18px;
-    font-weight: bold;
-    
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 40px;
+  width: 150px;
+  background-color: #363636;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
 }
-.heading{
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
+.heading {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
-#center_whole_content{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    
+#center_whole_content {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
-.border-outline input{
-outline: none;
+.border-outline input {
+  outline: none;
 }
 
-#heading{
-    font-size: 15px;
-    margin-left: 20px;
-    margin-top: 15px;
-    width: 230px;
-    text-align: center;
-    margin-bottom: 0px;
+#heading {
+  font-size: 15px;
+  margin-left: 20px;
+  margin-top: 15px;
+  width: 230px;
+  text-align: center;
+  margin-bottom: 0px;
 }
-#companyDetails{
-    font-size: 13px;
-    margin-left: 20px;
-    margin-top: 15px;
-    width: 230px;
-    text-align: center;
-    margin-bottom: 0px;
+#companyDetails {
+  font-size: 13px;
+  margin-left: 20px;
+  margin-top: 15px;
+  width: 230px;
+  text-align: center;
+  margin-bottom: 0px;
 }
 
-.billto td{
-    background-color: white;
+.billto td {
+  background-color: white;
 }
 .billto {
-    
-    width: 50%;
-    padding-left: 4px;
+  width: 50%;
+  padding-left: 4px;
 }
-.customerId{
-    width: 39%;
+.customerId {
+  width: 39%;
 }
-.cutomerId td{
-    background-color: hsl(258, 45%, 94%);
+.cutomerId td {
+  background-color: hsl(258, 45%, 94%);
 }
 
-
-.all td{
-    background-color:#36363680;
+.all td {
+  background-color: #36363680;
 }
-.all th{
-    border: none;
-    color:white;
-    background-color:#363636;
-    font-weight: normal;
+.all th {
+  border: none;
+  color: white;
+  background-color: #363636;
+  font-weight: normal;
 }
- .all2 th{
-    border: none;
-    color:white;
-    background-color: #363636;
-    font-weight: normal;
- }
- .whole{
-     border: 1px solid #c4c6ca;
-    width: 600px;
-    height:100;
-    padding: 5px;
-    box-shadow: 0px 0px 15px ;
-    margin-top: 30px;
-    padding-bottom: 40px; 
-    }  
-    .whole input{
-        border: none;
-    } 
+.all2 th {
+  border: none;
+  color: white;
+  background-color: #363636;
+  font-weight: normal;
+}
+.whole {
+  border: 1px solid #c4c6ca;
+  width: 600px;
+  height: 100;
+  padding: 5px;
+  box-shadow: 0px 0px 15px;
+  margin-top: 30px;
+  padding-bottom: 40px;
+}
+.whole input {
+  border: none;
+}
 
- 
-th{
-    height: 25px;
+th {
+  height: 25px;
 }
 
 .billno {
-display: flex; 
-justify-content: flex-end;   
-padding-right: 28px;
-
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 28px;
 }
 
-.particulars{
-    display: flex;
-    justify-content: center;
+.particulars {
+  display: flex;
+  justify-content: center;
 }
-.widthSN{
-    width:30px;
-    
+.widthSN {
+  width: 30px;
 }
-.widthQTY{
-    width: 60px;
+.widthQTY {
+  width: 60px;
 }
-.widthQTY input{
-    width: 60px;
+.widthQTY input {
+  width: 60px;
 }
 
-.widthpariculars{
-    width:150px
+.widthpariculars {
+  width: 150px;
 }
-.width_Rate_Amount{
-    width:100px;
+.width_Rate_Amount {
+  width: 100px;
 }
-.particulars table{
-border: 0.5px solid black;
-border-collapse: collapse;
-margin-top: 20px;
+.particulars table {
+  border: 0.5px solid black;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.particulars td,
+th {
+  border: 0.5px solid black;
+}
+.particulars input {
+  text-align: center;
+}
 
+.input input {
+  border-bottom: 2px solid #424040;
 }
-.particulars td,th{
-    border: 0.5px solid black;
+.button {
+  display: flex;
+  justify-content: space-between;
+  width: 12%;
+  margin-left: 18px;
 }
-.particulars input{
+.button button {
+  height: 25px;
+  color: white;
+  font-family: bold;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  width: 30px;
+}
+.btn1 button {
+  background-color: rgba(9, 114, 9, 0.849);
+}
+.btn2 button {
+  background-color: rgba(158, 12, 12, 0.726);
+}
+.btn1 button:hover {
+  background-color: rgb(66, 201, 66);
+}
+.btn2 button:hover {
+  background-color: rgb(212, 16, 16);
+}
+.continueButton input {
+  background-color: #363636;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  width: 80px;
+  height: 25px;
+  margin-left: 20px;
+  transition: ease-out 0.3s;
+}
+.continueButton input:hover {
+  box-shadow: inset 80px 0 0 0 #5c5858;
+}
+.flex1 {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  justify-content: space-around;
+}
+.flex2 {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  justify-content: space-around;
+}
+.particulars table {
+  width: 555px;
+}
+.print button{
+  background:   #424040;
+  cursor: pointer;;
+  border: none;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  width: 80px;
+  height:35px;
+  color: white;
+  outline: none;
+  transition: ease-out 0.3s;
+  font-size: 15px;
+}
+.print button:hover{
+  box-shadow: inset 80px 0 0 0 #5c5858;
+  color: white;
+}
+.print{
+  display: flex;
+  justify-content: center;
+}
+
+/* for resizing */
+@media (max-width: 654px) {
+  .whole {
+    width: 550px;
+  }
+  .whole th {
+    font-size: 12px;
+  }
+
+  .particulars table {
+    width: 505px;
+  }
+  .customerId td {
     text-align: center;
-}
-
-.input input{
-    border-bottom: 2px solid #424040; 
-    
-}
-.button{
-    display: flex;
-    justify-content: space-between;
-    width: 12%;
-    margin-left: 18px;
-}
-.button button{
-    height: 25px;
-    color: white;
-    font-family: bold;
-    font-size: 16px;
-    border-radius: 4px;
-    border: none;
-    width: 30px;
-}
-.btn1 button{
-    background-color: rgba(9, 114, 9, 0.849);
-    
-}
-.btn2 button{
-    background-color: rgba(158, 12, 12, 0.726);
-
-}
-.btn1 button:hover{
-    background-color: rgb(66, 201, 66)
-}
-.btn2 button:hover{
-    background-color: rgb(212, 16, 16);
-}
-.continueButton input{
-    background-color: #363636;
-    border-radius: 4px;
-    color: white;
-    font-weight: bold;
-    width: 80px;
-    height: 25px;
-    margin-left: 20px;
-    transition: ease-out 0.3s;
-}
-.continueButton input:hover{
- box-shadow: inset 80px 0 0 0 #5c5858;
-}
-.flex1{
-display: flex;
-flex-direction: row-reverse;
-width:100%;
-justify-content: space-around;
-}
-.flex2{
-    display: flex;
-    flex-direction: row-reverse;
-    width: 100%;
-    justify-content: space-around;
-}
-.particulars table{
-    width:555px;
- }
-
-  /* for resizing */
-@media (max-width:654px){
-  .whole{
-      width: 550px;
   }
-  .whole th{
-      font-size: 12px;
-  }
-
-  .particulars table{
-    width:505px;
- }
- .customerId td{
-text-align: center;
- }
 }
- 
-@media (max-width:600px){
-.whole{
+
+@media (max-width: 600px) {
+  .whole {
     width: 430px;
     font-size: 12px;
+  }
+
+  .particulars table {
+    width: 400px;
+  }
+  .billno {
+    width: 100%;
+  }
+  .flex2 input {
+    width: 120px;
+  }
+  .button {
+    width: 15%;
+  }
 }
 
-.particulars table{
-    width: 400px;
+/* footer css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.billno{
+
+.fcontainer {
+  max-width: 1170px;
+  margin: auto;
+  position: relative;
+  bottom: 20px;
+}
+
+.footer {
+  height: 120px;
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.f-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul {
+  list-style: none;
+}
+
+.footer {
+  background-color: #363636;
+  padding: 25px 0;
+}
+
+.footer-col {
+  width: 33%;
+  padding: 0 15px;
+}
+.footer-col h4 {
+  font-size: 19px;
+  color: #ffff;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  position: relative;
+}
+.footer-col h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  width: 130px;
+}
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  /* color: #ffff; */
+  text-decoration: none;
+  font-weight: 300;
+  color: #ffffff;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #bbb7b7;
+  padding-left: 5px;
+}
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+/* responsive */
+
+@media (max-width: 767px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 574px) {
+  .footer-col {
     width: 100%;
-    
-}
-.flex2 input{
-    width:120px;
-}
-.button{
-    width: 15%;
-}
+  }
 }

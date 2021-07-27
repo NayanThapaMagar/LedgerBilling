@@ -7,7 +7,7 @@ body{
 }
 .main{
    
-    border: 1px solid #52c3f8;
+    border: 1px solid #c4c6ca;
     width: 700px;
     padding: 20px;
     margin: auto;
@@ -136,9 +136,6 @@ h2{
 #no-outline:focus{
     outline: none;
 }
-
-
-
 
 #searchCustomer{
     margin-left: 25px;

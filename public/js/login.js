@@ -1,7 +1,7 @@
 const login = (e) => {
   e.preventDefault();
   const userName = document.getElementById("userName").value.trim();
-  const password = document.getElementById("password").value.trim();
+  const password = document.getElementById("password").value;
 
   const fetchOptions = {
     method: "POST",
@@ -29,10 +29,6 @@ const login = (e) => {
     });
 };
 
-//redirecting to change password page
-// const redirectToChangePassword = (e) => {
-//   window.location.assign("/secured/redirectToChangePassword");
-// };
 
 
 

@@ -38,7 +38,7 @@ module.exports = (req, res) => {
             contact: admin.contact
           },
           process.env.TOKEN_SECRET,
-          { expiresIn: "1h" }
+          { expiresIn: "24h" }
         );
         res.cookie("token", token);
         res.cookie("contact", admin.contact);

@@ -79,7 +79,7 @@ const contactOnChange = (e, selectedNo) => {
       }
     });
 };
-
+//------------------------------------------------------------CONVERTING FIGURE TO WORDS--------------------------------------------------------------------------------//
 var a = [
   "",
   "One ",
@@ -156,11 +156,25 @@ const amountOnInput = (e, amount0) => {
   const amount = parseInt(amount0);
   document.querySelector("#word").value = inWords(amount);
 };
-// inserting cash bill
+
+//--------------------------------------------------------------------------PRINTING INVOICE-----------------------------------------------------------------------//
+function PrintInvoice(elem) {
+  var printContents = document.getElementById(elem).innerHTML;
+  var originalContents = document.body.innerHTML;
+  document.body.innerHTML = printContents;
+  window.focus();
+  window.print();
+  document.body.innerHTML = originalContents;
+  window.location.assign("/secured/cashBill");
+  return true;
+}
+
+//--------------------------------------------------------------------------UPLOADING CASH BILL DATA----------------------------------------------------------------------//
 const uploadCashBill = (e) => {
   e.preventDefault();
   if (
-    document.querySelector("#select-options-customer").value.trim() == "----select----"
+    document.querySelector("#select-options-customer").value.trim() ==
+    "----select----"
   ) {
     alert("Customer Contact not selected!!");
     return;
@@ -213,17 +227,26 @@ const uploadCashBill = (e) => {
     body: JSON.stringify({ customerId }),
   };
   setTimeout(function () {
-  fetch("/secured/customerBalance", fetchOptions1)
-    .then((res) => res.json())
-    .then((data) => {
-      if (!data.success) {
-        //failed to insert data
-        alert("Failed to update Devit/Credit amount!!!");
-      } else {
-        //Data inserted
-        alert(`${data.message}`);
-        window.location.assign("/secured/cashBill");
-      }
-    });
-  }, 5);
+    fetch("/secured/customerBalance", fetchOptions1)
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data.success) {
+          //failed to insert data
+          alert("Failed to update Devit/Credit amount!!!");
+        } else {
+          //Data inserted
+          alert(`${data.message}`);
+        }
+      });
+  }, 50);
+  // Getting Ready to print Cash Bill
+  setTimeout(function () {
+    document.getElementById("Date").innerHTML = document.getElementById("date").value;
+    document.getElementById("CustomerName").innerHTML = document.getElementById("customerName").value;
+    document.getElementById("Rupees").innerHTML = document.getElementById("rupees").value;
+    document.getElementById("Word").innerHTML = document.getElementById("word").value;
+    document.getElementById("Continue").innerHTML = "";
+    PrintInvoice("CashBill");
+  }, 100);
 };
+

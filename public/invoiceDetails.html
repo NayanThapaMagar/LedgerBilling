@@ -12,7 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="./css/footerMain.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link
@@ -95,146 +98,154 @@
     </div>
     <div class="body">
       <main id="center_whole_content">
-        <div class="whole border-outline">
-          <form id="invoiceForm">
-            <!-- bill HTML -->
+        <div id="invoicePrint">
+          <div class="whole border-outline" id="inv">
+            <form id="invoiceForm">
+              <!-- bill HTML -->
 
-            <div id="heading">
-              <h2 id="companyName">Company Name: Nuss</h2>
-            </div>
-
-            <div id="companyDetails">
-              <h4 id="companyAddress">Company Name: Nuss</h4>
-              <h4 id="companyContact">Company Name: Nuss</h4>
-              <h4 id="companyEmail">Company Name: Nuss</h4>
-            </div>
-
-            <div class="billno all">
-              <table>
-                <tr>
-                  <th>Invoice no:</th>
-                  <th>Date:</th>
-                </tr>
-
-                <tr align="center">
-                  <td id="invoiceNo">00</td>
-                  <td id="date"></td>
-                </tr>
-              </table>
-            </div>
-
-            <br /><br />
-
-            <div class="flex1">
-              <div class="customerId all">
-                <table>
-                  <tr>
-                    <th>CUTOMER ID</th>
-                    <th>TERMS</th>
-                  </tr>
-                  <td id="customerId">00</td>
-                  <td>Due Upon Receipt</td>
-                  <tr></tr>
-                </table>
+              <div id="heading">
+                <h2 id="companyName">Company Name: Nuss</h2>
               </div>
 
-              <div class="billto all2">
-                <table>
-                  <tr>
-                    <th colspan="2">Bill To</th>
-                  </tr>
-
-                  <tr>
-                    <td>Name:</td>
-                    <td id="customerName"></td>
-                  </tr>
-
-                  <tr>
-                    <td>Address:</td>
-                    <td id="customerAddress"></td>
-                  </tr>
-
-                  <tr>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Contact number:</td>
-                    <td id="customerContact"></td>
-                  </tr>
-                </table>
+              <div id="companyDetails">
+                <h4 id="companyAddress">Company Name: Nuss</h4>
+                <h4 id="companyContact">Company Name: Nuss</h4>
+                <h4 id="companyEmail">Company Name: Nuss</h4>
               </div>
-            </div>
 
-            <div class="particulars all2">
-              <table>
-                <tr>
-                  <th class="widthSN">SN</th>
-                  <th class="widthParticulars">Particulars</th>
-                  <th class="widthQTY">Id</th>
-                  <th class="width_Rate_Amount">Rate</th>
-                  <th class="widthQTY">Qty</th>
-                  <th class="width_Rate_Amount">Amount</th>
-                </tr>
-
-                <tbody id="transacted-product"></tbody>
-              </table>
-            </div>
-
-            <br />
-            <br />
-
-            <div class="flex2">
-              <div class="total input">
+              <div class="billno all">
                 <table>
                   <tr>
-                    <td>Total:</td>
-                    <td id="total"></td>
+                    <th>Invoice no:</th>
+                    <th>Date:</th>
                   </tr>
-                  <tr>
-                    <td>Vat:</td>
-                    <td id="vat"></td>
-                  </tr>
-                  <tr>
-                    <td>Discount:</td>
-                    <td id="discount"></td>
-                  </tr>
-                  <tr>
-                    <td>Grand Total:</td>
-                    <td id="grandTotal"></td>
-                  </tr>
-                  <tr>
-                    <td>Paid amount:</td>
-                    <td id="paidAmount"></td>
-                  </tr>
-                  <tr>
-                    <td>Due amount:</td>
-                    <td id="dueAmount"></td>
+
+                  <tr align="center">
+                    <td id="invoiceNo">00</td>
+                    <td id="date"></td>
                   </tr>
                 </table>
               </div>
 
-              <div class="delivery input">
+              <br /><br />
+
+              <div class="flex1">
+                <div class="customerId all">
+                  <table>
+                    <tr>
+                      <th>CUTOMER ID</th>
+                      <th>TERMS</th>
+                    </tr>
+                    <td id="customerId">00</td>
+                    <td>Due Upon Receipt</td>
+                    <tr></tr>
+                  </table>
+                </div>
+
+                <div class="billto all2">
+                  <table>
+                    <tr>
+                      <th colspan="2">Bill To</th>
+                    </tr>
+
+                    <tr>
+                      <td>Name:</td>
+                      <td id="customerName"></td>
+                    </tr>
+
+                    <tr>
+                      <td>Address:</td>
+                      <td id="customerAddress"></td>
+                    </tr>
+
+                    <tr>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Contact number:</td>
+                      <td id="customerContact"></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div class="particulars all2">
                 <table>
                   <tr>
-                    <td>Delivery By:</td>
-                    <td id="deliveredBy"></td>
+                    <th class="widthSN">SN</th>
+                    <th class="widthParticulars">Particulars</th>
+                    <th class="widthQTY">Id</th>
+                    <th class="width_Rate_Amount">Rate</th>
+                    <th class="widthQTY">Qty</th>
+                    <th class="width_Rate_Amount">Amount</th>
                   </tr>
-                  <tr>
-                    <td>Checked By:</td>
-                    <td id="checkedBy"></td>
-                  </tr>
-                  <br />
-                  <br />
-                  <tr>
-                    <td>Authorized signature:</td>
-                    <td></td>
-                  </tr>
+
+                  <tbody id="transacted-product"></tbody>
                 </table>
               </div>
-            </div>
-          </form>
+
+              <br />
+              <br />
+
+              <div class="flex2">
+                <div class="total input">
+                  <table>
+                    <tr>
+                      <td>Total:</td>
+                      <td id="total"></td>
+                    </tr>
+                    <tr>
+                      <td>Vat:</td>
+                      <td id="vat"></td>
+                    </tr>
+                    <tr>
+                      <td>Discount:</td>
+                      <td id="discount"></td>
+                    </tr>
+                    <tr>
+                      <td>Grand Total:</td>
+                      <td id="grandTotal"></td>
+                    </tr>
+                    <tr>
+                      <td>Paid amount:</td>
+                      <td id="paidAmount"></td>
+                    </tr>
+                    <tr>
+                      <td>Due amount:</td>
+                      <td id="dueAmount"></td>
+                    </tr>
+                  </table>
+                </div>
+
+                <div class="delivery input">
+                  <table>
+                    <tr>
+                      <td>Delivery By:</td>
+                      <td id="deliveredBy"></td>
+                    </tr>
+                    <tr>
+                      <td>Checked By:</td>
+                      <td id="checkedBy"></td>
+                    </tr>
+                    <br />
+                    <br />
+                    <tr>
+                      <td>Authorized signature:</td>
+                      <td></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div></div>
         </div>
       </main>
+    </div>
+    <div class="print">
+    <button class="btn22">
+      <a onclick="toPrint(event)" class="btn22">Print</a>
+    </button>
     </div>
     <footer class="footer">
       <div class="fcontainer">
@@ -255,10 +266,18 @@
           <div class="footer-col">
             <h4>follow us on</h4>
             <div class="social-links">
-              <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://mobile.twitter.com/login"><i class="fab fa-twitter"></i></a>
-              <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-              <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://mobile.twitter.com/login"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.instagram.com/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.linkedin.com"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
             </div>
           </div>
         </div>
