@@ -114,12 +114,12 @@ function PrintInvoice(elem) {
   window.location.reload();
   return true;
 }
-const toPrint = (e) => {
-  e.preventDefault();
+const toPrint = () => {
   document.getElementById("Date").innerHTML = document.getElementById("date").value;
   document.getElementById("CustomerName").innerHTML = document.getElementById("customerName").value;
   document.getElementById("CustomerContact").innerHTML = document.getElementById("customerContact").value;
   document.getElementById("Rupees").innerHTML = document.getElementById("rupees").value;
   document.getElementById("Word").innerHTML = document.getElementById("word").value;
+  document.getElementById("PrintButton").innerHTML = "";
   PrintInvoice("cashBillPrint");
 };

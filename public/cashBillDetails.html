@@ -140,21 +140,23 @@
               <div class="cashrupee">
                 <div class="cashreceived">
                   <label for="customerName">Cash Received from:</label>
-                  <span id="CustomerName">
+                  <div id="CustomerName">
                     <input type="text" id="customerName" readonly />
-                  </span>
+                  </div>
                 </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <div class="rupee">
                   <label for="contact">Contact</label>
-                  <span id="CustomerContact">
+                  <div id="CustomerContact">
                     <input id="customerContact" style="width: 130px" readonly />
-                  </span>
+                  </div>
                 </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <div class="rupee">
                   <label for="rupees">Amount in figure</label>
-                  <span id="Rupees">
+                  <div id="Rupees">
                     <input type="text" id="rupees" placeholder="******" readonly />
-                  </span>
+                  </div>
                 </div>
               </div>
   
@@ -179,9 +181,9 @@
                   <input type="text" id="received by" readonly />
                 </div>
               </div>
-              <div class="print">
+              <div class="print" id="PrintButton">
               <button class="btn22">
-                <a onclick="toPrint(event)" class="btn22">Print</a>
+                <a onclick="toPrint()" class="btn22">Print</a>
               </button>
               </div>
             </div>
