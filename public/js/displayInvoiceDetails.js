@@ -68,22 +68,16 @@ fetch("/secured/invoiceDetails", fetchOptions)
 
 
 function PrintInvoice(elem) {
-  var mywindow = window.open("", "PRINT", "height=400,width=700");
-
-  // mywindow.document.write("<html><head><title>" + document.title + "</title>");
-  // mywindow.document.write("</head><body >");
-  // mywindow.document.write("<h1>" + document.title + "</h1>");
-  mywindow.document.write(document.getElementById(elem).innerHTML);
-  // mywindow.document.write("</body></html>");
-
-  mywindow.document.close();
-  mywindow.focus();
-  mywindow.print();
-  mywindow.close();
-
+  var printContents = document.getElementById(elem).innerHTML;
+  var originalContents = document.body.innerHTML;
+  document.body.innerHTML = printContents;
+  window.focus();
+  window.print();
+  document.body.innerHTML = originalContents;
+  window.location.reload();
   return true;
 }
 const toPrint = (e) => {
   e.preventDefault();
-  PrintInvoice("inv");
+  PrintInvoice("invoicePrint");
 };

@@ -98,86 +98,93 @@
       </div>
 
       <div class="center">
-        <form onsubmit="uploadCashBill(event)">
-          <div class="whole">
-            <div class="heading">
-              <h2 id="companyName">Company Name:</h2>
-            </div>
-
-            <div class="companydetails">
-              <table>
-                <tr>
-                  <td id="companyAddress">Address:</td>
-                </tr>
-                <tr>
-                  <td id="companyContact">Contact Number:</td>
-                </tr>
-                <tr>
-                  <td id="companyEmail">Email:</td>
-                </tr>
-              </table>
-            </div>
-
-            <div class="flex">
-              <div>
+        <div id="cashBillPrint">
+          <form onsubmit="uploadCashBill(event)">
+            <div class="whole">
+              <div class="heading">
+                <h2 id="companyName">Company Name:</h2>
+              </div>
+  
+              <div class="companydetails">
                 <table>
                   <tr>
-                    <td>Cash Bill No:</td>
-                    <td id="cashBillNo">00</td>
+                    <td id="companyAddress">Address:</td>
+                  </tr>
+                  <tr>
+                    <td id="companyContact">Contact Number:</td>
+                  </tr>
+                  <tr>
+                    <td id="companyEmail">Email:</td>
                   </tr>
                 </table>
               </div>
-
-              <div>
-                <label for="date">Date:</label>
-                <input type="date" id="date" readonly />
+  
+              <div class="flex">
+                <div>
+                  <table>
+                    <tr>
+                      <td>Cash Bill No:</td>
+                      <td id="cashBillNo">00</td>
+                    </tr>
+                  </table>
+                </div>
+  
+                <div>
+                  <label for="date">Date:</label>
+                  <span id="Date">
+                    <input type="date" id="date" readonly />
+                  </span>
+                </div>
+              </div>
+  
+              <div class="cashrupee">
+                <div class="cashreceived">
+                  <label for="customerName">Cash Received from:</label>
+                  <span id="CustomerName">
+                    <input type="text" id="customerName" readonly />
+                  </span>
+                </div>
+                <div class="rupee">
+                  <label for="contact">Contact</label>
+                  <span id="CustomerContact">
+                    <input id="customerContact" style="width: 130px" readonly />
+                  </span>
+                </div>
+                <div class="rupee">
+                  <label for="rupees">Amount in figure</label>
+                  <span id="Rupees">
+                    <input type="text" id="rupees" placeholder="******" readonly />
+                  </span>
+                </div>
+              </div>
+  
+              <div class="amount_word">
+                <label for="word">Amount in words:</label>
+                <span id="Word">
+                  <input type="text" id="word" readonly />
+                </span>
+              </div>
+  
+              <div class="checkbox">
+                <h4>Payment received in:</h4>
+                <p>We accept amount only in cash</p>
+              </div>
+  
+              <div class="flex2">
+                <div>
+                  <span>Autorized Signature:</span><input type="text" readonly />
+                </div>
+                <div>
+                  <label for="receivedby">Received by:</label>
+                  <input type="text" id="received by" readonly />
+                </div>
               </div>
             </div>
-
-            <div class="cashrupee">
-              <div class="cashreceived">
-                <label for="customerName">Cash Received from:</label>
-                <input type="text" id="customerName" readonly />
-                <!-- <span id="customerName"></span> -->
-              </div>
-              <div class="rupee">
-                <label for="rupees">Contact</label>
-                <input id="customerContact" style="width: 130px" readonly />
-              </div>
-              <div class="rupee">
-                <label for="rupees">Amount in figure</label>
-                <input type="text" id="rupees" placeholder="******" readonly />
-              </div>
-            </div>
-
-            <div class="amount_word">
-              <label for="word">Amount in words:</label>
-              <input type="text" id="word" readonly />
-            </div>
-
-            <div class="checkbox">
-              <h4>Payment received in:</h4>
-              <p>We accept amount only in cash</p>
-              <!-- <label for="cash">Cash</label>
-              <input type="checkbox" id="cash" />
-              <label for="Cheque">Cheque</label>
-              <input type="checkbox" id="Cheque" /> -->
-            </div>
-
-            <div class="flex2">
-              <div>
-                <span>Autorized Signature:</span><input type="text" readonly />
-              </div>
-              <div>
-                <label for="receivedby">Received by:</label>
-                <input type="text" id="received by" readonly />
-              </div>
-            </div>
-          </div>
-        </form>
-        <!-- <button class="btn22">
+          </form>
+        </div>
+        <button class="btn22">
           <a onclick="toPrint(event)" class="btn22">Print</a>
-        </button> -->
+        </button>
       </div>
     </div>
     <footer class="footer">

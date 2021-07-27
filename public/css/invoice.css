@@ -338,11 +338,3 @@ ul {
     width: 100%;
   }
 }
-/* @media print {
-  body {display:block};
-  #invoiceForm {display: block};
-  .productQty1 {display: block};
-  #paidAmount {display: block};
-  #deliveredBy {display: block};
-  #checkedBy {display: block};
-} */

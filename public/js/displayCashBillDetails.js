@@ -104,37 +104,22 @@ fetch("/secured/cashBillDetails", fetchOptions)
     );
   });
 
-// function PrintInvoice(elem) {
-//   var mywindow = window.open("", "PRINT", "height=400,width=700");
-
-//   // mywindow.document.write("<html><head><title>" + document.title + "</title>");
-//   // mywindow.document.write("</head><body >");
-//   // mywindow.document.write("<h1>" + document.title + "</h1>");
-//   // mywindow.document.write("<h2>"+document.getElementById("companyName").innerHTML+"</h2>");
-//   // mywindow.document.write("<p>"+document.getElementById("companyAddress").innerHTML+"</p>"); 
-//   // mywindow.document.write("<p>"+document.getElementById("companyContact").innerHTML+"</p>"); 
-//   // mywindow.document.write("<p>"+document.getElementById("companyEmail").innerHTML+"</p>"); 
-//   // mywindow.document.write("<p>Cash Bill No:"+document.querySelector("#cashBillNo").innerHTML+"</p>"); 
-//   // mywindow.document.write(`<input type="date readonly/ >"`); 
-//   // document.querySelector("#date").value
-//   // mywindow.document.write(document.querySelector("#customerName").value); 
-//   // mywindow.document.write(document.querySelector("#customerContact").value); 
-//   // mywindow.document.write(document.querySelector("#rupees").value); 
-//   // mywindow.document.write(document.querySelector("#word").value); 
-//   mywindow.document.write(document.getElementById(elem).innerHTML);
-//   // mywindow.document.write(document.querySelector("#cashBillNo").innerHTML);
-//   // mywindow.document.write(document.querySelector("#date").value);
-//   // mywindow.document.write(document.getElementById(elem).nodeValue);
-//   // mywindow.document.write("</body></html>");
-
-//   mywindow.document.close();
-//   mywindow.focus();
-//   mywindow.print();
-//   mywindow.close();
-
-//   return true;
-// }
-// const toPrint = (e) => {
-//   e.preventDefault();
-//   PrintInvoice("cashBill");
-// };
+function PrintInvoice(elem) {
+  var printContents = document.getElementById(elem).innerHTML;
+  var originalContents = document.body.innerHTML;
+  document.body.innerHTML = printContents;
+  window.focus();
+  window.print();
+  document.body.innerHTML = originalContents;
+  window.location.reload();
+  return true;
+}
+const toPrint = (e) => {
+  e.preventDefault();
+  document.getElementById("Date").innerHTML = document.getElementById("date").value;
+  document.getElementById("CustomerName").innerHTML = document.getElementById("customerName").value;
+  document.getElementById("CustomerContact").innerHTML = document.getElementById("customerContact").value;
+  document.getElementById("Rupees").innerHTML = document.getElementById("rupees").value;
+  document.getElementById("Word").innerHTML = document.getElementById("word").value;
+  PrintInvoice("cashBillPrint");
+};
