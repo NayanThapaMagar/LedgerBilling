@@ -81,7 +81,7 @@
     height: 100;
     padding: 5px;
     box-shadow: 0px 0px 15px;
-    margin-top: 30px;
+    margin-top: 10px;
     padding-bottom: 40px;
   }
   .whole input {
@@ -209,7 +209,7 @@
   .print{
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 0px;
   }
   
   /* for resizing */
