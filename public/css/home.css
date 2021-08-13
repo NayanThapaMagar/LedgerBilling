@@ -75,6 +75,14 @@ nav {
     top: 8%;
     right: 0%;
 }
+#para{
+    margin-top: 20px;
+    font-size: 34px;
+    color: white;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+}
 .dropdown-content a {
     float: none;
     color: #f3ebeb;
