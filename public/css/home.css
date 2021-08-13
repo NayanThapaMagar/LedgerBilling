@@ -77,11 +77,10 @@ nav {
 }
 #para{
     margin-top: 20px;
-    font-size: 34px;
-    color: white;
+    font-size: 14px;
     font-weight: bold;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-style: italic;
+    /* font-style: italic; */
 }
 .dropdown-content a {
     float: none;
