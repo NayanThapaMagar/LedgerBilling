@@ -35,28 +35,26 @@ db.connect(function (err) {
 //use static folder to serve frontend
 const staticDir = path.join(__dirname, "public");
 app.use(express.static(staticDir));
-app.use(express.json({ limit: "1mb" }));
+// app.use(express.json({ limit: "100mb" }));
 
-// app.get("/", (req, res) => {
-//   if (req.headers.cookie) {
-//     const cookieInfo = req.headers.cookie.split("; ");
-//     const user = {
-//       [cookieInfo[0].split("=")[0]]: cookieInfo[0].split("=")[1],
-//       [cookieInfo[1].split("=")[0]]: cookieInfo[1].split("=")[1],
-//     };
-//     if (user.token) {
-//       const decodedToken = jwt.verify(user.token, process.env.TOKEN_SECRET);
-//       if (decodedToken.contact === user.contact) {
-//         return res.redirect("/secured/home");
-//       }
-//     }
-//   }
-//   return res.sendFile(staticDir+"/login.html");
-// })
-
+//App Entrance
 app.get("/", (req, res) => {
+  if (req.headers.cookie) {
+    const cookieInfo = req.headers.cookie.split("; ");
+    const user = {
+      [cookieInfo[0].split("=")[0]]: cookieInfo[0].split("=")[1],
+      [cookieInfo[1].split("=")[0]]: cookieInfo[1].split("=")[1],
+    };
+    if (user.token) {
+      const decodedToken = jwt.verify(user.token, process.env.TOKEN_SECRET);
+      if (decodedToken.contact === user.contact) {
+        return res.redirect("/secured/home");
+      }
+    }
+  }
   return res.sendFile(staticDir+"/login.html");
 })
+
 
 //Route Middlewares
 app.use("/secured", securedRoute);
