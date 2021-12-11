@@ -4,10 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "\\"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "engines": {
-    "node": "6.11.1"
+    "node": "4.17.0"
   },
   "author": "",
   "license": "ISC",
