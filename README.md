@@ -1,9 +1,9 @@
 # LedgerBilling
-USE MYSQL batabase
-Create a .env file inside LedgerBilling. Inside .env file enter
-DB_PASSWORD = 
-DB_USER = 
-TOKEN_SECRET =
-and their values
-Then create database named "login" and run setupDB from terminal.
-After that you are ready to go...
+1>USE MYSQL batabase
+2>Create a .env file inside LedgerBilling. 
+3>Inside .env file type
+DB_PASSWORD = ******(password),
+DB_USER = ******(your username),
+TOKEN_SECRET = ******(secret token)
+4>Then create database named "login" and run setupDB from terminal.
+5>After that you are ready to go...
