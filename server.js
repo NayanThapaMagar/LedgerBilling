@@ -35,8 +35,9 @@ db.connect(function (err) {
 //use static folder to serve frontend
 const staticDir = path.join(__dirname, "public");
 app.use(express.static(staticDir));
-app.use(express.json({ limit: "1mb" }));
+// app.use(express.json({ limit: "100mb" }));
 
+//App Entrance
 app.get("/", (req, res) => {
   if (req.headers.cookie) {
     const cookieInfo = req.headers.cookie.split("; ");
